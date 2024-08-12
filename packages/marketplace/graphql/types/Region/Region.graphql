@@ -1,0 +1,19 @@
+"""
+Represents a region item
+"""
+type RegionItem {
+  name: String!
+  url: String!
+  children: [MenuItem]
+}
+
+"""
+Represents a region
+"""
+type Region {
+  items: [RegionItem]
+}
+
+extend type Query {
+  menu: Region
+}

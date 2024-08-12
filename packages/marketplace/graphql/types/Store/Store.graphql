@@ -1,0 +1,18 @@
+"""
+Represents a store item
+"""
+type StoreItem {
+  name: String!
+  url: String!
+}
+
+"""
+Represents a store
+"""
+type Store {
+  items: [StoreItem]
+}
+
+extend type Query {
+  menu: Store
+}
