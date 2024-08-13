@@ -18,7 +18,7 @@ export default function SearchInfo() {
       <div className="mb-1 md:mb-2">
         <div className="text-left ">
           <h1 className="search-name mt-25">
-            {_('Search results for "${keyword}"', { keyword: key })}
+            {_(`Search results for "${keyword}"`, { keyword: key })}
           </h1>
         </div>
       </div>

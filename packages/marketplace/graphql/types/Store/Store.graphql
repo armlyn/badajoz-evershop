@@ -1,18 +1,33 @@
 """
-Represents a store item
+Represents a store.
 """
-type StoreItem {
+type Store {
+  id: Int!
+  uuid: String!
   name: String!
-  url: String!
+  description: String
+  logo: String
+  address: String
+  phone: String
+  opening_hours: String
+  closing_hours: String
+  email: String
+  website: String
+  qr_code: String
+  url: String
 }
 
 """
-Represents a store
+Returns a collection of stores.
 """
-type Store {
-  items: [StoreItem]
+type StoreCollection {
+  items: [Store]
+  currentPage: Int!
+  total: Int!
+  currentFilters: [Filter]
 }
 
 extend type Query {
-  menu: Store
+  store(id: Int): Store
+  stores(filters: [FilterInput]): StoreCollection
 }
