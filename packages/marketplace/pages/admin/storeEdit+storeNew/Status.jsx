@@ -11,8 +11,8 @@ export default function Status({ store }) {
           type="radio"
           name="status"
           options={[
-            { value: false, text: 'Disabled' },
-            { value: true, text: 'Enabled' }
+            { value: 0, text: 'Disabled' },
+            { value: 1, text: 'Enabled' }
           ]}
           value={store.approved}
         />
@@ -23,7 +23,7 @@ export default function Status({ store }) {
 
 Status.propTypes = {
   store: PropTypes.shape({
-    approved: PropTypes.bool,
+    approved: PropTypes.number,
   })
 };
 

@@ -30,7 +30,7 @@ export default function FormContent({ gridUrl }) {
           title="Save"
           onAction={() => {
             document
-              .getElementById('categoryForm')
+              .getElementById('storeForm')
               .dispatchEvent(
                 new Event('submit', { cancelable: true, bubbles: true })
               );

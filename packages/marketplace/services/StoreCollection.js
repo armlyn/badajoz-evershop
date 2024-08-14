@@ -25,7 +25,7 @@ class StoreCollection {
 
         // Apply the filters
         const storeCollectionFilters = await getValue(
-            'productCollectionFilters',
+            'storeCollectionFilters',
             [],
             {
                 isAdmin

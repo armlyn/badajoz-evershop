@@ -5,7 +5,7 @@ import { get } from '@evershop/evershop/src/lib/util/get';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
 
-export default function Seo({ category }) {
+export default function Seo({ store }) {
   const fields = [
     {
       component: { default: Field },
@@ -53,9 +53,9 @@ export default function Seo({ category }) {
       sortOrder: 30
     }
   ].map((f) => {
-    if (get(category, `${f.props.id}`) !== undefined) {
+    if (get(store, `${f.props.id}`) !== undefined) {
       // eslint-disable-next-line no-param-reassign
-      f.props.value = get(category, `${f.props.id}`);
+      f.props.value = get(store, `${f.props.id}`);
     }
     return f;
   });
@@ -63,14 +63,14 @@ export default function Seo({ category }) {
   return (
     <Card title="Search engine optimize">
       <Card.Session>
-        <Area id="categoryEditSeo" coreComponents={fields} />
+        <Area id="storeEditSeo" coreComponents={fields} />
       </Card.Session>
     </Card>
   );
 }
 
 Seo.propTypes = {
-  category: PropTypes.shape({
+  store: PropTypes.shape({
     metaDescription: PropTypes.string,
     metaKeywords: PropTypes.string,
     metaTitle: PropTypes.string,
@@ -79,7 +79,7 @@ Seo.propTypes = {
 };
 
 Seo.defaultProps = {
-  category: {
+  store: {
     metaDescription: '',
     metaKeywords: '',
     metaTitle: '',
@@ -94,7 +94,7 @@ export const layout = {
 
 export const query = `
   query Query {
-    category(id: getContextValue('categoryId', null)) {
+    store(id: getContextValue('storeId', null)) {
       urlKey
       metaTitle
       metaKeywords

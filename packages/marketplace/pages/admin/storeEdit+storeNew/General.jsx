@@ -56,7 +56,7 @@ export default function General({
         validationRules: ['notEmpty'],
         type: 'text'
       },
-      sortOrder: 30,
+      sortOrder: 40,
       id: 'phone'
     },
     {
@@ -70,7 +70,7 @@ export default function General({
         uploadApi,
         folderCreateApi
       },
-      sortOrder: 30
+      sortOrder: 50
     }
   ].map((f) => {
     if (get(store, `${f.props.id}`) !== undefined) {
@@ -97,7 +97,14 @@ General.propTypes = {
   store: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
-    id: PropTypes.number
+    id: PropTypes.number,
+    address: PropTypes.string,
+    phone: PropTypes.string,
+    approved: PropTypes.number,
+    urlKey: PropTypes.string,
+    metaTitle: PropTypes.string,
+    metaDescription: PropTypes.string,
+    metaKeywords: PropTypes.string
   })
 };
 
@@ -116,7 +123,13 @@ export const query = `
       id
       name
       description
+      address
+      phone
       approved
+      urlKey
+      metaTitle
+      metaDescription
+      metaKeywords
     }
     browserApi: url(routeId: "fileBrowser", params: [{key: "0", value: ""}])
     deleteApi: url(routeId: "fileDelete", params: [{key: "0", value: ""}])

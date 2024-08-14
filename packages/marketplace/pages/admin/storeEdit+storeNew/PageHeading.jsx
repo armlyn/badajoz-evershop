@@ -6,7 +6,7 @@ export default function StoreEditPageHeading({ backUrl, store }) {
   return (
     <PageHeading
       backUrl={backUrl}
-      heading={category ? `Editing ${store.name}` : 'Create A New store'}
+      heading={store ? `Editing ${store.name}` : 'Create A New store'}
     />
   );
 }
