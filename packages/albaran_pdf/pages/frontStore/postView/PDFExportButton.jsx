@@ -7,7 +7,7 @@ function PDFExportButton({ albaran }) {
   const handleExport = () => {
     const doc = new JsPDF();
     AlbaranDocument(doc, albaran);
-    doc.save(`Albaran_${albaran.albaranNumber}.pdf`);
+    doc.save(`Albaran_${albaran.orderNumber}.pdf`);
   };
 
   return (
@@ -19,7 +19,7 @@ function PDFExportButton({ albaran }) {
 
 PDFExportButton.propTypes = {
   albaran: PropTypes.shape({
-    albaranNumber: PropTypes.string.isRequired
+    orderNumber: PropTypes.string.isRequired
   }).isRequired
 };
 

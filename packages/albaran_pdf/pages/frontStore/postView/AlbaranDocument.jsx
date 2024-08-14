@@ -7,11 +7,11 @@ const AlbaranDocument = (doc, albaran) => {
   doc.setTextColor(40);
   doc.setFont('Helvetica', 'bold');
   doc.setFontSize(20);
-  doc.text(`Albarán #${albaran.numeroAlbaran}`, 105, 20, { align: 'center' });
+  doc.text(`Albarán #${albaran.orderNumber}`, 105, 20, { align: 'center' });
 
   doc.setFont('Helvetica', 'normal');
   doc.setFontSize(12);
-  doc.text(`Fecha de Emisión: ${albaran.fechaEmision}`, 105, 30, {
+  doc.text(`Fecha de Emisión: ${albaran.issueDate}`, 105, 30, {
     align: 'center'
   });
 
@@ -19,8 +19,8 @@ const AlbaranDocument = (doc, albaran) => {
   const sectionTop = 50;
   const sectionGap = 10;
 
-  const senderHeight = calculateSectionHeight(3);
-  const recipientHeight = calculateSectionHeight(3);
+  const senderHeight = calculateSectionHeight(6);
+  const recipientHeight = calculateSectionHeight(6);
 
   doc.setFillColor(240, 240, 240);
   doc.rect(20, sectionTop, 170, senderHeight, 'F');
@@ -35,25 +35,33 @@ const AlbaranDocument = (doc, albaran) => {
   doc.setFont('Helvetica', 'bold');
   doc.text('Remitente', 25, sectionTop + 7);
   doc.setFont('Helvetica', 'normal');
-  doc.text(albaran.sender.name, 25, sectionTop + 7 + lineHeight);
-  doc.text(albaran.sender.address, 25, sectionTop + 7 + lineHeight * 2);
-  doc.text(albaran.sender.phone, 25, sectionTop + 7 + lineHeight * 3);
+  doc.text(albaran.shippingAddress.fullName, 25, sectionTop + 7 + lineHeight);
+  doc.text(
+    `${albaran.shippingAddress.address1} ${albaran.shippingAddress.address2}`,
+    25,
+    sectionTop + 7 + lineHeight * 2
+  );
+  doc.text(
+    albaran.shippingAddress.telephone,
+    25,
+    sectionTop + 7 + lineHeight * 3
+  );
 
   doc.setFont('Helvetica', 'bold');
   doc.text('Destinatario', 25, sectionTop + senderHeight + sectionGap + 7);
   doc.setFont('Helvetica', 'normal');
   doc.text(
-    albaran.recipient.name,
+    albaran.billingAddress.fullName,
     25,
     sectionTop + senderHeight + sectionGap + 7 + lineHeight
   );
   doc.text(
-    albaran.recipient.address,
+    `${albaran.billingAddress.address1} ${albaran.billingAddress.address2}`,
     25,
     sectionTop + senderHeight + sectionGap + 7 + lineHeight * 2
   );
   doc.text(
-    albaran.recipient.phone,
+    albaran.billingAddress.telephone,
     25,
     sectionTop + senderHeight + sectionGap + 7 + lineHeight * 3
   );
@@ -66,7 +74,7 @@ const AlbaranDocument = (doc, albaran) => {
   );
 
   doc.setFont('Helvetica', 'normal');
-  albaran.products.forEach((producto, index) => {
+  albaran.items.forEach((item, index) => {
     const yPosition =
       sectionTop +
       senderHeight +
@@ -75,11 +83,12 @@ const AlbaranDocument = (doc, albaran) => {
       30 +
       index * (lineHeight + 2);
     doc.text(
-      `${producto.quantity} x ${producto.description} (Código: ${producto.code})`,
+      `${item.qty} x ${item.productName} (Código: ${item.productSku})`,
       25,
       yPosition
     );
   });
+
   doc.setFont('Helvetica', 'bold');
   doc.text('Firma de entrega:', 20, 270);
   doc.line(60, 270, 160, 270);
