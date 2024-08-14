@@ -1,5 +1,5 @@
-export const mockDeliveryNote = {
-  deliveryNoteNumber: '001',
+export const mockAlbaran = {
+  albaranNumber: '001',
   issueDate: '2024-08-12',
   sender: {
     name: 'Empresa Vendedora',

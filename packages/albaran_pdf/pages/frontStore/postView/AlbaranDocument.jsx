@@ -19,63 +19,63 @@ const AlbaranDocument = (doc, albaran) => {
   const sectionTop = 50;
   const sectionGap = 10;
 
-  const remitenteHeight = calculateSectionHeight(3);
-  const destinatarioHeight = calculateSectionHeight(3);
+  const senderHeight = calculateSectionHeight(3);
+  const recipientHeight = calculateSectionHeight(3);
 
   doc.setFillColor(240, 240, 240);
-  doc.rect(20, sectionTop, 170, remitenteHeight, 'F');
+  doc.rect(20, sectionTop, 170, senderHeight, 'F');
   doc.rect(
     20,
-    sectionTop + remitenteHeight + sectionGap,
+    sectionTop + senderHeight + sectionGap,
     170,
-    destinatarioHeight,
+    recipientHeight,
     'F'
   );
 
   doc.setFont('Helvetica', 'bold');
   doc.text('Remitente', 25, sectionTop + 7);
   doc.setFont('Helvetica', 'normal');
-  doc.text(albaran.remitente.nombre, 25, sectionTop + 7 + lineHeight);
-  doc.text(albaran.remitente.direccion, 25, sectionTop + 7 + lineHeight * 2);
-  doc.text(albaran.remitente.telefono, 25, sectionTop + 7 + lineHeight * 3);
+  doc.text(albaran.sender.name, 25, sectionTop + 7 + lineHeight);
+  doc.text(albaran.sender.address, 25, sectionTop + 7 + lineHeight * 2);
+  doc.text(albaran.sender.phone, 25, sectionTop + 7 + lineHeight * 3);
 
   doc.setFont('Helvetica', 'bold');
-  doc.text('Destinatario', 25, sectionTop + remitenteHeight + sectionGap + 7);
+  doc.text('Destinatario', 25, sectionTop + senderHeight + sectionGap + 7);
   doc.setFont('Helvetica', 'normal');
   doc.text(
-    albaran.destinatario.nombre,
+    albaran.recipient.name,
     25,
-    sectionTop + remitenteHeight + sectionGap + 7 + lineHeight
+    sectionTop + senderHeight + sectionGap + 7 + lineHeight
   );
   doc.text(
-    albaran.destinatario.direccion,
+    albaran.recipient.address,
     25,
-    sectionTop + remitenteHeight + sectionGap + 7 + lineHeight * 2
+    sectionTop + senderHeight + sectionGap + 7 + lineHeight * 2
   );
   doc.text(
-    albaran.destinatario.telefono,
+    albaran.recipient.phone,
     25,
-    sectionTop + remitenteHeight + sectionGap + 7 + lineHeight * 3
+    sectionTop + senderHeight + sectionGap + 7 + lineHeight * 3
   );
 
   doc.setFont('Helvetica', 'bold');
   doc.text(
     'Productos',
     20,
-    sectionTop + remitenteHeight + destinatarioHeight + sectionGap * 2 + 20
+    sectionTop + senderHeight + recipientHeight + sectionGap * 2 + 20
   );
 
   doc.setFont('Helvetica', 'normal');
-  albaran.productos.forEach((producto, index) => {
+  albaran.products.forEach((producto, index) => {
     const yPosition =
       sectionTop +
-      remitenteHeight +
-      destinatarioHeight +
+      senderHeight +
+      recipientHeight +
       sectionGap * 2 +
       30 +
       index * (lineHeight + 2);
     doc.text(
-      `${producto.cantidad} x ${producto.descripcion} (Código: ${producto.codigo})`,
+      `${producto.quantity} x ${producto.description} (Código: ${producto.code})`,
       25,
       yPosition
     );
