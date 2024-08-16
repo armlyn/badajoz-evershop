@@ -1,0 +1,10 @@
+extend type Region {
+  editUrl: String
+  updateApi: String!
+  deleteApi: String!
+  addStoreUrl: String
+}
+
+extend type Store {
+  removeFromRegionUrl: String
+}

@@ -5,7 +5,8 @@ import RegionIcon from '@heroicons/react/solid/esm/MapIcon';
 import NavigationItemGroup from '@components/admin/cms/NavigationItemGroup';
 
 export default function MarketplaceMenuGroup({
-    storeGrid
+    storeGrid,
+    regionGrid
 }) {
     return (
         <NavigationItemGroup
@@ -18,7 +19,7 @@ export default function MarketplaceMenuGroup({
                     title: 'Stores'
                 },{
                     Icon: RegionIcon,
-                    url: storeGrid,
+                    url: regionGrid,
                     title: 'Regions'
                 }
             ]}
@@ -38,5 +39,7 @@ export const layout = {
 export const query = `
   query Query {
     storeGrid: url(routeId:"storeGrid")
+    regionGrid: url(routeId:"regionGrid")
+
   }
 `;
