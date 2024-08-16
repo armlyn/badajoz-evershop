@@ -11,7 +11,8 @@ export default function General({
   browserApi,
   deleteApi,
   uploadApi,
-  folderCreateApi
+  folderCreateApi,
+  storeRegions: { items: regions }
 }) {
   const fields = [
     {
@@ -60,6 +61,21 @@ export default function General({
       id: 'phone'
     },
     {
+      component: { default: Field },
+      props: {
+        id: 'region_id',
+        name: 'region',
+        value: store?.region_id || null,
+        type: 'select',
+        label: 'Region',
+        options: [...regions],
+        placeholder: 'None',
+        disableDefaultOption: false
+      },
+      sortOrder: 45,
+      id: 'region'
+    },
+    {
       component: { default: CkeditorField },
       props: {
         id: 'description',
@@ -98,18 +114,30 @@ General.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     id: PropTypes.number,
+    region_id: PropTypes.number,
     address: PropTypes.string,
     phone: PropTypes.string,
-    approved: PropTypes.number,
+    status: PropTypes.number,
     urlKey: PropTypes.string,
     metaTitle: PropTypes.string,
     metaDescription: PropTypes.string,
     metaKeywords: PropTypes.string
+  }),
+  storeRegions: PropTypes.shape({
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.number,
+        text: PropTypes.string
+      })
+    )
   })
 };
 
 General.defaultProps = {
-  store: {}
+  store: undefined,
+  storeRegions: {
+    items: []
+  }
 };
 
 export const layout = {
@@ -125,7 +153,7 @@ export const query = `
       description
       address
       phone
-      approved
+      status
       urlKey
       metaTitle
       metaDescription
@@ -135,5 +163,11 @@ export const query = `
     deleteApi: url(routeId: "fileDelete", params: [{key: "0", value: ""}])
     uploadApi: url(routeId: "imageUpload", params: [{key: "0", value: ""}])
     folderCreateApi: url(routeId: "folderCreate")
+    storeRegions: regions {
+      items {
+        value: id
+        text: name
+      }
+    }
   }
 `;

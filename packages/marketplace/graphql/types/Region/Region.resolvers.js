@@ -8,7 +8,7 @@ const {
 const { StoreCollection } = require('../../../services/StoreCollection');
 const {
     getRegionsBaseQuery
-} = require('../../../services/getStoresBaseQuery');
+} = require('../../../services/getRegionsBaseQuery');
 const { RegionCollection } = require('../../../services/RegionCollection');
 
 module.exports = {

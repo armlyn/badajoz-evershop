@@ -19,7 +19,7 @@ class StoreCollection {
     async init(filters = [], isAdmin = false) {
         // If the user is not admin, we need to filter out the out of stock products and the disabled products
         if (!isAdmin) {
-            this.baseQuery.andWhere('store.approved', '=', true);
+            this.baseQuery.andWhere('store.status', '=', 1);
         }
         const currentFilters = [];
 

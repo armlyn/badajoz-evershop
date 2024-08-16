@@ -15,14 +15,17 @@ const {
 const {
   getConnection
 } = require('@evershop/evershop/src/lib/postgres/connection');
-const { getAjv } = require('../../../base/services/getAjv');
+const { getAjv } = require('@evershop/evershop/src/modules/base/services/getAjv');
 const storeDataSchema = require('./storeDataSchema.json');
 
 function validateStoreDataBeforeInsert(data) {
   const ajv = getAjv();
   storeDataSchema.required = [
     'name',
-    'approved'
+    'url_key',
+    'status',
+    'address',
+    'phone'
   ];
   const jsonSchema = getValueSync(
     'createStoreDataJsonSchema',
@@ -39,8 +42,13 @@ function validateStoreDataBeforeInsert(data) {
 
 async function insertStoreData(data, connection) {
   const store = await insert('store').given(data).execute(connection);
+  const description = await insert('store_description')
+    .given(data)
+    .prime('store_id', store.id)
+    .execute(connection);
 
   return {
+    ...description,
     ...store
   };
 }

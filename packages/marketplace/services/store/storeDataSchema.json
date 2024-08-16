@@ -11,6 +11,9 @@
       "type": "string",
       "skipEscape": true
     },
+    "short_description": {
+      "type": "string"
+    },
     "url_key": {
       "type": "string",
       "pattern": "^\\S+$",
@@ -28,11 +31,14 @@
     "meta_keywords": {
       "type": "string"
     },
-    "approved": {
-      "type": ["boolean", "string"],
-      "enum": [true, false, "true", "false"]
+    "status": {
+      "type": ["integer", "string"],
+      "enum": [0, 1, "0", "1"]
     },
     "address": {
+      "type": "string"
+    },
+    "phone": {
       "type": "string"
     },
     "region_id": {

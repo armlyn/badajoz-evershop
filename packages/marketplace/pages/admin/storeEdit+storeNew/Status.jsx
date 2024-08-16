@@ -14,7 +14,8 @@ export default function Status({ store }) {
             { value: 0, text: 'Disabled' },
             { value: 1, text: 'Enabled' }
           ]}
-          value={store.approved}
+          value={store?.status === undefined ? 1 : store.status}
+          label="Status"
         />
       </Card.Session>
     </Card>
@@ -23,12 +24,14 @@ export default function Status({ store }) {
 
 Status.propTypes = {
   store: PropTypes.shape({
-    approved: PropTypes.number,
+    status: PropTypes.number.isRequired
   })
 };
 
 Status.defaultProps = {
-  store: {}
+  store: {
+    status: 1
+  }
 };
 
 export const layout = {
@@ -39,7 +42,7 @@ export const layout = {
 export const query = `
   query Query {
     store(id: getContextValue("storeId", null)) {
-      approved
+      status
     }
   }
 `;

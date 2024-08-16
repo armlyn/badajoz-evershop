@@ -17,7 +17,7 @@ const {
   getConnection
 } = require('@evershop/evershop/src/lib/postgres/connection');
 const { error } = require('@evershop/evershop/src/lib/log/logger');
-const { getAjv } = require('../../../base/services/getAjv');
+const { getAjv } = require('@evershop/evershop/src/modules/base/services/getAjv');
 const storeDataSchema = require('./storeDataSchema.json');
 
 function validateStoreDataBeforeUpdate(data) {
@@ -38,6 +38,13 @@ function validateStoreDataBeforeUpdate(data) {
 
 async function updateStoreData(uuid, data, connection) {
   const query = select().from('store');
+  query
+    .leftJoin('store_description')
+    .on(
+      'store_description.store_id',
+      '=',
+      'store.id'
+    );
   
   const store = await query.where('uuid', '=', uuid).load(connection);
   if (!store) {
@@ -55,6 +62,20 @@ async function updateStoreData(uuid, data, connection) {
       throw e;
     }
   }
+
+  try {
+    const description = await update('store_description')
+      .given(data)
+      .where('store_id', '=', store.id)
+      .execute(connection);
+    Object.assign(store, description);
+  } catch (e) {
+    if (!e.message.includes('No data was provided')) {
+      throw e;
+    }
+  }
+
+
   Object.assign(store, newStore);
   return store;
 }

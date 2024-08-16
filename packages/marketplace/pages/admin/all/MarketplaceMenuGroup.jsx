@@ -20,7 +20,7 @@ export default function MarketplaceMenuGroup({
                     Icon: RegionIcon,
                     url: storeGrid,
                     title: 'Regions'
-                },
+                }
             ]}
         />
     );

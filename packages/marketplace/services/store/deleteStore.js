@@ -24,6 +24,14 @@ async function deleteStore(uuid, context) {
   await startTransaction(connection);
   try {
     const query = select().from('store');
+    query
+      .leftJoin('store_description')
+      .on(
+        'store_description.store_id',
+        '=',
+        'store.id'
+      );
+      
     const store = await query.where('uuid', '=', uuid).load(connection);
     if (!store) {
       throw new Error('Invalid store id');

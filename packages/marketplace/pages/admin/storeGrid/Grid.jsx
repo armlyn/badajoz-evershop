@@ -6,7 +6,6 @@ import Area from '@components/common/Area';
 import Pagination from '@components/common/grid/Pagination';
 import { Checkbox } from '@components/common/form/fields/Checkbox';
 import { useAlertContext } from '@components/common/modal/Alert';
-import StoreNameRow from './rows/StoreName';
 import StatusRow from '@components/common/grid/rows/StatusRow';
 import ProductPriceRow from '@components/admin/catalog/productGrid/rows/PriceRow';
 import BasicRow from '@components/common/grid/rows/BasicRow';
@@ -18,6 +17,7 @@ import SortableHeader from '@components/common/grid/headers/Sortable';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 import Filter from '@components/common/list/Filter';
+import StoreNameRow from './rows/StoreName';
 
 function Actions({ stores = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -241,12 +241,12 @@ export default function StoreGrid({
                                 : 'Disabled'
                               : undefined
                           }
-                          title="Approved"
+                          title="Status"
                         />
                       )
                     },
                     sortOrder: 10
-                  },
+                  }
                   // {
                   //   component: {
                   //     default: () => (
@@ -331,7 +331,7 @@ export default function StoreGrid({
                     )
                   },
                   sortOrder: 10
-                },             
+                }             
               ]}
             />
           </tr>

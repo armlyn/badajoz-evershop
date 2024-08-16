@@ -15,7 +15,7 @@ type Store {
   website: String
   qr_code: String
   url: String
-  approved: Int!
+  status: Int!
   urlKey: String
   metaTitle: String
   metaDescription: String
