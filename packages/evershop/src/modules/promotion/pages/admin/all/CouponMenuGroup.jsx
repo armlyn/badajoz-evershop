@@ -2,17 +2,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Icon from '@heroicons/react/solid/esm/GiftIcon';
 import NavigationItemGroup from '@components/admin/cms/NavigationItemGroup';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CatalogMenuGroup({ couponGrid }) {
   return (
     <NavigationItemGroup
       id="couponMenuGroup"
-      name="Promotion"
+      name={_("Promotion")}
       items={[
         {
           Icon,
           url: couponGrid,
-          title: 'Coupons'
+          title: _('Coupons')
         }
       ]}
     />

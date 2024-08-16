@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useAppState } from '@components/common/context/app';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function BestCustomers({ listUrl, setting }) {
   const context = useAppState();
@@ -9,10 +10,10 @@ export default function BestCustomers({ listUrl, setting }) {
 
   return (
     <Card
-      title="Best customers"
+      title={_("Best customers")}
       actions={[
         {
-          name: 'All customers',
+          name: _('All customers'),
           onAction: () => {
             window.location.href = listUrl;
           }
@@ -23,9 +24,9 @@ export default function BestCustomers({ listUrl, setting }) {
         <table className="listing">
           <thead>
             <tr>
-              <th>Full name</th>
-              <th>Orders</th>
-              <th>Total</th>
+              <th>{_("Full name")}</th>
+              <th>{_("Orders")}</th>
+              <th>{_("Total")}</th>
             </tr>
           </thead>
           <tbody>

@@ -1,8 +1,9 @@
 import React from 'react';
 import PageHeading from '@components/admin/cms/PageHeading';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function Heading() {
-  return <PageHeading backUrl={null} heading="Coupons" />;
+  return <PageHeading backUrl={null} heading={_("Coupons")} />;
 }
 
 export const layout = {

@@ -2,19 +2,20 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function Status({ product }) {
   return (
-    <Card title="Product status" subdued>
+    <Card title={_("Product status")} subdued>
       <Card.Session>
         <Field
           id="status"
           name="status"
           value={product?.status === undefined ? 1 : product.status}
-          label="Status"
+          label={_("Status")}
           options={[
-            { value: 0, text: 'Disabled' },
-            { value: 1, text: 'Enabled' }
+            { value: 0, text: _('Disabled') },
+            { value: 1, text: _('Enabled') }
           ]}
           type="radio"
         />
@@ -24,10 +25,10 @@ export default function Status({ product }) {
           id="visibility"
           name="visibility"
           value={product?.visibility === undefined ? 1 : product.visibility}
-          label="Visibility"
+          label={_("Visibility")}
           options={[
-            { value: 0, text: 'Not visible' },
-            { value: 1, text: 'Visible' }
+            { value: 0, text: _('Not visible') },
+            { value: 1, text: _('Visible') }
           ]}
           type="radio"
         />

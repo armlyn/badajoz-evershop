@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import PageHeading from '@components/admin/cms/PageHeading';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CollectionEditPageHeading({ backUrl, collection }) {
   return (
     <div className='w-2/3' style={{margin: '0 auto'}}>
       <PageHeading
         backUrl={backUrl}
-        heading={collection ? `Editing ${collection.name}` : 'Create A New Collection'}
+        heading={collection ? `Editing ${collection.name}` : _('Create A New Collection')}
       />
     </div>
   );

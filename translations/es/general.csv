@@ -1,7 +1,348 @@
 Discount ${discount} For All Orders Over ${price}, Descuento de ${discount} para todos los pedidos superiores a ${price}.
 Please select, Por favor, selecciona...
 The page you requested does not exist., La página que solicitaste no existe
-Continue shopping, Continuar comprando
 404 Page Not Found, 404 Página no encontrada
+Attribute options, Opciones de atributos
+Attribute Group, Grupo de atributos
+Attribute group, Grupo de atributos
+Attributes, Atributos
+Attribute Name, Nombre atributo
+Are you sure?, ¿Esta seguro?
+Add product, Añadir producto
+Add image, Añadir imagen
+All customers, Todos los clientes
+Address, Dirección
+All products, Todos los productos
+Activities, Actividades
+Attribute saved successfully!, ¡Atributo guardado exitosamente!
+Add products, Añadir Productos
+Attribute code, Código atributo
+Back To Dashboard, Volver al panel de control
+Best customers, Los mejores clientes
+Best Sellers, Los más vendidos
+Basic configuration, Configuración básica
+Base calculation address, Dirección de cálculo base
+Based on order price, Basado en el precio del pedido
+Based on order weight, Basado en el peso del pedido
+Black, Negro
+Buy X get Y, Compra X y obtén Y
+Billing address, Dirección de Envio
+Catalog, Catálogo
+Customers, Clientes
+Customer, Cliente
+Customer notes, Notas del cliente
+Categories, Categorias
+Collections, Colecciones
+Category banner, Banner de categoría
+Cancel, Cancelar
+Create A New Product, Crear un nuevo producto
+Code, Código
+City, Ciudad
+Customer was notified, El cliente fue notificado
+click to upload an image, Haga clic para cargar una imagen
+Contact Information, Información del contacto
+Category saved successfully!, ¡Categoría guardada exitosamente!
+Clear filter, Limpiar filtro
+Collection Name, Nombre colección
+Continue shopping, Continuar comprando
+Create a new group, Crear un nuevo grupo
+Create A New Attribute, Crear un nuevo atributo
+Create new shipping zone, Crear nueva zona de envío
+Create A New Customer, Crear un nuevo cliente
+Create new tax class, Crear nueva clase de impuesto
+Change, Cambiar
+Client ID, ID Cliente
+Can&apos;t be undone, No se puede deshacer
+Complete shipment, Envío completo
+Create A New category, Crear nueva categoría
+Create A New Collection, Crear una nueva colección
+Category Name, Nombre categoría
+Category, Categoría
+Copyright © 2021 EverShop, Derechos reservados © 2024 Badajoz
+Choose where you ship and how much you charge for shipping., Elige dónde enviar y cuánto cobrar por el envío.
+Collection saved successfully!, ¡Colección guardada exitosamente!
+Can not change the attribute group of a product that is already in a variant group., No se puede cambiar el grupo de atributos de un producto que ya está en un grupo de variantes.
+Configurable, Configurable
+Configure tax classes and tax rates, Configurar clases de impuestos y tasas de impuestos
+Create A New Page, Crear una nueva página
+Contact information, Información del contacto
+Configure the available payment methods, Configurar los métodos de pago disponibles
+Configure the tax classes that will be available to your customers at checkout., Configure las clases de impuestos que estarán disponibles para sus clientes en el momento del pago.
+Cms Pages, Páginas CMS
+Content, Contenido
+Capture, Captura
+Coupon code, Código de cupón
+Customer Email, Correo electrónico del cliente
+Carrier, Transportador
+Created At, Creado en
+Completed, Completado
+Country, País
+Currency, Moneda
+Configure your store information, Configura la información de tu tienda
+Customer email (empty for all), Correo electrónico del cliente (vacío para todos)
+Coupons, Cupones
+Cancelled, Cancelado
+Create A New Coupon, Crear un nuevo cupón
+Coupon saved successfully!, ¡Cupón guardado exitosamente!
+Client Secret, Secreto del cliente
+Cash On Delivery Payment, Pago contra reembolso
+Customer's purchase, Compra del cliente
+Customer conditions, Condiciones del cliente
+Customer does not have any order yet., El cliente no tiene ningún pedido todavía.
+Delete, Borrar
+Delete ${selectedIds.length} pages, Eliminar ${selectedIds.length} páginas
+Delete ${selectedIds.length} collections, Eliminar ${selectedIds.length} colecciones
+Description, Descripción
+Dashboard, Panel de Control
+Daily, Diario
+Date, Fecha
+Discount amount, Importe del descuento
+Delete ${selectedIds.length} products, Eliminar ${selectedIds.length} productos
+Delete ${selectedIds.length} coupons, Eliminar ${selectedIds.length} cupones
+Disabled, Deshabilitado 
+Disable ${selectedIds.length} pages, Deshabilitar ${selectedIds.length} páginas
+Disable ${selectedIds.length} coupons, Deshabilitar ${selectedIds.length} cupones
+Disable ${selectedIds.length} customers, Deshabilitar ${selectedIds.length} clientes
+Disable, Deshabilitar
+Delivered, Entregado
+delivering, entregando
+Disable ${selectedIds.length} products, Deshabilitar ${selectedIds.length} productos
+Display Name, Nombre para mostrar
+Discount Type, Tipo de descuento
+Default, Por defecto
+Enabled, Habilitado
+Enable, Habilitar
+EverShop Admin Panel, Panel de administración de Badajoz
+Enable?, ¿Habilitar?
+Email, Correo electrónico
+Enter customer emails, Introducir correos electrónicos de clientes
+Enter purchased amount, Introduzca el importe de la compra
+Enter coupon code, Introducir código de cupón
+Enter description, Introducir descripción
+Environment, Ambiente
+Edit Tracking Info, Editar información de seguimiento
+Edit Tracking Information, Editar información de seguimiento
+Enable ${selectedIds.length} pages, Habilitar ${selectedIds.length} páginas
+Enable ${selectedIds.length} customers, Habilitar ${selectedIds.length} clientes
+Enable ${selectedIds.length} coupons, Habilitar ${selectedIds.length} cupones
+EVERSHOP, BADAJOZ MARKETPLACE
+End Date, Fecha de finalización
+End date, Fecha de finalización
+Editing ${attribute.attributeName}, Editando ${attribute.attributeName}
+Editing ${category.name}, Editando ${category.name}
+Editing ${product.name}, Editando ${product.name}
+Editing ${page.name}, Editando ${page.name}
+Editing ${customer.fullName}, Editando ${customer.fullName}
+Editing #${order.orderNumber}, Editando #${order.orderNumber}
+Editing ${coupon.coupon}, Editando ${coupon.coupon}
+Enable ${selectedIds.length} products, Habilitar ${selectedIds.length} productos
+Enter minimum purchase amount, Introduzca el importe mínimo de compra
+Enter minimum purchase qty, Introduzca la cantidad mínima de compra
+Featured Products, Productos destacados
+featuredProducts, Productos destacados
+Free shipping?, ¿Envío gratis?
+Free shipping, Envío gratis
+Full Name, Nombre completo
+Fullfill ${selectedIds.length} orders, Cumplir con ${selectedIds.length} pedidos
+Failed!, ¡Fallido!
+Fixed discount to entire order, Descuento fijo para todo el pedido
+Fixed discount to specific products, Descuento fijo para productos específicos
+General, General
+Groups, Grupos
+Group, Grupo
+Group name is required, El nombre del grupo es obligatorio
+General, General
 Home, Inicio
+Hello, Hola
+Higest tax rate based on cart items, Tasa de impuestos más alta basada en los artículos del carrito
+Include In Store Menu, Incluir en el menú de la tienda
+Include In Menu, Incluir en el menú
+Is Required?, ¿Es Requerido?
+Is Filterable?, ¿Es Filtrable?
+items, elementos
+Inventory, Inventario
+Key, Llave
+Layout, Disposición
+Logout, Cerrar sesión
+Live, Vivir
+Logout failed, Error al cerrar sesión
+Look like you just started. No bestsellers yet., Parece que acabas de empezar. No hay más vendidos todavía.
+Lifetime Sales, Ventas de por vida
+lifetime sale, ventas de por vida
+Loading..., Cargando...
+Manage stock?, ¿Gestionar stock?
+Multiselect, Selección múltiple
+Meta title, Título meta
+Meta keywords, Palabras clave meta
+Meta description, Descripción meta
+Mark Delivered, Marca entregada
+Mark as shipped, Marcar como enviado
+Minimum purchased amount, Importe mínimo de compra
+Minimum purchase qty, Cantidad mínima de compra
+Monthly, Mensual
+Minimum order price, Precio mínimo de pedido
+Minimum order weight, Peso mínimo del pedido
+Maximum order price, Precio máximo del pedido
+Maximum order weight, Peso máximo del pedido
+Minimum purchase amount, Monto mínimo de compra
+Minimum quantity, Cantidad mínima
+meta_description, Descripción meta
+New Product, Nuevo Producto
+Not required, No requerido
 Not found, No encontrado
+Name, Nombre
+New Category, Nueva categoría
+New Attribute, Nuevo atributo
+New Collection, Nueva colección
+New Coupon, Nuevo cupón
+New Page, Nueva página
+Not visible, No visible
+No collections, No hay colecciones
+No free shipping, Sin envío gratuito
+No notes from customer, No hay notas del cliente
+No results for, No hay resultados para
+No groups found for query &quot;{inputValue}&rdquo;, No se encontraron grupos para la consulta {inputValue};
+Next, Siguiente
+None, Ninguno
+No product to display., No hay producto para mostrar.
+Oh no..., Oh no...
+Orders, Pedidos
+Operator, Operador
+orders, pedidos
+Order must contains product matched bellow conditions(All), El pedido debe contener productos que cumplan con las siguientes condiciones (Todos)
+Others, Otros
+Order conditions, Condiciones del pedido
+Order Number, Número de orden
+One column, Una columna
+order and other resources, pedidos y otros recursos
+of orders completed, de pedidos completados
+of orders cancelled, de pedidos cancelados
+Quick links, Link rápidos
+Parent category, Categoría padre
+Province, Provincia
+Products, Productos
+Product type, Tipo de producto
+Product saved successfully!, ¡Producto guardado exitosamente!
+Page Not Found, Página No Encontrada
+Pending, Pendiente
+Proportional allocation based on cart items, Asignación proporcional en función de los artículos del carrito
+Pages, Páginas
+Paid, Pagado
+Paypal Payment, Pago con Paypal
+Processing, Procesando
+Page saved successfully!, ¡Página guardada exitosamente!
+Price, Precio
+Promotion, Promoción
+Product status, Estado del producto
+Publishable Key, Clave publicable
+Previous, Previo
+Publishable Key, Clave publicable
+Payment status, Estado del pago
+PostalCode, Código Postal
+per page, por página
+pending, pendiente
+Password, Contraseña
+Percentage discount to entire order, Porcentaje de descuento sobre todo el pedido
+Percentage discount to specific products, Porcentaje de descuento en productos específicos
+Payment Setting, Configuración de pago
+quickLinks, Acceso rápido
+Quantity, Cantidad
+Required, Requerido
+Results for, Resultados para
+Remove, Remover
+records, archivos
+Setting, Configuración
+Search, Buscar
+Search products, Buscar productos
+Save, Guardar
+Start date, Fecha de inicio
+Simple, Sencillo
+Sandbox, Salvadera
+Select category, Seleccionar categoría
+Search for products, Búsqueda de productos
+Send notification to the customer, Enviar notificación al cliente
+Sale Statistics, Estadísticas de venta
+Select Products, Seleccionar productos
+Search attribute groups, Buscar grupos de atributos
+Setting saved, Configuración guardada
+SKU, SKU
+select, seleccionar
+Show, Mostrar
+Shipping Address, Dirección de envío
+Ship, Envío
+Select groups the attribute belongs to, Seleccionar grupos a los que pertenece el atributo
+Store Address, Dirección de la tienda
+Stripe Payment, Pago con Stripe
+Shipped, Enviado
+State Date, Estado Fecha
+Store Name, Nombre de la tienda
+Setup shipping cost, Configurar el costo de envío
+Store Email, Correo electrónico de la tienda
+Store Description, Descripción de la tienda
+Start shipment, Iniciar envío
+Store Information, Información de la tienda
+Store Phone Number, Número de teléfono de la tienda
+Secret Key, Clave secreta
+sold, vendido
+Something wrong. Please reload the page!, Algo no va bien. Por favor recarga la página!
+Shipment Status, Estado del envío
+Shipment status, Estado del envío
+Show to customers?, Mostrar a los clientes?
+Sort order, Orden de clasificación
+Select, Seleccionar
+Stock, Existencias
+Search engine optimize, Optimización de motores de búsqueda
+Stock availability, Disponibilidad de stock
+Shipping tax class, Clase de impuesto de envío
+Status, Estado
+Sale, Venta
+Store Setting, Configuración de la tienda
+Shipping Setting, Configuración de envío
+shipping methods and delivery fee, métodos de envío y tarifa de envío
+Shipping, Envío
+Ship Items, Artículos de envío
+Size, Talla
+Text, Texto
+There is no order to display, No hay ningún orden para mostrar
+Type, Tipo
+Tax setting has been saved successfully!, ¡La configuración de impuestos se ha guardado correctamente!
+Total, Total
+This field can not be empty, Este campo no puede estar vacío
+Thumbnail, Thumbnail
+Tracking number, El número de rastreo
+Two columns left, Dos columnas a la izquierda
+Two columns right, Dos columnas a la derecha
+Three columns, Tres columnas
+TRY OTHER RESOURCES, PRUEBE OTROS RECURSOS
+Textarea, Área de texto
+Tax Setting, Configuración fiscal
+Tax, Impuesto
+Taxable Goods, Bienes sujetos a impuestos
+Tax classes, Clases de impuestos
+Tax class, Clase de impuesto
+Track shipment, Seguimiento del envío
+There is no product to display, No hay ningún producto para mostrar
+There is no categoryop no y to display, No hay ninguna categoría para mostrar
+There is no collections to display, No hay ninguna colección para mostrar
+There is no customer to display, No hay ningún cliente para mostrar
+There is no coupon to display, No hay ningún cupón para mostrar
+There is no page to display, No hay ninguna página para mostrar
+Url key, Clave de URL
+Unique ID, ID único
+Use comma when you have multi email, Utilice comas cuando tenga varios correos electrónicos
+Unassign, Anular asignación
+Update tracking, Seguimiento de actualizaciones
+Used Times, Tiempos usados
+Variant, Variante
+Visible, Visible
+Visibility, Visibilidad
+Value, Valor
+Version 1.0 dev, Version 1.0 dev
+Where you ship, Dónde se realizan los envíos
+Weekly, Semanal 
+Webhook Secret Key, Clave secreta del webhook
+Weight, Peso
+White, Blanco
+Yes, Si
+You have no groups to display, No tienes grupos para mostrar
+Yellow, Amarillo

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const getGroup = (groups = [], groupId = null) =>
   groups.find(
@@ -30,7 +31,7 @@ export default function Attributes({ product, groups: { items } }) {
 
   return (
     <Card>
-      <Card.Session title="Attribute group" subdued>
+      <Card.Session title={_("Attribute group")} subdued>
         <div>
           {product?.variantGroupId && (
             <div>
@@ -43,8 +44,7 @@ export default function Attributes({ product, groups: { items } }) {
                 <span>{currentGroup.groupName}</span>
               </div>
               <div className="italic text-textSubdued">
-                Can not change the attribute group of a product that is already
-                in a variant group.
+                {_("Can not change the attribute group of a product that is already in a variant group.")}
               </div>
             </div>
           )}
@@ -63,7 +63,7 @@ export default function Attributes({ product, groups: { items } }) {
           )}
         </div>
       </Card.Session>
-      <Card.Session title="Attributes">
+      <Card.Session title={_("Attributes")}>
         <table className="table table-auto">
           <tbody>
             {currentGroup.attributes.items.map((attribute, index) => {

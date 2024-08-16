@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import Area from '@components/common/Area';
 import { Form } from '@components/common/form/Form';
 import SettingMenu from '@components/admin/setting/SettingMenu';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function PaymentSetting({ saveSettingApi }) {
   return (
@@ -19,7 +20,7 @@ export default function PaymentSetting({ saveSettingApi }) {
             action={saveSettingApi}
             onSuccess={(response) => {
               if (!response.error) {
-                toast.success('Setting saved');
+                toast.success(_('Setting saved'));
               } else {
                 toast.error(response.error.message);
               }

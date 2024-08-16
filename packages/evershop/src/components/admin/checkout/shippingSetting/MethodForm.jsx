@@ -13,6 +13,7 @@ import { toast } from 'react-toastify';
 import PriceBasedPrice from '@components/admin/checkout/shippingSetting/PriceBasedPrice';
 import WeightBasedPrice from '@components/admin/checkout/shippingSetting/WeightBasedPrice';
 import { Input } from '@components/common/form/fields/Input';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const MethodsQuery = `
   query Methods {
@@ -33,8 +34,8 @@ function Condition({ method }) {
         <Radio
           name="condition_type"
           options={[
-            { value: 'price', text: 'Based on order price' },
-            { value: 'weight', text: 'Based on order weight' }
+            { value: 'price', text: _('Based on order price') },
+            { value: 'weight', text: _('Based on order weight') }
           ]}
           onChange={(value) => setType(value)}
           value={type}
@@ -45,10 +46,10 @@ function Condition({ method }) {
           <Field
             name="min"
             label={
-              type === 'price' ? 'Minimum order price' : 'Minimum order weight'
+              type === 'price' ? _('Minimum order price') : _('Minimum order weight')
             }
             placeholder={
-              type === 'price' ? 'Minimum order price' : 'Minimum order weight'
+              type === 'price' ? _('Minimum order price') : _('Minimum order weight')
             }
             type="text"
             value={method?.min}
@@ -59,10 +60,10 @@ function Condition({ method }) {
           <Field
             name="max"
             label={
-              type === 'price' ? 'Maximum order price' : 'Maximum order weight'
+              type === 'price' ? _('Maximum order price') : _('Maximum order weight')
             }
             placeholder={
-              type === 'price' ? 'Maximum order price' : 'Maximum order weight'
+              type === 'price' ? _('Maximum order price') : _('Maximum order weight')
             }
             type="text"
             value={method?.max}
@@ -201,7 +202,7 @@ function MethodForm({ saveMethodApi, closeModal, getZones, method }) {
               />
               {updatingName && (
                 <Button
-                  title="Save"
+                  title={_("Save")}
                   variant="primary"
                   onAction={async () => {
                     // Use fetch to call the API (method.updateApi) to update the method name
@@ -235,9 +236,9 @@ function MethodForm({ saveMethodApi, closeModal, getZones, method }) {
             value={shippingMethod?.value}
             validationRules={['notEmpty']}
           />
-          <Toggle name="is_enabled" label="Status" value={method?.isEnabled} />
+          <Toggle name="is_enabled" label={_("Status")} value={method?.isEnabled} />
         </Card.Session>
-        <Card.Session title="Setup shipping cost">
+        <Card.Session title={_("Setup shipping cost")}>
           <Radio
             name="calculation_type"
             options={[

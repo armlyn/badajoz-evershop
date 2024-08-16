@@ -6,6 +6,7 @@ import { get } from '@evershop/evershop/src/lib/util/get';
 import Button from '@components/common/form/Button';
 import './Image.scss';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function Image({ category, imageUploadUrl }) {
   const [image, setImage] = useState(category?.image);
@@ -36,7 +37,7 @@ export default function Image({ category, imageUploadUrl }) {
           !response.headers.get('content-type') ||
           !response.headers.get('content-type').includes('application/json')
         ) {
-          throw new TypeError('Something wrong. Please try again');
+          throw new TypeError(_('Something wrong. Please try again'));
         }
 
         return response.json();
@@ -45,7 +46,7 @@ export default function Image({ category, imageUploadUrl }) {
         if (!response.error) {
           setImage(response.data.files[0]);
         } else {
-          toast.error(get(response, 'error.message', 'Failed!'));
+          toast.error(get(response, 'error.message', _('Failed!')));
         }
       })
       .catch((error) => {
@@ -59,13 +60,13 @@ export default function Image({ category, imageUploadUrl }) {
 
   return (
     <Card
-      title="Category banner"
+      title={_("Category banner")}
       actions={
         image
           ? [
-              { name: 'Change', onAction: () => ref.current.click() },
+              { name: _('Change'), onAction: () => ref.current.click() },
               {
-                name: 'Remove',
+                name: _('Remove'),
                 variant: 'critical',
                 onAction: () => setImage(undefined)
               }
@@ -96,14 +97,14 @@ export default function Image({ category, imageUploadUrl }) {
               </div>
               <div className="flex justify-center">
                 <Button
-                  title="Add image"
+                  title={_("Add image")}
                   variant="default"
                   onAction={() => ref.current.click()}
                 />
               </div>
               <div className="flex justify-center mt-1">
                 <span style={{ color: '#6d7175', fontSize: '1.2rem' }}>
-                  click to upload an image
+                  {_("click to upload an image")}
                 </span>
               </div>
             </label>

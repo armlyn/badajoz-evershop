@@ -6,6 +6,7 @@ import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
 import CkeditorField from '@components/common/form/fields/Ckeditor';
 import CategoryTree from '@components/admin/catalog/productEdit/category/CategoryTree';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function ParentCategory({ currentId, parent }) {
   const [selecting, setSelecting] = React.useState(false);
@@ -13,7 +14,7 @@ function ParentCategory({ currentId, parent }) {
 
   return (
     <div className="mt-15 relative">
-      <div className="mb-1">Parent category</div>
+      <div className="mb-1">{_("Parent category")}</div>
       {category && (
         <div className="border rounded border-[#c9cccf] mb-1 p-1">
           {category.path.map((item, index) => (
@@ -30,7 +31,7 @@ function ParentCategory({ currentId, parent }) {
                 setSelecting(true);
               }}
             >
-              Change
+              {_("Change")}
             </a>
           </span>
         </div>
@@ -44,7 +45,7 @@ function ParentCategory({ currentId, parent }) {
           }}
           className="text-interactive"
         >
-          Select category
+          {_("Select category")} 
         </a>
       )}
       {selecting && (
@@ -101,7 +102,7 @@ export default function General({
       props: {
         id: 'name',
         name: 'name',
-        label: 'Name',
+        label: _('Name'),
         validationRules: ['notEmpty'],
         type: 'text'
       },
@@ -131,7 +132,7 @@ export default function General({
       props: {
         id: 'description',
         name: 'description',
-        label: 'Description',
+        label: _('Description'),
         browserApi,
         deleteApi,
         uploadApi,
@@ -148,7 +149,7 @@ export default function General({
   });
 
   return (
-    <Card title="General">
+    <Card title={_("General")}>
       <Card.Session>
         <Area id="categoryEditGeneral" coreComponents={fields} />
       </Card.Session>

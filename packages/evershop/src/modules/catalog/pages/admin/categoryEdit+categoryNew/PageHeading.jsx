@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import PageHeading from '@components/admin/cms/PageHeading';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CategoryEditPageHeading({ backUrl, category }) {
   return (
     <PageHeading
       backUrl={backUrl}
-      heading={category ? `Editing ${category.name}` : 'Create A New category'}
+      heading={category ? _(`Editing ${category.name}`) : _('Create A New category')}
     />
   );
 }

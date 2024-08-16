@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import Area from '@components/common/Area';
 import { Form } from '@components/common/form/Form';
 import { get } from '@evershop/evershop/src/lib/util/get';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function ProductNewForm({ action }) {
   const id = 'productForm';
@@ -19,7 +20,7 @@ export default function ProductNewForm({ action }) {
         return formData;
       }}
       onError={() => {
-        toast.error('Something wrong. Please reload the page!');
+        toast.error(_('Something wrong. Please reload the page!'));
       }}
       onSuccess={(response) => {
         if (response.error) {
@@ -27,11 +28,11 @@ export default function ProductNewForm({ action }) {
             get(
               response,
               'error.message',
-              'Something wrong. Please reload the page!'
+              _('Something wrong. Please reload the page!')
             )
           );
         } else {
-          toast.success('Product saved successfully!');
+          toast.success(_('Product saved successfully!'));
           // Wait for 2 seconds to show the success message
           setTimeout(() => {
             // Redirect to the edit page

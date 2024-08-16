@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import Button from '@components/common/form/Button';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CaptureButton({
   captureAPI,
@@ -32,7 +33,7 @@ export default function CaptureButton({
     return (
       <Card.Session>
         <div className="flex justify-end">
-          <Button title="Capture" onAction={onAction} isLoading={isLoading} />
+          <Button title={_("Capture")} onAction={onAction} isLoading={isLoading} />
         </div>
       </Card.Session>
     );

@@ -6,6 +6,7 @@ import { Field } from '@components/common/form/Field';
 import { Form } from '@components/common/form/Form';
 import { Card } from '@components/admin/cms/Card';
 import SettingMenu from '@components/admin/setting/SettingMenu';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const ProvincesQuery = `
   query Province($countries: [String]) {
@@ -47,11 +48,11 @@ function Province({
   });
   const { data, fetching, error } = result;
 
-  if (fetching) return <p>Loading...</p>;
+  if (fetching) return <p>{_('Loading...')}</p>;
   if (error) {
     return (
       <p>
-        Oh no...
+        {_('Oh no...')}
         {error.message}
       </p>
     );
@@ -68,8 +69,8 @@ function Province({
         type="select"
         value={selectedProvince}
         name={fieldName}
-        label="Province"
-        placeholder="Province"
+        label={_("Province")}
+        placeholder={_("Province")}
         validationRules={['notEmpty']}
         options={provinces.map((p) => ({ value: p.code, text: p.name }))}
       />
@@ -107,11 +108,11 @@ function Country({
 
   const { data, fetching, error } = result;
 
-  if (fetching) return <p>Loading...</p>;
+  if (fetching) return <p>{_('Loading...')}</p>;
   if (error) {
     return (
       <p>
-        Oh no...
+        {_('Oh no...')}
         {error.message}
       </p>
     );
@@ -122,9 +123,9 @@ function Country({
       <Field
         type="select"
         value={selectedCountry}
-        label="Country"
+        label={_("Country")}
         name={fieldName}
-        placeholder="Country"
+        placeholder={_("Country")}
         onChange={onChange}
         validationRules={['notEmpty']}
         options={data.countries.map((c) => ({ value: c.code, text: c.name }))}
@@ -151,11 +152,11 @@ function Currency({ selectedCurrency, fieldName = 'storeCurrency' }) {
   });
   const { data, fetching, error } = result;
 
-  if (fetching) return <p>Loading...</p>;
+  if (fetching) return <p>{_('Loading...')}</p>;
   if (error) {
     return (
       <p>
-        Oh no...
+        {_('Oh no...')}
         {error.message}
       </p>
     );
@@ -166,8 +167,8 @@ function Currency({ selectedCurrency, fieldName = 'storeCurrency' }) {
       type="select"
       value={selectedCurrency}
       name={fieldName}
-      label="Currency"
-      placeholder="Currency"
+      label={_("Currency")}
+      placeholder={_("Currency")}
       options={data.currencies.map((c) => ({ value: c.code, text: c.name }))}
     />
   );
@@ -218,70 +219,70 @@ export default function StoreSetting({
             action={saveSettingApi}
             onSuccess={(response) => {
               if (!response.error) {
-                toast.success('Setting saved');
+                toast.success(_('Setting saved'));
               } else {
                 toast.error(response.error.message);
               }
             }}
           >
             <Card>
-              <Card.Session title="Store Information">
+              <Card.Session title={_("Store Information")}>
                 <Field
                   name="storeName"
-                  label="Store Name"
-                  placeholder="Store Name"
+                  label={_("Store Name")}
+                  placeholder={_("Store Name")}
                   value={storeName}
                   type="text"
                 />
                 <Field
                   name="storeDescription"
-                  label="Store Description"
-                  placeholder="Store Description"
+                  label={_("Store Description")}
+                  placeholder={_("Store Description")}
                   value={storeDescription}
                   type="textarea"
                 />
               </Card.Session>
-              <Card.Session title="Contact Information">
+              <Card.Session title={_("Contact Information")}>
                 <div className="grid grid-cols-2 gap-2 mt-2">
                   <div>
                     <Field
                       name="storePhoneNumber"
-                      label="Store Phone Number"
+                      label={_("Store Phone Number")}
                       value={storePhoneNumber}
-                      placeholder="Store Phone Number"
+                      placeholder={_("Store Phone Number")}
                       type="text"
                     />
                   </div>
                   <div>
                     <Field
                       name="storeEmail"
-                      label="Store Email"
+                      label={_("Store Email")}
                       value={storeEmail}
-                      placeholder="Store Email"
+                      placeholder={_("Store Email")}
                       type="text"
                     />
                   </div>
                 </div>
               </Card.Session>
-              <Card.Session title="Address">
+              <Card.Session title={_("Address")}>
                 <Country
                   selectedCountry={storeCountry}
                   setSelectedCountry={setSelectedCountry}
                 />
                 <Field
                   name="storeAddress"
-                  label="Address"
+                  label={_("Address")}
                   value={storeAddress}
-                  placeholder="Store Address"
+                  placeholder={_("Store Address")}
                   type="text"
                 />
                 <div className="grid grid-cols-3 gap-2 mt-2">
                   <div>
                     <Field
                       name="storeCity"
-                      label="City"
+                      label={_("City")}
                       value={storeCity}
-                      placeholder="City"
+                      placeholder={_("City")}
                       type="text"
                     />
                   </div>
@@ -292,9 +293,9 @@ export default function StoreSetting({
                   <div>
                     <Field
                       name="storePostalCode"
-                      label="PostalCode"
+                      label={_("PostalCode")}
                       value={storePostalCode}
-                      placeholder="PostalCode"
+                      placeholder={_("PostalCode")}
                       type="text"
                     />
                   </div>

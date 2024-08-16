@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { toast } from 'react-toastify';
 import './AdminUser.scss';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function AdminUser({ adminUser, logoutUrl, loginPage }) {
   const [showLogout, setShowLogout] = React.useState(false);
@@ -21,7 +22,7 @@ export default function AdminUser({ adminUser, logoutUrl, loginPage }) {
     if (response.status === 200) {
       window.location.href = loginPage;
     } else {
-      toast.error('Logout failed');
+      toast.error(_('Logout failed'));
     }
   };
 
@@ -40,7 +41,7 @@ export default function AdminUser({ adminUser, logoutUrl, loginPage }) {
             <div className="logout bg-background shadow p-2">
               <div>
                 <div>
-                  Hello <span className="text-primary">{fullName}!</span>
+                  {_("Hello")} <span className="text-primary">{fullName}!</span>
                 </div>
                 <div className="mt-1">
                   <a
@@ -51,7 +52,7 @@ export default function AdminUser({ adminUser, logoutUrl, loginPage }) {
                       logout();
                     }}
                   >
-                    Logout
+                    {_('Logout')}
                   </a>
                 </div>
               </div>

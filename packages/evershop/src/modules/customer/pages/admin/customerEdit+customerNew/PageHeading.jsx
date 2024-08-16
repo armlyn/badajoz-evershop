@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import PageHeading from '@components/admin/cms/PageHeading';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CustomerEditPageHeading({ backUrl, customer }) {
   return (
     <PageHeading
       backUrl={backUrl}
       heading={
-        customer ? `Editing ${customer.fullName}` : 'Create A New Customer'
+        customer ? _(`Editing ${customer.fullName}`) : _('Create A New Customer')
       }
     />
   );

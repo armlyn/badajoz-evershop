@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import CollectionIcon from '@heroicons/react/solid/esm/TagIcon';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function Collections({ product: { collections } }) {
   return (
-    <Card title="Collections" subdued>
+    <Card title={_("Collections")} subdued>
       <Card.Session>
         {collections.map((collection) => (
             <div className="flex justify-start gap-1 items-center align-middle">
@@ -16,7 +17,7 @@ export default function Collections({ product: { collections } }) {
             </div>
           ))}
         {collections.length === 0 && (
-          <div className="text-gray-500">No collections</div>
+          <div className="text-gray-500">{_("No collections")}</div>
         )}
       </Card.Session>
     </Card>

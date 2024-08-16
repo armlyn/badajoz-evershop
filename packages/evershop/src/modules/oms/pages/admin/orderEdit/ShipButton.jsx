@@ -7,6 +7,7 @@ import { useAlertContext } from '@components/common/modal/Alert';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 import { toast } from 'react-toastify';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function ShipButton({
   order: { shipment, createShipmentApi },
@@ -18,11 +19,11 @@ export default function ShipButton({
   } else {
     return (
       <Button
-        title="Ship Items"
+        title={_("Ship Items")}
         variant="primary"
         onAction={() => {
           openAlert({
-            heading: 'Ship Items',
+            heading: _("Ship Items"),
             content: (
               <div>
                 <Form
@@ -52,8 +53,8 @@ export default function ShipButton({
                         formId="ship-items"
                         type="text"
                         name="tracking_number"
-                        label="Tracking number"
-                        placeHolder="Tracking number"
+                        label={_("Tracking number")}
+                        placeHolder={_("Tracking number")}
                         value=""
                       />
                     </div>
@@ -62,7 +63,7 @@ export default function ShipButton({
                         formId="ship-items"
                         type="select"
                         name="carrier"
-                        label="Carrier"
+                        label={_("Carrier")}
                         value=""
                         options={carriers}
                       />
@@ -72,12 +73,12 @@ export default function ShipButton({
               </div>
             ),
             primaryAction: {
-              title: 'Cancel',
+              title: _('Cancel'),
               onAction: closeAlert,
               variant: ''
             },
             secondaryAction: {
-              title: 'Ship',
+              title: _('Ship'),
               onAction: () => {
                 dispatchAlert({
                   type: 'update',

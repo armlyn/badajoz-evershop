@@ -5,6 +5,7 @@ import { Field } from '@components/common/form/Field';
 import { Toggle } from '@components/common/form/fields/Toggle';
 import { get } from '@evershop/evershop/src/lib/util/get';
 import { Setting } from '@components/admin/promotion/couponEdit/Setting';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function General({ coupon = {} }) {
   return (
@@ -18,8 +19,8 @@ export default function General({ coupon = {} }) {
             value: get(coupon, 'coupon'),
             validationRules: ['notEmpty'],
             type: 'text',
-            label: 'Coupon code',
-            placeholder: 'Enter coupon code'
+            label: _('Coupon code'),
+            placeholder: _('Enter coupon code')
           },
           sortOrder: 10
         },
@@ -29,9 +30,9 @@ export default function General({ coupon = {} }) {
             name: 'description',
             value: get(coupon, 'description'),
             type: 'textarea',
-            label: 'Description',
+            label: _('Description'),
             validationRules: ['notEmpty'],
-            placeholder: 'Enter description'
+            placeholder: _('Enter description')
           },
           sortOrder: 20
         },
@@ -41,7 +42,7 @@ export default function General({ coupon = {} }) {
             name: 'status',
             value: get(coupon, 'status', 1).toString(),
             validationRules: ['notEmpty'],
-            label: 'Status'
+            label: _('Status')
           },
           sortOrder: 30
         },
@@ -60,7 +61,7 @@ export default function General({ coupon = {} }) {
             name: 'free_shipping',
             value: 1,
             type: 'checkbox',
-            label: 'Free shipping?',
+            label: _('Free shipping?'),
             isChecked: parseInt(get(coupon, 'freeShipping'), 10) === 1
           },
           sortOrder: 50

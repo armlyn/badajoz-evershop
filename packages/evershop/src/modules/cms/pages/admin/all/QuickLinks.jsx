@@ -2,17 +2,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Icon from '@heroicons/react/solid/esm/HomeIcon';
 import NavigationItemGroup from '@components/admin/cms/NavigationItemGroup';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function QuickLinks({ dashboard }) {
   return (
     <NavigationItemGroup
       id="quickLinks"
-      name="Quick links"
+      name={_("Quick links")}
       items={[
         {
           Icon,
           url: dashboard,
-          title: 'Dashboard'
+          title: _('Dashboard')
         }
       ]}
     />

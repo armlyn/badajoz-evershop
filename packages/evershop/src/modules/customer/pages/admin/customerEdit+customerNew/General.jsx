@@ -2,10 +2,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Area from '@components/common/Area';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function FullName({ fullName }) {
   return (
-    <Card.Session title="Full Name">
+    <Card.Session title={_("Full Name")}>
       <div>
         <span>{fullName}</span>
       </div>
@@ -19,9 +20,9 @@ FullName.propTypes = {
 
 function Group({ group }) {
   return (
-    <Card.Session title="Group">
+    <Card.Session title={_("Group")}>
       <div>
-        <span>{group?.groupName || 'Default'}</span>
+        <span>{group?.groupName || _('Default')}</span>
       </div>
     </Card.Session>
   );
@@ -35,7 +36,7 @@ Group.propTypes = {
 
 function Email({ email }) {
   return (
-    <Card.Session title="Email">
+    <Card.Session title={_("Email")}>
       <div>
         <span>{email}</span>
       </div>
@@ -49,9 +50,9 @@ Email.propTypes = {
 
 function Status({ status }) {
   return (
-    <Card.Session title="Status">
+    <Card.Session title={_("Status")}>
       <div>
-        <span>{parseInt(status, 10) === 1 ? 'Enabled' : 'Disabled'}</span>
+        <span>{parseInt(status, 10) === 1 ? _('Enabled') : _('Disabled')}</span>
       </div>
     </Card.Session>
   );

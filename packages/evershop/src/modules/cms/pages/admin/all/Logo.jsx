@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import './Logo.scss';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function Logo({ dashboardUrl }) {
   return (
@@ -61,7 +62,7 @@ export default function Logo({ dashboardUrl }) {
             </linearGradient>
           </defs>
         </svg>
-        <span className="font-bold">EVERSHOP</span>
+        <span className="font-bold">{_('EVERSHOP')}</span>
       </a>
     </div>
   );

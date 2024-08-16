@@ -15,6 +15,7 @@ import DummyColumnHeader from '@components/common/grid/headers/Dummy';
 import SortableHeader from '@components/common/grid/headers/Sortable';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ collections = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -33,18 +34,18 @@ function Actions({ collections = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Delete',
+      name: _('Delete'),
       onAction: () => {
         openAlert({
-          heading: `Delete ${selectedIds.length} collections`,
+          heading: _(`Delete ${selectedIds.length} collections`),
           content: <div>Can&apos;t be undone</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deleteCategories();
             },
@@ -114,7 +115,7 @@ export default function CollectionGrid({
               <Field
                 type="text"
                 id="name"
-                placeholder="Search"
+                placeholder={_("Search")}
                 value={currentFilters.find((f) => f.key === 'name')?.value}
                 onKeyPress={(e) => {
                   // If the user press enter, we should submit the form
@@ -137,7 +138,7 @@ export default function CollectionGrid({
           actions={[
             {
               variant: 'interactive',
-              name: 'Clear filter',
+              name: _('Clear filter'),
               onAction: () => {
                 // Just get the url and remove all query params
                 const url = new URL(document.location);
@@ -182,7 +183,7 @@ export default function CollectionGrid({
                     component: {
                       default: () => (
                         <SortableHeader
-                          title="Collection Name"
+                          title={_("Collection Name")}
                           name="name"
                           currentFilters={currentFilters}
                         />
@@ -194,7 +195,7 @@ export default function CollectionGrid({
                     component: {
                       default: () => (
                         <SortableHeader
-                          title="Code"
+                          title={_("Code")}
                           name="code"
                           currentFilters={currentFilters}
                         />
@@ -265,7 +266,7 @@ export default function CollectionGrid({
         </table>
         {collections.length === 0 && (
           <div className="flex w-full justify-center">
-            There is no collections to display
+            {_("There is no collections to display")}
           </div>
         )}
         <Pagination total={total} limit={limit} page={page} />

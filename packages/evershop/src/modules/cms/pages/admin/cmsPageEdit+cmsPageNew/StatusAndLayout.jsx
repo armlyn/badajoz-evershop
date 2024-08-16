@@ -2,30 +2,31 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function StatusAndLayout({ cmsPage }) {
   return (
     <Card>
-      <Card.Session title="Status">
+      <Card.Session title={_("Status")}>
         <Field
           type="radio"
           name="status"
           options={[
-            { value: 0, text: 'Disabled' },
-            { value: 1, text: 'Enabled' }
+            { value: 0, text: _('Disabled') },
+            { value: 1, text: _('Enabled') }
           ]}
           value={cmsPage?.status}
         />
       </Card.Session>
-      <Card.Session title="Layout">
+      <Card.Session title={_("Layout")}>
         <Field
           type="radio"
           name="layout"
           options={[
-            { value: 'oneColumn', text: 'One column' },
-            { value: 'twoColumnsLeft', text: 'Two columns left' },
-            { value: 'twoColumnsRight', text: 'Two columns right' },
-            { value: 'threeColumns', text: 'Three columns' }
+            { value: 'oneColumn', text: _('One column') },
+            { value: 'twoColumnsLeft', text: _('Two columns left') },
+            { value: 'twoColumnsRight', text: _('Two columns right') },
+            { value: 'threeColumns', text: _('Three columns') }
           ]}
           value={cmsPage?.layout}
         />

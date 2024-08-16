@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Area from '@components/common/Area';
 import Button from '@components/common/form/Button';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Name() {
   return (
@@ -14,7 +15,7 @@ function Content({ dashboardUrl }) {
     <div className="page-content">
       <div className="text-center">The page you requested does not exist.</div>
       <div className="mt-2 text-center">
-        <Button title="Back To Dashboard" url={dashboardUrl} outline />
+        <Button title={_("Back To Dashboard")} url={dashboardUrl} outline />
       </div>
     </div>
   );

@@ -2,19 +2,20 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function General({ attribute }) {
   return (
-    <Card title="Setting" subdued>
+    <Card title={_("Setting")} subdued>
       <Card.Session>
         <Field
           id="is_required"
           type="radio"
           name="is_required"
-          label="Is Required?"
+          label={_("Is Required?")}
           options={[
-            { value: 0, text: 'Not required' },
-            { value: 1, text: 'Required' }
+            { value: 0, text: _('Not required') },
+            { value: 1, text:  _('Required') }
           ]}
           value={attribute?.isRequired}
         />
@@ -24,10 +25,10 @@ export default function General({ attribute }) {
           id="is_filterable"
           type="radio"
           name="is_filterable"
-          label="Is Filterable?"
+          label={_("Is Filterable?")}
           options={[
-            { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
+            { value: 0, text: _('No') },
+            { value: 1, text: _('Yes') }
           ]}
           value={attribute?.isFilterable}
         />
@@ -37,10 +38,10 @@ export default function General({ attribute }) {
           id="display_on_frontend"
           type="radio"
           name="display_on_frontend"
-          label="Show to customers?"
+          label={_("Show to customers?")}
           options={[
             { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
+            { value: 1, text: _('Yes') }
           ]}
           value={attribute?.displayOnFrontend}
         />
@@ -50,7 +51,7 @@ export default function General({ attribute }) {
           id="sort_order"
           type="text"
           name="sort_order"
-          label="Sort order"
+          label={_("Sort order")}
           value={attribute?.sortOrder}
           validationRules={['notEmpty', 'number']}
         />

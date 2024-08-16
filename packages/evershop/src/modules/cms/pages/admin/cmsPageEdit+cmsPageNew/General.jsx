@@ -5,6 +5,7 @@ import { get } from '@evershop/evershop/src/lib/util/get';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
 import CkeditorField from '@components/common/form/fields/Ckeditor';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function General({
   page,
@@ -20,7 +21,7 @@ export default function General({
         type: 'text',
         id: 'name',
         name: 'name',
-        label: 'Name',
+        label: _('Name'),
         placeholder: 'Name',
         validationRules: ['notEmpty']
       },
@@ -40,7 +41,7 @@ export default function General({
       props: {
         id: 'content',
         name: 'content',
-        label: 'Content',
+        label: _('Content'),
         browserApi,
         deleteApi,
         uploadApi,
@@ -57,7 +58,7 @@ export default function General({
   });
 
   return (
-    <Card title="General">
+    <Card title={_("General")}>
       <Card.Session>
         <Area id="pageEditGeneral" coreComponents={fields} />
       </Card.Session>

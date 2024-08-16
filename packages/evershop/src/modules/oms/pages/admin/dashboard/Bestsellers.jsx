@@ -2,14 +2,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Card } from '@components/admin/cms/Card';
 import './Bestsellers.scss';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function BestSellers({ bestSellers, listUrl }) {
   return (
     <Card
-      title="Best Sellers"
+      title={_("Best Sellers")}
       actions={[
         {
-          name: 'All products',
+          name: _('All products'),
           onAction: () => {
             window.location.href = listUrl;
           }
@@ -22,7 +23,7 @@ export default function BestSellers({ bestSellers, listUrl }) {
             {bestSellers.length === 0 && (
               <tr>
                 <td align="left">
-                  Look like you just started. No bestsellers yet.
+                  {_('Look like you just started. No bestsellers yet.')}
                 </td>
                 <td> </td>
               </tr>
@@ -75,7 +76,7 @@ export default function BestSellers({ bestSellers, listUrl }) {
                 </td>
                 <td />
                 <td>{p.price.regular.text}</td>
-                <td>{p.soldQty} sold</td>
+                <td>{p.soldQty} {_('sold')}</td>
               </tr>
             ))}
           </tbody>

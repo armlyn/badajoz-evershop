@@ -12,6 +12,7 @@ import PageName from '@components/admin/cms/cmsPageGrid/rows/PageName';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 import SortableHeader from '@components/common/grid/headers/Sortable';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ pages = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -45,18 +46,18 @@ function Actions({ pages = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Disable',
+      name: _('Disable'),
       onAction: () => {
         openAlert({
-          heading: `Disable ${selectedIds.length} pages`,
-          content: 'Are you sure?',
+          heading: _(`Disable ${selectedIds.length} pages`),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Disable',
+            title: _('Disable'),
             onAction: async () => {
               await updatePages(0);
             },
@@ -67,18 +68,18 @@ function Actions({ pages = [], selectedIds = [] }) {
       }
     },
     {
-      name: 'Enable',
+      name: _('Enable'),
       onAction: () => {
         openAlert({
-          heading: `Enable ${selectedIds.length} pages`,
-          content: 'Are you sure?',
+          heading: _(`Enable ${selectedIds.length} pages`),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Enable',
+            title: _('Enable'),
             onAction: async () => {
               await updatePages(1);
             },
@@ -89,18 +90,18 @@ function Actions({ pages = [], selectedIds = [] }) {
       }
     },
     {
-      name: 'Delete',
+      name: _('Delete'),
       onAction: () => {
         openAlert({
-          heading: `Delete ${selectedIds.length} pages`,
-          content: <div>Can&apos;t be undone</div>,
+          heading: _(`Delete ${selectedIds.length} pages`),
+          content: <div>{_("Can&apos;t be undone")}</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deletePages();
             },
@@ -178,7 +179,7 @@ export default function CMSPageGrid({
                       <Field
                         type="text"
                         id="name"
-                        placeholder="Search"
+                        placeholder={_("Search")}
                         value={
                           currentFilters.find((f) => f.key === 'name')?.value
                         }
@@ -209,7 +210,7 @@ export default function CMSPageGrid({
         actions={[
           {
             variant: 'interactive',
-            name: 'Clear filter',
+            name: _('Clear filter'),
             onAction: () => {
               // Just get the url and remove all query params
               const url = new URL(document.location);
@@ -242,7 +243,7 @@ export default function CMSPageGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Name"
+                        title={_("Name")}
                         name="name"
                         currentFilters={currentFilters}
                       />
@@ -254,7 +255,7 @@ export default function CMSPageGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Status"
+                        title={_("Status")}
                         name="status"
                         currentFilters={currentFilters}
                       />
@@ -317,7 +318,7 @@ export default function CMSPageGrid({
       </table>
       {pages.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no page to display
+          {_('There is no page to display')}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />

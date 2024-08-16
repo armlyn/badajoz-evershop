@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { Field } from '@components/common/form/Field';
 import { Form } from '@components/common/form/Form';
 import { useAlertContext } from '@components/common/modal/Alert';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function GroupRow({ groups }) {
   const { openAlert, closeAlert, dispatchAlert } = useAlertContext();
@@ -45,12 +46,12 @@ export default function GroupRow({ groups }) {
         </div>
       ),
       primaryAction: {
-        title: 'Cancel',
+        title: _('Cancel'),
         onAction: closeAlert,
         variant: 'critical'
       },
       secondaryAction: {
-        title: 'Save',
+        title: _('Save'),
         onAction: () => {
           dispatchAlert({
             type: 'update',

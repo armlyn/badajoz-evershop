@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Button from '@components/common/form/Button';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function NewCouponButton({ newCouponUrl }) {
-  return <Button url={newCouponUrl} title="New Coupon" />;
+  return <Button url={newCouponUrl} title={_("New Coupon")} />;
 }
 
 NewCouponButton.propTypes = {

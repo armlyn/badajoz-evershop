@@ -3,6 +3,7 @@ import React from 'react';
 import { New } from '@components/admin/catalog/productEdit/variants/New';
 import { Card } from '@components/admin/cms/Card';
 import { Variants } from '@components/admin/catalog/productEdit/variants/Variants';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function VariantGroup({
   product,
@@ -12,7 +13,7 @@ export default function VariantGroup({
 }) {
   const [group, setGroup] = React.useState(product?.variantGroup || null);
   return (
-    <Card title="Variant">
+    <Card title={_("Variant")}>
       {!group && (
         <New
           createVariantGroupApi={createVariantGroupApi}

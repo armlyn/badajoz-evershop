@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import Area from '@components/common/Area';
 import { Form } from '@components/common/form/Form';
 import { get } from '@evershop/evershop/src/lib/util/get';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function AttributeEditForm({ action }) {
   const id = 'attributeForm';
@@ -12,7 +13,7 @@ export default function AttributeEditForm({ action }) {
       method="PATCH"
       action={action}
       onError={() => {
-        toast.error('Something wrong. Please reload the page!');
+        toast.error(_('Something wrong. Please reload the page!'));
       }}
       onSuccess={(response) => {
         if (response.error) {
@@ -20,11 +21,11 @@ export default function AttributeEditForm({ action }) {
             get(
               response,
               'error.message',
-              'Something wrong. Please reload the page!'
+              _('Something wrong. Please reload the page!')
             )
           );
         } else {
-          toast.success('Attribute saved successfully!');
+          toast.success(_('Attribute saved successfully!'));
         }
       }}
       submitBtn={false}

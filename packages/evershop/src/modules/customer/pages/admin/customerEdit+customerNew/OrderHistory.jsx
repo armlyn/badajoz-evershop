@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function OrderHistory({ customer: { orders = [] } }) {
   return (
     <Card title="Order History">
       {orders.length < 1 && (
         <Card.Session>
-          <div>Customer does not have any order yet.</div>
+          <div>{_("Customer does not have any order yet.")}</div>
         </Card.Session>
       )}
       {orders.length > 0 && (

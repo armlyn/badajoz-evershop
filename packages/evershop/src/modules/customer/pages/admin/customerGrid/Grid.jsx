@@ -15,6 +15,7 @@ import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 import SortableHeader from '@components/common/grid/headers/Sortable';
 import Filter from '@components/common/list/Filter';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ customers = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -34,18 +35,18 @@ function Actions({ customers = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Disable',
+      name: _('Disable'),
       onAction: () => {
         openAlert({
-          heading: `Disable ${selectedIds.length} customers`,
-          content: 'Are you sure?',
+          heading: _(`Disable ${selectedIds.length} customers`),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Disable',
+            title: _('Disable'),
             onAction: async () => {
               await updateCustomers(0);
             },
@@ -56,18 +57,18 @@ function Actions({ customers = [], selectedIds = [] }) {
       }
     },
     {
-      name: 'Enable',
+      name: _('Enable'),
       onAction: () => {
         openAlert({
-          heading: `Enable ${selectedIds.length} customers`,
-          content: 'Are you sure?',
+          heading: _(`Enable ${selectedIds.length} customers`),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Enable',
+            title: _('Enable'),
             onAction: async () => {
               await updateCustomers(1);
             },
@@ -144,7 +145,7 @@ export default function CustomerGrid({
                         <Field
                           type="text"
                           id="keyword"
-                          placeholder="Search"
+                          placeholder={_("Search")}
                           value={
                             currentFilters.find((f) => f.key === 'keyword')
                               ?.value
@@ -174,7 +175,7 @@ export default function CustomerGrid({
                         <Filter
                           options={[
                             {
-                              label: 'Enabled',
+                              label: _('Enabled'),
                               value: '1',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -183,7 +184,7 @@ export default function CustomerGrid({
                               }
                             },
                             {
-                              label: 'Disabled',
+                              label: _('Disabled'),
                               value: '0',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -196,11 +197,11 @@ export default function CustomerGrid({
                             currentFilters.find((f) => f.key === 'status')
                               ? currentFilters.find((f) => f.key === 'status')
                                   .value === '1'
-                                ? 'Enabled'
-                                : 'Disabled'
+                                ? _('Enabled')
+                                : _('Disabled')
                               : undefined
                           }
-                          title="Status"
+                          title={_("Status")}
                         />
                       )
                     },
@@ -215,7 +216,7 @@ export default function CustomerGrid({
         actions={[
           {
             variant: 'interactive',
-            name: 'Clear filter',
+            name: _('Clear filter'),
             onAction: () => {
               // Just get the url and remove all query params
               const url = new URL(document.location);
@@ -246,7 +247,7 @@ export default function CustomerGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Full Name"
+                        title={_("Full Name")}
                         name="full_name"
                         currentFilters={currentFilters}
                       />
@@ -259,7 +260,7 @@ export default function CustomerGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Email"
+                        title={_("Email")}
                         email="email"
                         currentFilters={currentFilters}
                       />
@@ -272,7 +273,7 @@ export default function CustomerGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Status"
+                        title={_("Status")}
                         name="status"
                         currentFilters={currentFilters}
                       />
@@ -285,7 +286,7 @@ export default function CustomerGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Created At"
+                        title={_("Created At")}
                         name="created_at"
                         currentFilters={currentFilters}
                       />
@@ -372,7 +373,7 @@ export default function CustomerGrid({
       </table>
       {customers.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no customer to display
+          {_("There is no customer to display")}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />

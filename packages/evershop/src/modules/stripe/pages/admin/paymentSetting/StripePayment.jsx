@@ -3,6 +3,7 @@ import React from 'react';
 import { Field } from '@components/common/form/Field';
 import { Toggle } from '@components/common/form/fields/Toggle';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function StripePayment({
   setting: {
@@ -14,11 +15,11 @@ export default function StripePayment({
   }
 }) {
   return (
-    <Card title="Stripe Payment">
+    <Card title={_("Stripe Payment")}>
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Enable?</h4>
+            <h4>{_('Enable?')}</h4>
           </div>
           <div className="col-span-2">
             <Toggle name="stripePaymentStatus" value={stripePaymentStatus} />
@@ -28,13 +29,13 @@ export default function StripePayment({
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Dislay Name</h4>
+            <h4>{_('Display Name')}</h4>
           </div>
           <div className="col-span-2">
             <Field
               type="text"
               name="stripeDislayName"
-              placeholder="Dislay Name"
+              placeholder={_('Display Name')}
               value={stripeDislayName}
             />
           </div>
@@ -43,13 +44,13 @@ export default function StripePayment({
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Publishable Key</h4>
+            <h4>{_('Publishable Key')}</h4>
           </div>
           <div className="col-span-2">
             <Field
               type="text"
               name="stripePublishableKey"
-              placeholder="Publishable Key"
+              placeholder={_('Publishable Key')}
               value={stripePublishableKey}
             />
           </div>
@@ -58,13 +59,13 @@ export default function StripePayment({
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Secret Key</h4>
+            <h4>{_('Secret Key')}</h4>
           </div>
           <div className="col-span-2">
             <Field
               type="text"
               name="stripeSecretKey"
-              placeholder="Secret Key"
+              placeholder={_('Secret Key')}
               value={stripeSecretKey}
             />
           </div>
@@ -73,13 +74,13 @@ export default function StripePayment({
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Webhook Secret Key</h4>
+            <h4>{_('Webhook Secret Key')}</h4>
           </div>
           <div className="col-span-2">
             <Field
               type="text"
               name="stripeEndpointSecret"
-              placeholder="Secret Key"
+              placeholder={_('Secret Key')}
               value={stripeEndpointSecret}
             />
           </div>

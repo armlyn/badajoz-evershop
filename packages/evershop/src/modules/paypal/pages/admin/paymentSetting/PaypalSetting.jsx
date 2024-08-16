@@ -3,6 +3,7 @@ import React from 'react';
 import { Field } from '@components/common/form/Field';
 import { Toggle } from '@components/common/form/fields/Toggle';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function PaypalPayment({
   setting: {
@@ -14,11 +15,11 @@ export default function PaypalPayment({
   }
 }) {
   return (
-    <Card title="Paypal Payment">
+    <Card title={_("Paypal Payment")}>
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Enable?</h4>
+            <h4>{_("Enable?")}</h4>
           </div>
           <div className="col-span-2">
             <Toggle name="paypalPaymentStatus" value={paypalPaymentStatus} />
@@ -28,13 +29,13 @@ export default function PaypalPayment({
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Dislay Name</h4>
+            <h4>{_("Display Name")}</h4>
           </div>
           <div className="col-span-2">
             <Field
               type="text"
               name="paypalDislayName"
-              placeholder="Dislay Name"
+              placeholder={_("Display Name")}
               value={paypalDislayName}
             />
           </div>
@@ -43,13 +44,13 @@ export default function PaypalPayment({
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Client ID</h4>
+            <h4>{_("Client ID")}</h4>
           </div>
           <div className="col-span-2">
             <Field
               type="text"
               name="paypalClientId"
-              placeholder="Publishable Key"
+              placeholder={_("Publishable Key")}
               value={paypalClientId}
             />
           </div>
@@ -58,13 +59,13 @@ export default function PaypalPayment({
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Client Secret</h4>
+            <h4>{_("Client Secret")}</h4>
           </div>
           <div className="col-span-2">
             <Field
               type="text"
               name="paypalClientSecret"
-              placeholder="Secret Key"
+              placeholder={_("Secret Key")}
               value={paypalClientSecret}
             />
           </div>
@@ -73,21 +74,21 @@ export default function PaypalPayment({
       <Card.Session>
         <div className="grid grid-cols-3 gap-2">
           <div className="col-span-1 items-center flex">
-            <h4>Environment</h4>
+            <h4>{_("Environment")}</h4>
           </div>
           <div className="col-span-2">
             <Field
               type="radio"
               name="paypalEnvironment"
-              placeholder="Environment"
+              placeholder={_("Environment")}
               value={paypalEnvironment}
               options={[
                 {
-                  text: 'Sandbox',
+                  text: _('Sandbox'),
                   value: 'https://api-m.sandbox.paypal.com'
                 },
                 {
-                  text: 'Live',
+                  text: _('Live'),
                   value: 'https://api-m.paypal.com'
                 }
               ]}

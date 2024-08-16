@@ -5,6 +5,7 @@ import { Field } from '@components/common/form/Field';
 import { get } from '@evershop/evershop/src/lib/util/get';
 import { BuyXGetY } from '@components/admin/promotion/couponEdit/BuyXGetY';
 import { TargetProducts } from '@components/admin/promotion/couponEdit/TargetProducts';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function DiscountType({ coupon = {} }) {
   const targetProducts = get(coupon, 'targetProducts', {});
@@ -24,23 +25,23 @@ export default function DiscountType({ coupon = {} }) {
                 options: [
                   {
                     value: 'fixed_discount_to_entire_order',
-                    text: 'Fixed discount to entire order'
+                    text: _('Fixed discount to entire order')
                   },
                   {
                     value: 'percentage_discount_to_entire_order',
-                    text: 'Percentage discount to entire order'
+                    text: _('Percentage discount to entire order')
                   },
                   {
                     value: 'fixed_discount_to_specific_products',
-                    text: 'Fixed discount to specific products'
+                    text: _('Fixed discount to specific products')
                   },
                   {
                     value: 'percentage_discount_to_specific_products',
-                    text: 'Percentage discount to specific products'
+                    text: _('Percentage discount to specific products')
                   },
                   {
                     value: 'buy_x_get_y',
-                    text: 'Buy X get Y'
+                    text: _('Buy X get Y')
                   }
                 ],
                 validationRules: ['notEmpty'],

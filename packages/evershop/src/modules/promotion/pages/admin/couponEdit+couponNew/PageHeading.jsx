@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import PageHeading from '@components/admin/cms/PageHeading';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CouponEditPageHeading({ backUrl, coupon }) {
   return (
     <PageHeading
       backUrl={backUrl}
-      heading={coupon ? `Editing ${coupon.coupon}` : 'Create A New Coupon'}
+      heading={coupon ? _(`Editing ${coupon.coupon}`) : _('Create A New Coupon')}
     />
   );
 }

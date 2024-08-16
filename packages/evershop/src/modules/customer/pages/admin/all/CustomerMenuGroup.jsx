@@ -2,17 +2,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import UsersIcon from '@heroicons/react/solid/esm/UsersIcon';
 import NavigationItemGroup from '@components/admin/cms/NavigationItemGroup';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CustomerMenuGroup({ customerGrid }) {
   return (
     <NavigationItemGroup
       id="customerMenuGroup"
-      name="Customer"
+      name={_("Customer")}
       items={[
         {
           Icon: UsersIcon,
           url: customerGrid,
-          title: 'Customers'
+          title: _('Customers')
         }
       ]}
     />

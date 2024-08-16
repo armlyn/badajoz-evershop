@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Area from '@components/common/Area';
 import { Field } from '@components/common/form/Field';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 import CategoryConditionSelector from './CategoryConditionSelector';
 import CollectionConditionSelector from './CollectionConditionSelector';
 import SkuConditionSelector from './SkuConditionSelector';
@@ -64,22 +65,22 @@ export function RequiredProducts({ requiredProducts }) {
   return (
     <div style={{ marginTop: '1rem', marginBottom: '1rem' }}>
       <div>
-        <span>Order must contains product matched bellow conditions(All)</span>
+        <span>{_('Order must contains product matched bellow conditions(All)')}</span>
       </div>
       <table className="table table-auto" style={{ marginTop: 0 }}>
         <thead>
           <tr>
             <th>
-              <span>Key</span>
+              <span>{_('Key')}</span>
             </th>
             <th>
-              <span>Operator</span>
+              <span>{_('Operator')}</span>
             </th>
             <th>
-              <span>Value</span>
+              <span>{_('Value')}</span>
             </th>
             <th>
-              <span>Minimum quantity</span>
+              <span>{_('Minimum quantity')}</span>
             </th>
             <th> </th>
           </tr>
@@ -414,7 +415,7 @@ export function RequiredProducts({ requiredProducts }) {
         </div>
         <div className="pl-1">
           <a href="#" onClick={(e) => addProduct(e)}>
-            <span>Add product</span>
+            <span>{_('Add product')}</span>
           </a>
         </div>
       </div>

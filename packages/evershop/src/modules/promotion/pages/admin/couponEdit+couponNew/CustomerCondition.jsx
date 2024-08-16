@@ -3,6 +3,7 @@ import React from 'react';
 import Select from 'react-select';
 import Area from '@components/common/Area';
 import { Field } from '@components/common/form/Field';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const customStyles = {
   container: (provided) => ({
@@ -61,10 +62,10 @@ export default function CustomerCondition({
           props: {
             type: 'input',
             name: 'user_condition[emails]',
-            label: 'Customer email (empty for all)',
-            placeholder: 'Enter customer emails',
+            label: _('Customer email (empty for all)'),
+            placeholder: _('Enter customer emails'),
             value: condition.emails ? condition.emails : '',
-            instruction: 'Use comma when you have multi email',
+            instruction: _('Use comma when you have multi email'),
             suffix: (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,11 +92,11 @@ export default function CustomerCondition({
           props: {
             type: 'input',
             name: 'user_condition[purchased]',
-            label: "Customer's purchase",
-            placeholder: 'Enter purchased amount',
+            label: _("Customer's purchase"),
+            placeholder: _('Enter purchased amount'),
             value: condition.purchased || null,
             validationRules: ['number'],
-            instruction: 'Minimum purchased amount'
+            instruction: _('Minimum purchased amount')
           },
           sortOrder: 30,
           id: 'couponCustomerConditionPurchased'

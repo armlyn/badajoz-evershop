@@ -5,6 +5,7 @@ import Area from '@components/common/Area';
 import { Field } from '@components/common/form/Field';
 import { get } from '@evershop/evershop/src/lib/util/get';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function Seo({ page }) {
   const fields = [
@@ -14,7 +15,7 @@ export default function Seo({ page }) {
         type: 'text',
         id: 'urlKey',
         name: 'url_key',
-        label: 'Url key',
+        label: _('Url key'),
         validationRules: ['notEmpty']
       },
       sortOrder: 0
@@ -25,8 +26,8 @@ export default function Seo({ page }) {
         type: 'text',
         id: 'metaTitle',
         name: 'meta_title',
-        label: 'Meta title',
-        placeholder: 'Meta title'
+        label: _('Meta title'),
+        placeholder: _('Meta title')
       },
       sortOrder: 10
     },
@@ -36,8 +37,8 @@ export default function Seo({ page }) {
         type: 'text',
         id: 'metaKeywords',
         name: 'meta_keywords',
-        label: 'Meta keywords',
-        placeholder: 'Meta keywords'
+        label: _('Meta keywords'),
+        placeholder: _('Meta keywords')
       },
       sortOrder: 20
     },
@@ -46,8 +47,8 @@ export default function Seo({ page }) {
       props: {
         type: 'textarea',
         id: 'metaDescription',
-        name: 'meta_description',
-        label: 'Meta description'
+        name: _('meta_description'),
+        label: _('meta_description')
       },
       sortOrder: 30
     }
@@ -59,7 +60,7 @@ export default function Seo({ page }) {
   });
 
   return (
-    <Card title="Search Engine Optimization">
+    <Card title={_("Search Engine Optimization")}>
       <Card.Session>
         <Area id="pageEditSeo" coreComponents={fields} />
       </Card.Session>

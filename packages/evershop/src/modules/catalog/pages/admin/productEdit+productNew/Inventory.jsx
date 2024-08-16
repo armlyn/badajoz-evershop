@@ -2,11 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function Inventory({ product }) {
   const inventory = product?.inventory || {};
   return (
-    <Card title="Inventory" subdued>
+    <Card title={_("Inventory")} subdued>
       <Card.Session>
         <Field
           id="manage_stock"
@@ -14,10 +15,10 @@ export default function Inventory({ product }) {
           value={
             inventory.manageStock === undefined ? 1 : inventory.manageStock
           }
-          label="Manage stock?"
+          label={_("Manage stock?")}
           options={[
             { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
+            { value: 1, text: _('Yes') }
           ]}
           type="radio"
         />
@@ -31,10 +32,10 @@ export default function Inventory({ product }) {
               ? 1
               : inventory.stockAvailability
           }
-          label="Stock availability"
+          label={_("Stock availability")}
           options={[
             { value: 0, text: 'No' },
-            { value: 1, text: 'Yes' }
+            { value: 1, text: _('Yes') }
           ]}
           type="radio"
         />
@@ -44,8 +45,8 @@ export default function Inventory({ product }) {
           id="qty"
           name="qty"
           value={inventory.qty}
-          placeholder="Quantity"
-          label="Quantity"
+          placeholder={_("Quantity")}
+          label={_("Quantity")}
           type="text"
           validationRules={['notEmpty']}
         />

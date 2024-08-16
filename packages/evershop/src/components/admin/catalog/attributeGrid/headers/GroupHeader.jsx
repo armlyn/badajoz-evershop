@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useQuery } from 'urql';
 import { Select } from '@components/common/form/fields/Select';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const GroupsQuery = `
   query {
@@ -44,10 +45,10 @@ export default function GroupHeader({ id, currentFilters = [] }) {
     <th className="column">
       <div className="table-header status-header">
         <div className="title" style={{ marginBottom: '1rem' }}>
-          <span>Attribute Group</span>
+          <span>{_('Attribute Group')}</span>
         </div>
         <div className="filter">
-          {fetching && <div>Loading</div>}
+          {fetching && <div>{_('Loading')}</div>}
           {error && <div>{error.message}</div>}
           {!fetching && !error && (
             <Select

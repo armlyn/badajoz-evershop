@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Button from '@components/common/form/Button';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function NewAttributeButton({ newAttributeUrl }) {
-  return <Button url={newAttributeUrl} title="New Attribute" />;
+  return <Button url={newAttributeUrl} title={_("New Attribute")} />;
 }
 
 NewAttributeButton.propTypes = {

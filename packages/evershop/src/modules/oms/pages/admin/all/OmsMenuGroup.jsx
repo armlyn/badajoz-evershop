@@ -2,17 +2,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Icon from '@heroicons/react/solid/esm/CubeIcon';
 import NavigationItemGroup from '@components/admin/cms/NavigationItemGroup';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function OmsMenuGroup({ orderGrid }) {
   return (
     <NavigationItemGroup
       id="omsMenuGroup"
-      name="Sale"
+      name={_("Sale")}
       items={[
         {
           Icon,
           url: orderGrid,
-          title: 'Orders'
+          title: _('Orders')
         }
       ]}
     />

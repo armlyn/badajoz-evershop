@@ -18,6 +18,7 @@ import SortableHeader from '@components/common/grid/headers/Sortable';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 import Filter from '@components/common/list/Filter';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ products = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -51,18 +52,18 @@ function Actions({ products = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Disable',
+      name: _('Disable'),
       onAction: () => {
         openAlert({
-          heading: `Disable ${selectedIds.length} products`,
-          content: 'Are you sure?',
+          heading: _(`Disable ${selectedIds.length} products`),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Disable',
+            title: _('Disable'),
             onAction: async () => {
               await updateProducts(0);
             },
@@ -73,18 +74,18 @@ function Actions({ products = [], selectedIds = [] }) {
       }
     },
     {
-      name: 'Enable',
+      name: _('Enable'),
       onAction: () => {
         openAlert({
-          heading: `Enable ${selectedIds.length} products`,
-          content: 'Are you sure?',
+          heading: _(`Enable ${selectedIds.length} products`),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Enable',
+            title: _('Enable'),
             onAction: async () => {
               await updateProducts(1);
             },
@@ -95,18 +96,18 @@ function Actions({ products = [], selectedIds = [] }) {
       }
     },
     {
-      name: 'Delete',
+      name: _('Delete'),
       onAction: () => {
         openAlert({
-          heading: `Delete ${selectedIds.length} products`,
-          content: <div>Can&apos;t be undone</div>,
+          heading: _(`Delete ${selectedIds.length} products`),
+          content: <div>{_("Can&apos;t be undone")}</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deleteProducts();
             },
@@ -185,7 +186,7 @@ export default function ProductGrid({
                         <Field
                           type="text"
                           id="keyword"
-                          placeholder="Search"
+                          placeholder={_("Search")}
                           value={
                             currentFilters.find((f) => f.key === 'keyword')
                               ?.value
@@ -215,7 +216,7 @@ export default function ProductGrid({
                         <Filter
                           options={[
                             {
-                              label: 'Enabled',
+                              label: _('Enabled'),
                               value: '1',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -224,7 +225,7 @@ export default function ProductGrid({
                               }
                             },
                             {
-                              label: 'Disabled',
+                              label: _('Disabled'),
                               value: '0',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -237,11 +238,11 @@ export default function ProductGrid({
                             currentFilters.find((f) => f.key === 'status')
                               ? currentFilters.find((f) => f.key === 'status')
                                   .value === '1'
-                                ? 'Enabled'
-                                : 'Disabled'
+                                ? _('Enabled')
+                                : _('Disabled')
                               : undefined
                           }
-                          title="Status"
+                          title={_("Status")}
                         />
                       )
                     },
@@ -253,7 +254,7 @@ export default function ProductGrid({
                         <Filter
                           options={[
                             {
-                              label: 'Simple',
+                              label: _('Simple'),
                               value: '1',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -262,7 +263,7 @@ export default function ProductGrid({
                               }
                             },
                             {
-                              label: 'Configurable',
+                              label: _('Configurable'),
                               value: '0',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -277,7 +278,7 @@ export default function ProductGrid({
                                   .value
                               : undefined
                           }
-                          title="Product type"
+                          title={_("Product type")}
                         />
                       )
                     },
@@ -292,7 +293,7 @@ export default function ProductGrid({
         actions={[
           {
             variant: 'interactive',
-            name: 'Clear filter',
+            name: _('Clear filter'),
             onAction: () => {
               const url = new URL(document.location);
               url.search = '';
@@ -325,7 +326,7 @@ export default function ProductGrid({
                       <th className="column">
                         <div className="table-header id-header">
                           <div className="font-medium uppercase text-xl">
-                            <span>Thumbnail</span>
+                            <span>{_("Thumbnail")}</span>
                           </div>
                         </div>
                       </th>
@@ -337,7 +338,7 @@ export default function ProductGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Name"
+                        title={_("Name")}
                         name="name"
                         currentFilters={currentFilters}
                       />
@@ -349,7 +350,7 @@ export default function ProductGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Price"
+                        title={_("Price")}
                         name="price"
                         currentFilters={currentFilters}
                       />
@@ -367,7 +368,7 @@ export default function ProductGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Stock"
+                        title={_("Stock")}
                         name="qty"
                         currentFilters={currentFilters}
                       />
@@ -379,7 +380,7 @@ export default function ProductGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Status"
+                        title={_("Status")}
                         name="status"
                         currentFilters={currentFilters}
                       />
@@ -481,7 +482,7 @@ export default function ProductGrid({
       </table>
       {products.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no product to display
+          {_("There is no product to display")}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />

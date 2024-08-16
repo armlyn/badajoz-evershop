@@ -2,6 +2,7 @@ import React from 'react';
 import Area from '@components/common/Area';
 import './Layout.scss';
 import './tailwind.scss';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function AdminLayout() {
   return (
@@ -17,10 +18,10 @@ export default function AdminLayout() {
           <Area id="content" className="main-content-inner" />
           <div className="footer">
             <div className="copyright">
-              <span>Copyright © 2021 EverShop</span>
+              <span>{_('Copyright © 2021 EverShop')}</span>
             </div>
             <div className="version">
-              <span>Version 1.0 dev</span>
+              <span>{_('Version 1.0 dev')}</span>
             </div>
           </div>
         </div>

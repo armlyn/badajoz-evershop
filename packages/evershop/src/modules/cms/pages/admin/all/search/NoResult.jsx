@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dot from '@components/common/Dot';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export function NoResult({ keyword, resourseLinks = [] }) {
   return (
     <div className="no-result items-center text-center">
       <h3>
-        No results for &quot;
+        {_('No results for')} &quot;
         {keyword}
         &quot;
       </h3>
-      <div>TRY OTHER RESOURCES</div>
+      <div>{_('TRY OTHER RESOURCES')}</div>
       <div className="grid grid-cols-2 mt-1">
         {resourseLinks.map((link, index) => (
           // eslint-disable-next-line react/no-array-index-key

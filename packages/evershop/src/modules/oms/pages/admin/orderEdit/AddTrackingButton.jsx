@@ -6,6 +6,7 @@ import Button from '@components/common/form/Button';
 import { useAlertContext } from '@components/common/modal/Alert';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function AddTrackingButton({ order: { shipment }, carriers }) {
   const { openAlert, closeAlert, dispatchAlert } = useAlertContext();
@@ -14,11 +15,11 @@ export default function AddTrackingButton({ order: { shipment }, carriers }) {
   } else {
     return (
       <Button
-        title="Edit Tracking Info"
+        title={_("Edit Tracking Info")} 
         variant="primary"
         onAction={() => {
           openAlert({
-            heading: 'Edit Tracking Information',
+            heading: _('Edit Tracking Information'),
             content: (
               <div>
                 <Form
@@ -45,7 +46,7 @@ export default function AddTrackingButton({ order: { shipment }, carriers }) {
                         type="text"
                         name="tracking_number"
                         label="Tracking number"
-                        placeHolder="Tracking number"
+                        placeHolder={_("Tracking number")}
                         value={shipment.trackingNumber || ''}
                         validationRules={['notEmpty']}
                       />
@@ -55,7 +56,7 @@ export default function AddTrackingButton({ order: { shipment }, carriers }) {
                         formId="edit-tracking-info"
                         type="select"
                         name="carrier"
-                        label="Carrier"
+                        label={_("Carrier")}
                         value={shipment.carrier || ''}
                         options={carriers}
                         validationRules={['notEmpty']}
@@ -66,12 +67,12 @@ export default function AddTrackingButton({ order: { shipment }, carriers }) {
               </div>
             ),
             primaryAction: {
-              title: 'Cancel',
+              title: _('Cancel'),
               onAction: closeAlert,
               variant: ''
             },
             secondaryAction: {
-              title: 'Update tracking',
+              title: _('Update tracking'),
               onAction: () => {
                 dispatchAlert({
                   type: 'update',

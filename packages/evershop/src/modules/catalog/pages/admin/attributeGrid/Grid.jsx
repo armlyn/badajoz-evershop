@@ -17,6 +17,7 @@ import DummyColumnHeader from '@components/common/grid/headers/Dummy';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 import { toast } from 'react-toastify';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ attributes = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -51,18 +52,18 @@ function Actions({ attributes = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Delete',
+      name: _('Delete'),
       onAction: () => {
         openAlert({
-          heading: `Delete ${selectedIds.length} attributes`,
-          content: <div>Can&apos;t be undone</div>,
+          heading: _(`Delete ${selectedIds.length} attributes`),
+          content: <div>{_("Can&apos;t be undone")}</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deleteAttributes();
             },
@@ -131,7 +132,7 @@ export default function AttributeGrid({
             <Field
               type="text"
               id="name"
-              placeholder="Search"
+              placeholder={_("Search")}
               value={currentFilters.find((f) => f.key === 'name')?.value}
               onKeyPress={(e) => {
                 // If the user press enter, we should submit the form
@@ -154,7 +155,7 @@ export default function AttributeGrid({
         actions={[
           {
             variant: 'interactive',
-            name: 'Clear filter',
+            name: _('Clear filter'),
             onAction: () => {
               // Just get the url and remove all query params
               const url = new URL(document.location);
@@ -186,7 +187,7 @@ export default function AttributeGrid({
                     default: () => (
                       <SortableHeader
                         name="name"
-                        title="Attribute Name"
+                        title={_("Attribute Name")}
                         currentFilters={currentFilters}
                       />
                     )
@@ -195,7 +196,7 @@ export default function AttributeGrid({
                 },
                 {
                   component: {
-                    default: () => <DummyColumnHeader title="Groups" />
+                    default: () => <DummyColumnHeader title={_("Groups")} />
                   },
                   sortOrder: 15
                 },
@@ -204,7 +205,7 @@ export default function AttributeGrid({
                     default: () => (
                       <SortableHeader
                         name="type"
-                        title="Type"
+                        title={_("Type")}
                         currentFilters={currentFilters}
                       />
                     )
@@ -216,7 +217,7 @@ export default function AttributeGrid({
                     default: () => (
                       <SortableHeader
                         name="is_required"
-                        title="Is Required?"
+                        title={_("Is Required?")}
                         currentFilters={currentFilters}
                       />
                     )
@@ -228,7 +229,7 @@ export default function AttributeGrid({
                     default: () => (
                       <SortableHeader
                         name="is_filterable"
-                        title="Is Filterable?"
+                        title={_("Is Filterable?")}
                         currentFilters={currentFilters}
                       />
                     )

@@ -9,6 +9,7 @@ import { get } from '@evershop/evershop/src/lib/util/get';
 import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
 import { Input } from '@components/common/form/fields/Input';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const GroupsQuery = `
   query Query {
@@ -30,7 +31,7 @@ function Groups({ groups, createGroupApi }) {
 
   const createGroup = () => {
     if (!newGroup.current.value) {
-      setCreateGroupError('Group name is required');
+      setCreateGroupError(_('Group name is required'));
       return;
     }
     fetch(createGroupApi, {
@@ -63,7 +64,7 @@ function Groups({ groups, createGroupApi }) {
 
   return (
     <div>
-      <div className="mb-1">Select groups the attribute belongs to</div>
+      <div className="mb-1">{_('Select groups the attribute belongs to')}</div>
       <div className="grid gap-2 grid-cols-2">
         <div>
           <Select
@@ -78,7 +79,7 @@ function Groups({ groups, createGroupApi }) {
           <div>
             <Input
               type="text"
-              placeholder="Create a new group"
+              placeholder={_("Create a new group")}
               ref={newGroup}
               error={createGroupError}
               suffix={
@@ -209,7 +210,7 @@ export default function General({ attribute, createGroupApi }) {
       props: {
         id: 'attributeName',
         name: 'attribute_name',
-        label: 'Name',
+        label: _('Name'),
         validationRules: ['notEmpty'],
         type: 'text'
       },
@@ -220,7 +221,7 @@ export default function General({ attribute, createGroupApi }) {
       props: {
         id: 'attributeCode',
         name: 'attribute_code',
-        label: 'Attribute code',
+        label: _('Attribute code'),
         validationRules: ['notEmpty'],
         type: 'text'
       },
@@ -241,12 +242,12 @@ export default function General({ attribute, createGroupApi }) {
         id: 'type',
         type: 'radio',
         name: 'type',
-        label: 'Type',
+        label: _('Type'),
         options: [
-          { value: 'text', text: 'Text' },
-          { value: 'select', text: 'Select' },
-          { value: 'multiselect', text: 'Multiselect' },
-          { value: 'textarea', text: 'Textarea' }
+          { value: 'text', text: _('Text') },
+          { value: 'select', text: _('Select') },
+          { value: 'multiselect', text: _('Multiselect') },
+          { value: 'textarea', text: _('Textarea') }
         ],
         onChange: (value) => {
           setType(value);
@@ -263,16 +264,16 @@ export default function General({ attribute, createGroupApi }) {
   });
 
   return (
-    <Card title="General">
+    <Card title={_("General")}>
       <Card.Session>
         <Area id="attributeEditGeneral" coreComponents={fields} />
       </Card.Session>
       {['select', 'multiselect'].includes(type) && (
-        <Card.Session title="Attribute options">
+        <Card.Session title={_("Attribute options")}>
           <Options originOptions={get(attribute, 'options', [])} />
         </Card.Session>
       )}
-      <Card.Session title="Attribute Group">
+      <Card.Session title={_("Attribute Group")}>
         <Groups
           groups={get(attribute, 'groups.items', [])}
           createGroupApi={createGroupApi}

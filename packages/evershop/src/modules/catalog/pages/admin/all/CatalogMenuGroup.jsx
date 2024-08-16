@@ -5,6 +5,7 @@ import CategoryIcon from '@heroicons/react/solid/esm/LinkIcon';
 import CollectionIcon from '@heroicons/react/solid/esm/TagIcon';
 import ProductIcon from '@heroicons/react/solid/esm/ArchiveIcon';
 import NavigationItemGroup from '@components/admin/cms/NavigationItemGroup';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CatalogMenuGroup({
   productGrid,
@@ -15,27 +16,27 @@ export default function CatalogMenuGroup({
   return (
     <NavigationItemGroup
       id="catalogMenuGroup"
-      name="Catalog"
+      name={_("Catalog")}
       items={[
         {
           Icon: ProductIcon,
           url: productGrid,
-          title: 'Products'
+          title: _('Products')
         },
         {
           Icon: CategoryIcon,
           url: categoryGrid,
-          title: 'Categories'
+          title: _('Categories')
         },
         {
           Icon: CollectionIcon,
           url: collectionGrid,
-          title: 'Collections'
+          title: _('Collections')
         },
         {
           Icon: AttributeIcon,
           url: attributeGrid,
-          title: 'Attributes'
+          title: _('Attributes')
         }
       ]}
     />

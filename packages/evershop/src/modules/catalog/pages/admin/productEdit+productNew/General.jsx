@@ -5,6 +5,7 @@ import { Field } from '@components/common/form/Field';
 import { Card } from '@components/admin/cms/Card';
 import CkeditorField from '@components/common/form/fields/Ckeditor';
 import CategoryTree from '@components/admin/catalog/productEdit/category/CategoryTree';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function SKUPriceWeight({ sku, price, weight, setting }) {
   return (
@@ -15,7 +16,7 @@ function SKUPriceWeight({ sku, price, weight, setting }) {
           name="sku"
           value={sku}
           placeholder="SKU"
-          label="SKU"
+          label={_("SKU")}
           type="text"
           validationRules={['notEmpty']}
         />
@@ -25,8 +26,8 @@ function SKUPriceWeight({ sku, price, weight, setting }) {
           id="price"
           name="price"
           value={price?.value}
-          placeholder="Price"
-          label="Price"
+          placeholder={_("Price")}
+          label={_("Price")}
           type="text"
           validationRules={['notEmpty']}
           suffix={setting.storeCurrency}
@@ -37,8 +38,8 @@ function SKUPriceWeight({ sku, price, weight, setting }) {
           id="weight"
           name="weight"
           value={weight?.value}
-          placeholder="Weight"
-          label="Weight"
+          placeholder={_("Weight")}
+          label={_("Weight")}
           type="text"
           validationRules={['notEmpty']}
           suffix={setting.weightUnit}
@@ -72,7 +73,7 @@ function Category({ product }) {
 
   return (
     <div className="mt-15 relative">
-      <div className="mb-1">Category</div>
+      <div className="mb-1">{_('Category')}</div>
       {category && (
         <div className="border rounded border-[#c9cccf] mb-1 p-1">
           {category.path.map((item, index) => (
@@ -89,7 +90,7 @@ function Category({ product }) {
                 setSelecting(true);
               }}
             >
-              Change
+              {_('Change')}
             </a>
             <a
               href="#"
@@ -99,7 +100,7 @@ function Category({ product }) {
               }}
               className="text-critical ml-2"
             >
-              Unassign
+              {_('Unassign')} 
             </a>
           </span>
         </div>
@@ -113,7 +114,7 @@ function Category({ product }) {
           }}
           className="text-interactive"
         >
-          Select category
+          {_('Select category')} 
         </a>
       )}
       {selecting && (
@@ -164,7 +165,7 @@ export default function General({
   productTaxClasses: { items: taxClasses }
 }) {
   return (
-    <Card title="General">
+    <Card title={_("General")}>
       <Card.Session>
         <Area
           id="productEditGeneral"
@@ -174,11 +175,11 @@ export default function General({
               props: {
                 id: 'name',
                 name: 'name',
-                label: 'Name',
+                label: _('Name'),
                 value: product?.name,
                 validationRules: ['notEmpty'],
                 type: 'text',
-                placeholder: 'Name'
+                placeholder: _('Name')
               },
               sortOrder: 10,
               id: 'name'
@@ -220,9 +221,9 @@ export default function General({
                 name: 'tax_class',
                 value: product?.taxClass || null,
                 type: 'select',
-                label: 'Tax class',
+                label: _('Tax class'),
                 options: [...taxClasses],
-                placeholder: 'None',
+                placeholder: _('None'),
                 disableDefaultOption: false
               },
               sortOrder: 25,
@@ -233,7 +234,7 @@ export default function General({
               props: {
                 id: 'description',
                 name: 'description',
-                label: 'Description',
+                label: _('Description'),
                 value: product?.description,
                 browserApi,
                 deleteApi,

@@ -16,6 +16,7 @@ import { Field } from '@components/common/form/Field';
 import SortableHeader from '@components/common/grid/headers/Sortable';
 import DummyColumnHeader from '@components/common/grid/headers/Dummy';
 import Filter from '@components/common/list/Filter';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ coupons = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -50,18 +51,18 @@ function Actions({ coupons = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Disable',
+      name: _('Disable'),
       onAction: () => {
         openAlert({
-          heading: `Disable ${selectedIds.length} coupons`,
-          content: 'Are you sure?',
+          heading: _(`Disable ${selectedIds.length} coupons`),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Disable',
+            title: _('Disable'),
             onAction: async () => {
               await updateCoupons(0);
             },
@@ -72,18 +73,18 @@ function Actions({ coupons = [], selectedIds = [] }) {
       }
     },
     {
-      name: 'Enable',
+      name: _('Enable'),
       onAction: () => {
         openAlert({
-          heading: `Enable ${selectedIds.length} coupons`,
-          content: 'Are you sure?',
+          heading: _(`Enable ${selectedIds.length} coupons`),
+          content: _('Are you sure?'),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Enable',
+            title: _('Enable'),
             onAction: async () => {
               await updateCoupons(1);
             },
@@ -94,18 +95,18 @@ function Actions({ coupons = [], selectedIds = [] }) {
       }
     },
     {
-      name: 'Delete',
+      name: _('Delete'),
       onAction: () => {
         openAlert({
-          heading: `Delete ${selectedIds.length} coupons`,
-          content: <div>Can&apos;t be undone</div>,
+          heading: _(`Delete ${selectedIds.length} coupons`),
+          content: <div>{_("Can&apos;t be undone")}</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deleteCoupons();
             },
@@ -184,7 +185,7 @@ export default function CouponGrid({
                         <Field
                           type="text"
                           id="coupon"
-                          placeholder="Search"
+                          placeholder={_("Search")}
                           value={
                             currentFilters.find((f) => f.key === 'coupon')
                               ?.value
@@ -219,7 +220,7 @@ export default function CouponGrid({
                         <Filter
                           options={[
                             {
-                              label: 'Enabled',
+                              label: _('Enabled'),
                               value: '1',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -228,7 +229,7 @@ export default function CouponGrid({
                               }
                             },
                             {
-                              label: 'Disabled',
+                              label: _('Disabled'),
                               value: '0',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -241,11 +242,11 @@ export default function CouponGrid({
                             currentFilters.find((f) => f.key === 'status')
                               ? currentFilters.find((f) => f.key === 'status')
                                   .value === '1'
-                                ? 'Enabled'
-                                : 'Disabled'
+                                ? _('Enabled')
+                                : _('Disabled')
                               : undefined
                           }
-                          title="Status"
+                          title={_("Status")}
                         />
                       )
                     },
@@ -257,7 +258,7 @@ export default function CouponGrid({
                         <Filter
                           options={[
                             {
-                              label: 'Free shipping',
+                              label: _('Free shipping'),
                               value: '1',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -266,7 +267,7 @@ export default function CouponGrid({
                               }
                             },
                             {
-                              label: 'No free shipping',
+                              label: _('No free shipping'),
                               value: '0',
                               onSelect: () => {
                                 const url = new URL(document.location);
@@ -282,11 +283,11 @@ export default function CouponGrid({
                               ? currentFilters.find(
                                   (f) => f.key === 'free_shipping'
                                 ).value === '1'
-                                ? 'Free shipping'
-                                : 'No free shipping'
+                                ? _('Free shipping')
+                                : _('No free shipping')
                               : undefined
                           }
-                          title="Free shipping?"
+                          title={_("Free shipping?")}
                         />
                       )
                     },
@@ -301,7 +302,7 @@ export default function CouponGrid({
         actions={[
           {
             variant: 'interactive',
-            name: 'Clear filter',
+            name: _('Clear filter'),
             onAction: () => {
               // Just get the url and remove all query params
               const url = new URL(document.location);
@@ -332,7 +333,7 @@ export default function CouponGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Coupon Code"
+                        title={_("Coupon Code")}
                         name="coupon"
                         currentFilters={currentFilters}
                       />
@@ -343,14 +344,14 @@ export default function CouponGrid({
                 {
                   // eslint-disable-next-line react/no-unstable-nested-components
                   component: {
-                    default: () => <DummyColumnHeader title="State Date" />
+                    default: () => <DummyColumnHeader title={_("State Date")} />
                   },
                   sortOrder: 20
                 },
                 {
                   // eslint-disable-next-line react/no-unstable-nested-components
                   component: {
-                    default: () => <DummyColumnHeader title="End Date" />
+                    default: () => <DummyColumnHeader title={_("End Date")} />
                   },
                   sortOrder: 30
                 },
@@ -359,7 +360,7 @@ export default function CouponGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Status"
+                        title={_("Status")}
                         name="status"
                         currentFilters={currentFilters}
                       />
@@ -372,7 +373,7 @@ export default function CouponGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Used Times"
+                        title={_("Used Times")}
                         name="used_time"
                         currentFilters={currentFilters}
                       />
@@ -443,7 +444,7 @@ export default function CouponGrid({
                     component: {
                       default: ({ areaProps }) => (
                         <StatusRow
-                          title="Status"
+                          title={_("Status")}
                           id="status"
                           areaProps={areaProps}
                         />
@@ -468,7 +469,7 @@ export default function CouponGrid({
       </table>
       {coupons.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no coupon to display
+          {_("There is no coupon to display")}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />

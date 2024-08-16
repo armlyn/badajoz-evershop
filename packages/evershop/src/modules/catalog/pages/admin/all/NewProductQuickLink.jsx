@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Icon from '@heroicons/react/solid/esm/ArchiveIcon';
 import NavigationItem from '@components/admin/cms/NavigationItem';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function NewProductQuickLink({ productNew }) {
-  return <NavigationItem Icon={Icon} title="New Product" url={productNew} />;
+  return <NavigationItem Icon={Icon} title={_("New Product")} url={productNew} />;
 }
 
 NewProductQuickLink.propTypes = {
@@ -12,7 +13,7 @@ NewProductQuickLink.propTypes = {
 };
 
 export const layout = {
-  areaId: 'quickLinks',
+  areaId: _('quickLinks'),
   sortOrder: 20
 };
 

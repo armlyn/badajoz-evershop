@@ -5,6 +5,7 @@ import ChevronDoubleLeftIcon from '@heroicons/react/outline/ChevronDoubleLeftIco
 import ChevronDoubleRightIcon from '@heroicons/react/outline/ChevronDoubleRightIcon';
 import './Pagination.scss';
 import { Select } from '@components/common/form/fields/Select';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function Pagination({ total, limit, page }) {
   const limitInput = React.useRef(null);
@@ -72,7 +73,7 @@ export default function Pagination({ total, limit, page }) {
       <div className="flex justify-between w-full space-x-1 mt-1 mb-1">
         <div className="flex space-x-1">
           <div className="self-center">
-            <span>Show</span>
+            <span>{_("Show")}</span>
           </div>
           <div className="limit">
             <div className="" style={{ width: '5rem' }}>
@@ -80,7 +81,7 @@ export default function Pagination({ total, limit, page }) {
             </div>
           </div>
           <div className="self-center">
-            <span>per page</span>
+            <span>{_("per page")}</span>
           </div>
         </div>
         <div className="flex space-x-1">
@@ -155,7 +156,7 @@ export default function Pagination({ total, limit, page }) {
             </>
           )}
           <div className="self-center">
-            <span>{total} records</span>
+            <span>{total} {_("records")}</span>
           </div>
         </div>
       </div>

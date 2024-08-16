@@ -4,6 +4,8 @@ import Area from '@components/common/Area';
 import Button from '@components/common/form/Button';
 import { useFormContext } from '@components/common/form/Form';
 import './FormContent.scss';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
+
 
 export default function FormContent({ gridUrl }) {
   const { state } = useFormContext();
@@ -19,7 +21,7 @@ export default function FormContent({ gridUrl }) {
       </div>
       <div className="form-submit-button flex border-t border-divider mt-15 pt-15 justify-between">
         <Button
-          title="Cancel"
+          title={_("Cancel")}
           variant="critical"
           outline
           onAction={() => {
@@ -27,7 +29,7 @@ export default function FormContent({ gridUrl }) {
           }}
         />
         <Button
-          title="Save"
+          title={_("Save")}
           onAction={() => {
             document
               .getElementById('categoryForm')

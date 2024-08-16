@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import PageHeading from '@components/admin/cms/PageHeading';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function OrderEditPageHeading({ backUrl, order }) {
   return (
-    <PageHeading backUrl={backUrl} heading={`Editing #${order.orderNumber}`} />
+    <PageHeading backUrl={backUrl} heading={_(`Editing #${order.orderNumber}`)} />
   );
 }
 

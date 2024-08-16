@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Icon from '@heroicons/react/solid/esm/DocumentIcon';
 import NavigationItemGroup from '@components/admin/cms/NavigationItemGroup';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export default function CmsMenuGroup({ cmsPageGrid }) {
   return (
@@ -12,7 +13,7 @@ export default function CmsMenuGroup({ cmsPageGrid }) {
         {
           Icon,
           url: cmsPageGrid,
-          title: 'Pages'
+          title: _('Pages')
         }
       ]}
     />

@@ -11,6 +11,7 @@ import { TaxClasses } from '@components/admin/tax/taxSetting/TaxClasses';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 import { toast } from 'react-toastify';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const CountriesQuery = `
   query Country($countries: [String]) {
@@ -88,13 +89,12 @@ export default function TaxSetting({
         </div>
         <div className="col-span-4 grid grid-cols-1 gap-2">
           <Card>
-            <Card.Session title="Tax">
+            <Card.Session title={_("Tax")}>
               <div>
-                Configure the tax classes that will be available to your
-                customers at checkout.
+                {_('Configure the tax classes that will be available to your customers at checkout.')}
               </div>
             </Card.Session>
-            <Card.Session title="Basic configuration">
+            <Card.Session title={_("Basic configuration")}>
               <Form
                 id="taxBasicConfig"
                 method="POST"
@@ -103,7 +103,7 @@ export default function TaxSetting({
                   if (response.error) {
                     toast.error(response.error.message);
                   } else {
-                    toast.success('Tax setting has been saved successfully!');
+                    toast.success(_('Tax setting has been saved successfully!'));
                   }
                 }}
               >
@@ -112,18 +112,18 @@ export default function TaxSetting({
                     <Field
                       type="select"
                       name="defaultShippingTaxClassId"
-                      label="Shipping tax class"
+                      label={_("Shipping tax class")}
                       value={setting.defaultShippingTaxClassId}
                       placeholder="None"
                       disableDefaultOption={false}
                       options={[
                         {
                           value: -1,
-                          text: 'Proportional allocation based on cart items'
+                          text: _('Proportional allocation based on cart items')
                         },
                         {
                           value: 0,
-                          text: 'Higest tax rate based on cart items'
+                          text: _('Higest tax rate based on cart items')
                         }
                       ].concat(
                         taxClassesQueryData.data.taxClasses.items.map(
@@ -139,20 +139,20 @@ export default function TaxSetting({
                     <Field
                       type="select"
                       name="baseCalculationAddress"
-                      label="Base calculation address"
+                      label={_("Base calculation address")}
                       value={setting.baseCalculationAddress}
                       options={[
                         {
                           value: 'shippingAddress',
-                          text: 'Shipping address'
+                          text: _('Shipping address')
                         },
                         {
                           value: 'billingAddress',
-                          text: 'Billing address'
+                          text: _('Billing address')
                         },
                         {
                           value: 'storeAddress',
-                          text: 'Store address'
+                          text: _('Store address')
                         }
                       ]}
                     />
@@ -161,7 +161,7 @@ export default function TaxSetting({
               </Form>
             </Card.Session>
           </Card>
-          <Card title="Tax classes">
+          <Card title={_("Tax classes")}>
             <TaxClasses
               classes={taxClassesQueryData.data.taxClasses.items}
               countries={countriesQueryData.data.countries}
@@ -170,7 +170,7 @@ export default function TaxSetting({
             <Card.Session>
               <div>
                 <Button
-                  title="Create new tax class"
+                  title={_("Create new tax class")}
                   variant="primary"
                   onAction={() => modal.openModal()}
                 />

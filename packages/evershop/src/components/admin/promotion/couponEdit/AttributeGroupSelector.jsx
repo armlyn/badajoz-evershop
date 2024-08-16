@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { useQuery } from 'urql';
 import CheckIcon from '@heroicons/react/outline/CheckIcon';
 import { SimplePageination } from '@components/common/SimplePagination';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const SearchQuery = `
   query Query ($filters: [FilterInput!]) {
@@ -97,7 +98,7 @@ function AttributeGroupSelector({
   }
 
   return (
-    <Card title="Select Products">
+    <Card title={_("Select Products")}>
       <div className="modal-content">
         <Card.Session>
           <div>
@@ -105,7 +106,7 @@ function AttributeGroupSelector({
               <input
                 type="text"
                 value={inputValue}
-                placeholder="Search attribute groups"
+                placeholder={_("Search attribute groups")}
                 onChange={(e) => setInputValue(e.target.value)}
               />
             </div>
@@ -119,9 +120,9 @@ function AttributeGroupSelector({
                 {data.attributeGroups.items.length === 0 && (
                   <div className="p-3 border border-divider rounded flex justify-center items-center">
                     {inputValue ? (
-                      <p>No groups found for query &quot;{inputValue}&rdquo;</p>
+                      <p>{_('No groups found for query &quot;{inputValue}&rdquo;')}</p>
                     ) : (
-                      <p>You have no groups to display</p>
+                      <p>{_('You have no groups to display')}</p>
                     )}
                   </div>
                 )}

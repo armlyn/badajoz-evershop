@@ -15,6 +15,7 @@ import YesNoRow from '@components/common/grid/rows/YesNoRow';
 import SortableHeader from '@components/common/grid/headers/Sortable';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ categories = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -33,18 +34,18 @@ function Actions({ categories = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Delete',
+      name: _('Delete'),
       onAction: () => {
         openAlert({
           heading: `Delete ${selectedIds.length} categories`,
-          content: <div>Can&apos;t be undone</div>,
+          content: <div>{_("Can&apos;t be undone")}</div>,
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'primary'
           },
           secondaryAction: {
-            title: 'Delete',
+            title: _('Delete'),
             onAction: async () => {
               await deleteCategories();
             },
@@ -113,7 +114,7 @@ export default function CategoryGrid({
             <Field
               type="text"
               id="name"
-              placeholder="Search"
+              placeholder={_("Search")}
               value={currentFilters.find((f) => f.key === 'name')?.value}
               onKeyPress={(e) => {
                 // If the user press enter, we should submit the form
@@ -136,7 +137,7 @@ export default function CategoryGrid({
         actions={[
           {
             variant: 'interactive',
-            name: 'Clear filter',
+            name: _('Clear filter'),
             onAction: () => {
               // Just get the url and remove all query params
               const url = new URL(document.location);
@@ -169,7 +170,7 @@ export default function CategoryGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Category Name"
+                        title={_("Category Name")}
                         name="name"
                         currentFilters={currentFilters}
                       />
@@ -182,7 +183,7 @@ export default function CategoryGrid({
                     default: () => (
                       <SortableHeader
                         name="status"
-                        title="Status"
+                        title={_("Status")}
                         currentFilters={currentFilters}
                       />
                     )
@@ -194,7 +195,7 @@ export default function CategoryGrid({
                     default: () => (
                       <SortableHeader
                         name="include_in_nav"
-                        title="Include In Menu"
+                        title={_("Include In Menu")}
                         currentFilters={currentFilters}
                       />
                     )
@@ -260,7 +261,7 @@ export default function CategoryGrid({
       </table>
       {categories.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no category to display
+          {_("There is no category to display")}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />

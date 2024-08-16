@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Area from '@components/common/Area';
 import { Card } from '@components/admin/cms/Card';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Status({ status }) {
   return (
@@ -62,14 +63,14 @@ function Actions({ status, startShipUrl, completeShipUrl }) {
   };
   return (
     <td>
-      {status === 'pending' && (
+      {status === _('pending') && (
         <a href="#" onClick={(e) => startShipment(e)}>
-          <span>Start shipment</span>
+          <span>{_('Start shipment')}</span>
         </a>
       )}
-      {status === 'delivering' && (
+      {status === _('delivering') && (
         <a href="#" onClick={(e) => completeShipment(e)}>
-          <span>Complete shipment</span>
+          <span>{_('Complete shipment')}</span>
         </a>
       )}
     </td>

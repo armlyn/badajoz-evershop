@@ -8,6 +8,7 @@ import { useModal } from '@components/common/modal/useModal';
 import ZoneForm from '@components/admin/checkout/shippingSetting/ZoneForm';
 import Spinner from '@components/common/Spinner';
 import { Zones } from '@components/admin/checkout/shippingSetting/Zones';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 const CountriesQuery = `
   query Country($countries: [String]) {
@@ -96,16 +97,16 @@ export default function ShippingSetting({ createShippingZoneApi }) {
         </div>
         <div className="col-span-4">
           {countriesQueryData.fetching || zonesQueryData.fetching ? (
-            <Card.Session title="Shipping">
+            <Card.Session title={_("Shipping")}>
               <div className="flex justify-center p-2">
                 <Spinner width={25} height={25} />
               </div>
             </Card.Session>
           ) : (
             <Card>
-              <Card.Session title="Shipping">
+              <Card.Session title={_("Shipping")}>
                 <div>
-                  Choose where you ship and how much you charge for shipping.
+                  {_("Choose where you ship and how much you charge for shipping.")}
                 </div>
               </Card.Session>
               {zonesQueryData.error ? (
@@ -133,7 +134,7 @@ export default function ShippingSetting({ createShippingZoneApi }) {
               <Card.Session>
                 <div>
                   <Button
-                    title="Create new shipping zone"
+                    title={_("Create new shipping zone")}
                     variant="primary"
                     onAction={() => modal.openModal()}
                   />

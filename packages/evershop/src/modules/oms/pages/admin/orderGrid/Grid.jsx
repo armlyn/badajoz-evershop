@@ -17,6 +17,7 @@ import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 import SortableHeader from '@components/common/grid/headers/Sortable';
 import Filter from '@components/common/list/Filter';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 function Actions({ orders = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -36,23 +37,23 @@ function Actions({ orders = [], selectedIds = [] }) {
 
   const actions = [
     {
-      name: 'Mark as shipped',
+      name: _('Mark as shipped'),
       onAction: () => {
         openAlert({
-          heading: `Fullfill ${selectedIds.length} orders`,
+          heading: _(`Fullfill ${selectedIds.length} orders`),
           content: (
             <Checkbox
               name="notify_customer"
-              label="Send notification to the customer"
+              label={_("Send notification to the customer")}
             />
           ),
           primaryAction: {
-            title: 'Cancel',
+            title: _('Cancel'),
             onAction: closeAlert,
             variant: 'default'
           },
           secondaryAction: {
-            title: 'Mark as shipped',
+            title: _('Mark as shipped'),
             onAction: async () => {
               await fullFillOrders();
             },
@@ -133,7 +134,7 @@ export default function OrderGrid({
                         <Field
                           type="text"
                           id="keyword"
-                          placeholder="Search"
+                          placeholder={_("Search")}
                           value={
                             currentFilters.find((f) => f.key === 'keyword')
                               ?.value
@@ -182,7 +183,7 @@ export default function OrderGrid({
                                 ).value
                               : undefined
                           }
-                          title="Payment status"
+                          title={_("Payment status")}
                         />
                       )
                     },
@@ -213,7 +214,7 @@ export default function OrderGrid({
                                 ).value
                               : undefined
                           }
-                          title="Shipment status"
+                          title={_("Shipment status")}
                         />
                       )
                     },
@@ -228,7 +229,7 @@ export default function OrderGrid({
         actions={[
           {
             variant: 'interactive',
-            name: 'Clear filter',
+            name: _('Clear filter'),
             onAction: () => {
               // Just get the url and remove all query params
               const url = new URL(document.location);
@@ -261,7 +262,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Order Number"
+                        title={_("Order Number")}
                         name="number"
                         currentFilters={currentFilters}
                       />
@@ -273,7 +274,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Date"
+                        title={_("Date")}
                         name="created_at"
                         currentFilters={currentFilters}
                       />
@@ -285,7 +286,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Customer Email"
+                        title={_("Customer Email")}
                         name="email"
                         currentFilters={currentFilters}
                       />
@@ -297,7 +298,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Shipment Status"
+                        title={_("Shipment Status")}
                         name="shipment_status"
                         currentFilters={currentFilters}
                       />
@@ -309,7 +310,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Payment Status"
+                        title={_("Shipment Status")}
                         name="payment_status"
                         currentFilters={currentFilters}
                       />
@@ -321,7 +322,7 @@ export default function OrderGrid({
                   component: {
                     default: () => (
                       <SortableHeader
-                        title="Total"
+                        title={_("Total")}
                         name="total"
                         currentFilters={currentFilters}
                       />
@@ -416,7 +417,7 @@ export default function OrderGrid({
       </table>
       {orders.length === 0 && (
         <div className="flex w-full justify-center">
-          There is no order to display
+          {_('There is no order to display')}
         </div>
       )}
       <Pagination total={total} limit={limit} page={page} />
