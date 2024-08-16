@@ -8,7 +8,7 @@ export default function CustomerEditPageHeading({ backUrl, customer }) {
     <PageHeading
       backUrl={backUrl}
       heading={
-        customer ? _(`Editing ${customer.fullName}`) : _('Create A New Customer')
+        customer ? _('Editing') + customer.fullName : _('Create A New Customer')
       }
     />
   );

@@ -70,6 +70,7 @@ Configure the available payment methods, Configurar los métodos de pago disponi
 Configure the tax classes that will be available to your customers at checkout., Configure las clases de impuestos que estarán disponibles para sus clientes en el momento del pago.
 Cms Pages, Páginas CMS
 Content, Contenido
+collections, colecciones
 Capture, Captura
 Coupon code, Código de cupón
 Customer Email, Correo electrónico del cliente
@@ -81,6 +82,7 @@ Currency, Moneda
 Configure your store information, Configura la información de tu tienda
 Customer email (empty for all), Correo electrónico del cliente (vacío para todos)
 Coupons, Cupones
+coupons, cupones
 Cancelled, Cancelado
 Create A New Coupon, Crear un nuevo cupón
 Coupon saved successfully!, ¡Cupón guardado exitosamente!
@@ -89,24 +91,16 @@ Cash On Delivery Payment, Pago contra reembolso
 Customer's purchase, Compra del cliente
 Customer conditions, Condiciones del cliente
 Customer does not have any order yet., El cliente no tiene ningún pedido todavía.
-Delete, Borrar
-Delete ${selectedIds.length} pages, Eliminar ${selectedIds.length} páginas
-Delete ${selectedIds.length} collections, Eliminar ${selectedIds.length} colecciones
+Delete, Eliminar
 Description, Descripción
 Dashboard, Panel de Control
 Daily, Diario
 Date, Fecha
 Discount amount, Importe del descuento
-Delete ${selectedIds.length} products, Eliminar ${selectedIds.length} productos
-Delete ${selectedIds.length} coupons, Eliminar ${selectedIds.length} cupones
 Disabled, Deshabilitado 
-Disable ${selectedIds.length} pages, Deshabilitar ${selectedIds.length} páginas
-Disable ${selectedIds.length} coupons, Deshabilitar ${selectedIds.length} cupones
-Disable ${selectedIds.length} customers, Deshabilitar ${selectedIds.length} clientes
 Disable, Deshabilitar
 Delivered, Entregado
 delivering, entregando
-Disable ${selectedIds.length} products, Deshabilitar ${selectedIds.length} productos
 Display Name, Nombre para mostrar
 Discount Type, Tipo de descuento
 Default, Por defecto
@@ -122,20 +116,10 @@ Enter description, Introducir descripción
 Environment, Ambiente
 Edit Tracking Info, Editar información de seguimiento
 Edit Tracking Information, Editar información de seguimiento
-Enable ${selectedIds.length} pages, Habilitar ${selectedIds.length} páginas
-Enable ${selectedIds.length} customers, Habilitar ${selectedIds.length} clientes
-Enable ${selectedIds.length} coupons, Habilitar ${selectedIds.length} cupones
 EVERSHOP, BADAJOZ MARKETPLACE
 End Date, Fecha de finalización
 End date, Fecha de finalización
-Editing ${attribute.attributeName}, Editando ${attribute.attributeName}
-Editing ${category.name}, Editando ${category.name}
-Editing ${product.name}, Editando ${product.name}
-Editing ${page.name}, Editando ${page.name}
-Editing ${customer.fullName}, Editando ${customer.fullName}
-Editing #${order.orderNumber}, Editando #${order.orderNumber}
-Editing ${coupon.coupon}, Editando ${coupon.coupon}
-Enable ${selectedIds.length} products, Habilitar ${selectedIds.length} productos
+Editing, Editando
 Enter minimum purchase amount, Introduzca el importe mínimo de compra
 Enter minimum purchase qty, Introduzca la cantidad mínima de compra
 Featured Products, Productos destacados
@@ -143,7 +127,7 @@ featuredProducts, Productos destacados
 Free shipping?, ¿Envío gratis?
 Free shipping, Envío gratis
 Full Name, Nombre completo
-Fullfill ${selectedIds.length} orders, Cumplir con ${selectedIds.length} pedidos
+Fullfill, Cumplir con
 Failed!, ¡Fallido!
 Fixed discount to entire order, Descuento fijo para todo el pedido
 Fixed discount to specific products, Descuento fijo para productos específicos
@@ -228,6 +212,7 @@ Pending, Pendiente
 Proportional allocation based on cart items, Asignación proporcional en función de los artículos del carrito
 Pages, Páginas
 Paid, Pagado
+products, productos
 Paypal Payment, Pago con Paypal
 Processing, Procesando
 Page saved successfully!, ¡Página guardada exitosamente!
@@ -240,6 +225,7 @@ Publishable Key, Clave publicable
 Payment status, Estado del pago
 PostalCode, Código Postal
 per page, por página
+pages, páginas
 pending, pendiente
 Password, Contraseña
 Percentage discount to entire order, Porcentaje de descuento sobre todo el pedido

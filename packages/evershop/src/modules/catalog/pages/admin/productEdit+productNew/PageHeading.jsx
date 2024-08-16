@@ -7,7 +7,7 @@ export default function ProductEditPageHeading({ backUrl, product }) {
   return (
     <PageHeading
       backUrl={backUrl}
-      heading={product ? _(`Editing ${product.name}`) : _('Create A New Product')}
+      heading={product ? _('Editing') + product.name : _('Create A New Product')}
     />
   );
 }

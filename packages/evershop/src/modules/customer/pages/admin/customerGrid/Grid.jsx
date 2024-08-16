@@ -38,7 +38,7 @@ function Actions({ customers = [], selectedIds = [] }) {
       name: _('Disable'),
       onAction: () => {
         openAlert({
-          heading: _(`Disable ${selectedIds.length} customers`),
+          heading: `${_('Disable')  } ${  selectedIds.length  } ${  _(' customers')}`,
           content: _('Are you sure?'),
           primaryAction: {
             title: _('Cancel'),
@@ -60,7 +60,7 @@ function Actions({ customers = [], selectedIds = [] }) {
       name: _('Enable'),
       onAction: () => {
         openAlert({
-          heading: _(`Enable ${selectedIds.length} customers`),
+          heading: `${_('Enable')  } ${  selectedIds.length  } ${  _('customers')}`,
           content: _('Are you sure?'),
           primaryAction: {
             title: _('Cancel'),

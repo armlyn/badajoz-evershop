@@ -54,7 +54,7 @@ function Actions({ coupons = [], selectedIds = [] }) {
       name: _('Disable'),
       onAction: () => {
         openAlert({
-          heading: _(`Disable ${selectedIds.length} coupons`),
+          heading:  `${_('Disable')  } ${  selectedIds.length  } ${   _('coupons')}`,
           content: _('Are you sure?'),
           primaryAction: {
             title: _('Cancel'),
@@ -76,7 +76,7 @@ function Actions({ coupons = [], selectedIds = [] }) {
       name: _('Enable'),
       onAction: () => {
         openAlert({
-          heading: _(`Enable ${selectedIds.length} coupons`),
+          heading: `${_('Enable')  } ${  selectedIds.length  } ${  _('coupons')}`,
           content: _('Are you sure?'),
           primaryAction: {
             title: _('Cancel'),
@@ -98,7 +98,7 @@ function Actions({ coupons = [], selectedIds = [] }) {
       name: _('Delete'),
       onAction: () => {
         openAlert({
-          heading: _(`Delete ${selectedIds.length} coupons`),
+          heading: `${_('Delete')  } ${  selectedIds.length  } ${  _('coupons')}`,
           content: <div>{_("Can&apos;t be undone")}</div>,
           primaryAction: {
             title: _('Cancel'),

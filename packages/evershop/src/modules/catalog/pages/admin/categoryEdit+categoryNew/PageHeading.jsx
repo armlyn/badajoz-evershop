@@ -7,7 +7,7 @@ export default function CategoryEditPageHeading({ backUrl, category }) {
   return (
     <PageHeading
       backUrl={backUrl}
-      heading={category ? _(`Editing ${category.name}`) : _('Create A New category')}
+      heading={category ? _('Editing') + category.name : _('Create A New category')}
     />
   );
 }

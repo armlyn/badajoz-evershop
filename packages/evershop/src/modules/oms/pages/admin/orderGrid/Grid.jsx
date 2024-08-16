@@ -40,7 +40,7 @@ function Actions({ orders = [], selectedIds = [] }) {
       name: _('Mark as shipped'),
       onAction: () => {
         openAlert({
-          heading: _(`Fullfill ${selectedIds.length} orders`),
+          heading: `${_('Fullfill')  } ${  selectedIds.length  } ${  _('orders')}`,
           content: (
             <Checkbox
               name="notify_customer"

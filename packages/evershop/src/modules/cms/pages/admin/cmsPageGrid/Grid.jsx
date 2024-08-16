@@ -49,7 +49,7 @@ function Actions({ pages = [], selectedIds = [] }) {
       name: _('Disable'),
       onAction: () => {
         openAlert({
-          heading: _(`Disable ${selectedIds.length} pages`),
+          heading: `${_('Disable')  } ${  selectedIds.length  } ${  _('pages')}`,
           content: _('Are you sure?'),
           primaryAction: {
             title: _('Cancel'),
@@ -71,7 +71,7 @@ function Actions({ pages = [], selectedIds = [] }) {
       name: _('Enable'),
       onAction: () => {
         openAlert({
-          heading: _(`Enable ${selectedIds.length} pages`),
+          heading: `${_('Enable')  } ${  selectedIds.length  } ${  _(' pages')}`,
           content: _('Are you sure?'),
           primaryAction: {
             title: _('Cancel'),
@@ -93,7 +93,8 @@ function Actions({ pages = [], selectedIds = [] }) {
       name: _('Delete'),
       onAction: () => {
         openAlert({
-          heading: _(`Delete ${selectedIds.length} pages`),
+          heading: `${_('Delete')  } ${  selectedIds.length  } ${  _('pages')}`,
+
           content: <div>{_("Can&apos;t be undone")}</div>,
           primaryAction: {
             title: _('Cancel'),

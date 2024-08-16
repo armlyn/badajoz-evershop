@@ -37,8 +37,8 @@ function Actions({ collections = [], selectedIds = [] }) {
       name: _('Delete'),
       onAction: () => {
         openAlert({
-          heading: _(`Delete ${selectedIds.length} collections`),
-          content: <div>Can&apos;t be undone</div>,
+          heading: `${_('Delete')  } ${  selectedIds.length  } ${  _('collections')}`,
+          content: <div>{_('Can&apos;t be undone')}</div>,
           primaryAction: {
             title: _('Cancel'),
             onAction: closeAlert,

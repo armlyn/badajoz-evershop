@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Field } from '@components/common/form/Field';
+import { _ } from '@evershop/evershop/src/lib/locale/translate';
 
 export function Setting({ discountAmount, startDate, endDate }) {
   return (
@@ -10,16 +11,16 @@ export function Setting({ discountAmount, startDate, endDate }) {
           type="text"
           name="discount_amount"
           value={discountAmount}
-          placeholder="Discount amount"
+          placeholder={_("Discount amount")}
           validationRules={['notEmpty']}
-          label="Discount amount"
+          label={_("Discount amount")}
         />
       </div>
       <div>
         <Field
           type="date"
           name="start_date"
-          label="Start date"
+          label={_("Start date")}
           value={startDate}
           suffix={
             <svg
@@ -44,7 +45,7 @@ export function Setting({ discountAmount, startDate, endDate }) {
         <Field
           type="date"
           name="end_date"
-          label="End date"
+          label={_("End date")}
           value={endDate}
           suffix={
             <svg
