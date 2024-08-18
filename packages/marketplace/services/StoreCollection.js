@@ -8,7 +8,7 @@ const { getValue } = require('@evershop/evershop/src/lib/util/registry');
 class StoreCollection {
     constructor(baseQuery) {
         this.baseQuery = baseQuery;
-        this.baseQuery.orderBy('store.id', 'DESC');
+        this.baseQuery.orderBy('store.store_id', 'DESC');
     }
 
     /**
@@ -48,7 +48,7 @@ class StoreCollection {
 
         // Clone the main query for getting total right before doing the paging
         const totalQuery = this.baseQuery.clone();
-        totalQuery.select('COUNT(store.id)', 'total');
+        totalQuery.select('COUNT(store.store_id)', 'total');
         totalQuery.removeOrderBy();
         totalQuery.removeLimit();
 

@@ -37,9 +37,9 @@ async function updateRegionData(uuid, data, connection) {
   query
     .leftJoin('region_description')
     .on(
-      'region_description.region_id',
+      'region_description.region_description_region_id',
       '=',
-      'region.id'
+      'region.region_id'
     );
   const region = await query.where('uuid', '=', uuid).load(connection);
   if (!region) {
@@ -60,7 +60,7 @@ async function updateRegionData(uuid, data, connection) {
   try {
     const description = await update('region_description')
       .given(data)
-      .where('region_id', '=', region.id)
+      .where('region_description_region_id', '=', region.region_id)
       .execute(connection);
     Object.assign(region, description);
   } catch (e) {

@@ -16,7 +16,7 @@ module.exports = {
         region: async (_, { id }, { pool }) => {
             const query = select().from('region');
 
-            query.where('id', '=', id);
+            query.where('region_id', '=', id);
             const result = await query.load(pool);
             return result ? camelCase(result) : null;
         },
@@ -30,7 +30,7 @@ module.exports = {
     Region: {
         stores: async (region, { filters = [] }, { user }) => {
             const query = await getStoresByRegionBaseQuery(
-                region.id,
+                region.region_id,
                 !user
             );
             const root = new StoreCollection(query);

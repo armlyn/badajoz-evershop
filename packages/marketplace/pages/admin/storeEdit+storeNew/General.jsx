@@ -31,7 +31,7 @@ export default function General({
       component: { default: Field },
       props: {
         id: 'storeId',
-        name: 'id',
+        name: 'store_id',
         type: 'hidden'
       },
       sortOrder: 20
@@ -63,8 +63,8 @@ export default function General({
     {
       component: { default: Field },
       props: {
-        id: 'region_id',
-        name: 'region',
+        id: 'regionId',
+        name: 'region_id',
         value: store?.region_id || null,
         type: 'select',
         label: 'Region',
@@ -113,8 +113,7 @@ General.propTypes = {
   store: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
-    id: PropTypes.number,
-    region_id: PropTypes.number,
+    storeId: PropTypes.number,
     address: PropTypes.string,
     phone: PropTypes.string,
     status: PropTypes.number,
@@ -148,9 +147,10 @@ export const layout = {
 export const query = `
   query Query {
     store(id: getContextValue("storeId", null)) {
-      id
+      storeId
       name
       description
+      regionId
       address
       phone
       status
@@ -165,7 +165,7 @@ export const query = `
     folderCreateApi: url(routeId: "folderCreate")
     storeRegions: regions {
       items {
-        value: id
+        value: regionId
         text: name
       }
     }

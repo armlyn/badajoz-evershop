@@ -9,11 +9,11 @@ const {
 module.exports = async function buildUrlReWrite(data) {
   try {
     const regionUuid = data.uuid;
-    const regionId = data.category_id;
+    const regionId = data.region_id;
     // Load the category
     const region = await select()
       .from('region')
-      .where('id', '=', regionId)
+      .where('region_id', '=', regionId)
       .load(pool);
 
     if (!region) {
@@ -22,7 +22,7 @@ module.exports = async function buildUrlReWrite(data) {
 
     const urlKey = await select('url_key')
       .from('region_description')
-      .where('region_id', '=', regionId)
+      .where('region_description_region_id', '=', regionId)
       .load(pool);
     const path = `/${urlKey.url_key}`;
     

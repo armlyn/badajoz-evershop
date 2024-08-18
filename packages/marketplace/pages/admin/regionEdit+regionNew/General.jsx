@@ -30,8 +30,8 @@ export default function General({
     {
       component: { default: Field },
       props: {
-        id: 'id',
-        name: 'id',
+        id: 'regionId',
+        name: 'region_id',
         type: 'hidden'
       },
       sortOrder: 20
@@ -74,7 +74,7 @@ General.propTypes = {
   region: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
-    id: PropTypes.number
+    regionId: PropTypes.number
   })
 };
 
@@ -90,7 +90,7 @@ export const layout = {
 export const query = `
   query Query {
     region(id: getContextValue("regionId", null)) {
-      id
+      regionId
       name
       description
     }

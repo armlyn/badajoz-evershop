@@ -7,7 +7,7 @@ module.exports = async function buildUrlReWrite(data) {
     const regionId = data.region_id;
     const storeDescription = await select()
         .from('store_description')
-        .where('store_id', '=', storeId)
+        .where('store_description_store_id', '=', storeId)
         .load(pool);
 
     if (!storeDescription) {

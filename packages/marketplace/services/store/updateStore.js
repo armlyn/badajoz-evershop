@@ -41,9 +41,9 @@ async function updateStoreData(uuid, data, connection) {
   query
     .leftJoin('store_description')
     .on(
-      'store_description.store_id',
+      'store_description.store_description_store_id',
       '=',
-      'store.id'
+      'store.store_id'
     );
   
   const store = await query.where('uuid', '=', uuid).load(connection);
@@ -66,7 +66,7 @@ async function updateStoreData(uuid, data, connection) {
   try {
     const description = await update('store_description')
       .given(data)
-      .where('store_id', '=', store.id)
+      .where('store_description_store_id', '=', store.store_id)
       .execute(connection);
     Object.assign(store, description);
   } catch (e) {

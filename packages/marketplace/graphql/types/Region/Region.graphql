@@ -2,7 +2,7 @@
 The `Region` type represents a region object.
 """
 type Region {
-  id: Int!
+  regionId: Int!
   uuid: String!
   name: String!
   description: String

@@ -4,12 +4,12 @@ const { insertOnUpdate, select } = require('@evershop/postgres-query-builder');
 
 module.exports = async function buildUrlReWrite(data) {
   try {
-    const storeId = data.id;
+    const storeId = data.store_id;
     const storeUuid = data.uuid;
     const regionId = data.region_id;
     const storeDescription = await select()
       .from('store_description')
-      .where('store_id', '=', storeId)
+      .where('store_description_store_id', '=', storeId)
       .load(pool);
 
     if (!storeDescription) {
@@ -29,7 +29,7 @@ module.exports = async function buildUrlReWrite(data) {
     // Load the region
     const region = await select()
       .from('region')
-      .where('id', '=', regionId)
+      .where('region_id', '=', regionId)
       .load(pool);
 
     if (!region) {

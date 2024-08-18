@@ -143,7 +143,7 @@ export default function RegionGrid({
             }
           }
         ]}
-       />
+      />
       <table className="listing sticky">
         <thead>
           <tr>
@@ -186,7 +186,7 @@ export default function RegionGrid({
             setSelectedRows={setSelectedRows}
           />
           {regions.map((c) => (
-            <tr key={c.id}>
+            <tr key={c.regionId}>
               <td style={{ width: '2rem' }}>
                 <Checkbox
                   isChecked={selectedRows.includes(c.uuid)}
@@ -230,7 +230,7 @@ RegionGrid.propTypes = {
   regions: PropTypes.shape({
     items: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.number.isRequired,
+        regionId: PropTypes.number.isRequired,
         uuid: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         editUrl: PropTypes.string.isRequired,
@@ -257,7 +257,7 @@ export const query = `
   query Query($filters: [FilterInput]) {
     regions (filters: $filters) {
       items {
-        id
+        regionId
         uuid
         name
         editUrl

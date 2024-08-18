@@ -397,7 +397,7 @@ StoreGrid.propTypes = {
   stores: PropTypes.shape({
     items: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.number,
+        storeId: PropTypes.number,
         uuid: PropTypes.string,
         name: PropTypes.string,
         editUrl: PropTypes.string,
@@ -425,7 +425,7 @@ export const query = `
   query Query($filters: [FilterInput]) {
     stores (filters: $filters) {
       items {
-        id
+        storeId
         uuid
         name
       }

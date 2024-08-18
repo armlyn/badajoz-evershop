@@ -26,9 +26,9 @@ async function deleteRegion(uuid, context) {
     query
       .leftJoin('region_description')
       .on(
-        'region_description.region_id',
+        'region_description.region_description_region_id',
         '=',
-        'region.id'
+        'region.region_id'
       );
 
     const region = await query.where('uuid', '=', uuid).load(connection);

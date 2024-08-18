@@ -5,9 +5,9 @@ module.exports.getStoresBaseQuery = () => {
     query
         .leftJoin('store_description')
         .on(
-            'store_description.store_id',
+            'store_description.store_description_store_id',
             '=',
-            'store.id'
+            'store.store_id'
         );
 
     return query;

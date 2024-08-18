@@ -5,7 +5,7 @@ const { getValue } = require('@evershop/evershop/src/lib/util/registry');
 class RegionCollection {
     constructor(baseQuery) {
         this.baseQuery = baseQuery;
-        this.baseQuery.orderBy('region.id', 'DESC');
+        this.baseQuery.orderBy('region.region_id', 'DESC');
     }
 
     async init(filters = [], isAdmin = false) {
@@ -36,7 +36,7 @@ class RegionCollection {
 
         // Clone the main query for getting total right before doing the paging
         const totalQuery = this.baseQuery.clone();
-        totalQuery.select('COUNT(region.id)', 'total');
+        totalQuery.select('COUNT(region.region_id)', 'total');
         totalQuery.removeOrderBy();
         totalQuery.removeLimit();
 

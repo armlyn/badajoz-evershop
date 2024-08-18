@@ -33,7 +33,7 @@ async function insertRegionData(data, connection) {
   const region = await insert('region').given(data).execute(connection);
   const description = await insert('region_description')
     .given(data)
-    .prime('region_id', region.insertId)
+    .prime('region_description_region_id', region.insertId)
     .execute(connection);
 
   return {

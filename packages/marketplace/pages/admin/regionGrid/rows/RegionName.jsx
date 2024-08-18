@@ -6,7 +6,7 @@ export default function RegionNameRow({ region }) {
         <td>
             <div>
                 <a className="hover:underline font-semibold" href={region.editUrl}>
-                    {region.path.map((p) => p.name).join(' / ')}
+                    {region.name}
                 </a>
             </div>
         </td>
@@ -16,10 +16,6 @@ export default function RegionNameRow({ region }) {
 RegionNameRow.propTypes = {
     region: PropTypes.shape({
         editUrl: PropTypes.string.isRequired,
-        path: PropTypes.arrayOf(
-            PropTypes.shape({
-                name: PropTypes.string.isRequired
-            })
-        ).isRequired
+        name: PropTypes.string.isRequired
     }).isRequired
 };

@@ -25,7 +25,7 @@ module.exports = {
     Query: {
         store: async (_, { id }, { pool }) => {
             const query = getStoresBaseQuery();
-            query.where('store.id', '=', id);
+            query.where('store.store_id', '=', id);
             const result = await query.load(pool);
             if (!result) {
                 return null;

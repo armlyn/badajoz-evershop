@@ -44,7 +44,7 @@ async function insertStoreData(data, connection) {
   const store = await insert('store').given(data).execute(connection);
   const description = await insert('store_description')
     .given(data)
-    .prime('store_id', store.id)
+    .prime('store_description_store_id', store.store_id)
     .execute(connection);
 
   return {
