@@ -43,7 +43,7 @@ export default function RegionNewForm({ action }) {
     );
 }
 
-StoreNewForm.propTypes = {
+RegionNewForm.propTypes = {
     action: PropTypes.string.isRequired
 };
 

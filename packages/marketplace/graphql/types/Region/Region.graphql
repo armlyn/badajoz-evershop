@@ -6,8 +6,10 @@ type Region {
   uuid: String!
   name: String!
   description: String
-  population: Int
-  area: Float
+  urlKey: String
+  metaTitle: String
+  metaDescription: String
+  metaKeywords: String
   qr_code: String
   stores(filters: [FilterInput]): StoreCollection
   url: String

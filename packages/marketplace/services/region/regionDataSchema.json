@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "skipEscape": true
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "string"
+    },
+    "meta_keywords": {
+      "type": "string"
+    },
+    "url_key": {
+      "type": "string",
+      "pattern": "^\\S+$",
+      "errorMessage": {
+        "pattern": "Url key should not contain spaces"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "meta_title",
+    "meta_description"
+  ],
+  "additionalProperties": true
+}
