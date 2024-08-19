@@ -11,6 +11,7 @@ import { Checkbox } from '@components/common/form/fields/Checkbox';
 import { Card } from '@components/admin/cms/Card';
 import RegionNameRow from './rows/RegionName';
 import SortableHeader from '@components/common/grid/headers/Sortable';
+import BasicRow from '@components/common/grid/rows/BasicRow';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
 
@@ -174,6 +175,18 @@ export default function RegionGrid({
                     )
                   },
                   sortOrder: 10
+                },
+                {
+                  component: {
+                    default: () => (
+                      <SortableHeader
+                        title="Description"
+                        name="description"
+                        currentFilters={currentFilters}
+                      />
+                    )
+                  },
+                  sortOrder: 20
                 }
               ]}
             />
@@ -210,6 +223,15 @@ export default function RegionGrid({
                     },
                     sortOrder: 10
                   },
+                  {
+                    // eslint-disable-next-line react/no-unstable-nested-components
+                    component: {
+                      default: ({ areaProps }) => (
+                        <BasicRow id="description" areaProps={areaProps} />
+                      )
+                    },
+                    sortOrder: 20
+                  }
                 ]}
               />
             </tr>
@@ -233,6 +255,7 @@ RegionGrid.propTypes = {
         regionId: PropTypes.number.isRequired,
         uuid: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
         editUrl: PropTypes.string.isRequired,
         deleteApi: PropTypes.string.isRequired
       })
@@ -260,6 +283,7 @@ export const query = `
         regionId
         uuid
         name
+        description
         editUrl
         deleteApi
       }

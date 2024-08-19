@@ -39,7 +39,11 @@
       "type": "string"
     },
     "phone": {
-      "type": "string"
+      "type": "string",
+      "pattern": "(\\(?\\d{3}\\)?[\\s.-]?)?\\d{3}[\\s.-]?\\d{4}",
+      "errorMessage": {
+        "pattern": "Enter valid phone number"
+      }
     },
     "region_id": {
       "type": ["string", "number", "null"],

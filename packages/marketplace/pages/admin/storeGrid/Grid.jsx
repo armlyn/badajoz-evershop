@@ -247,42 +247,6 @@ export default function StoreGrid({
                     },
                     sortOrder: 10
                   }
-                  // {
-                  //   component: {
-                  //     default: () => (
-                  //       <Filter
-                  //         options={[
-                  //           {
-                  //             label: 'Simple',
-                  //             value: '1',
-                  //             onSelect: () => {
-                  //               const url = new URL(document.location);
-                  //               url.searchParams.set('type', 'simple');
-                  //               window.location.href = url;
-                  //             }
-                  //           },
-                  //           {
-                  //             label: 'Configurable',
-                  //             value: '0',
-                  //             onSelect: () => {
-                  //               const url = new URL(document.location);
-                  //               url.searchParams.set('type', 'configurable');
-                  //               window.location.href = url;
-                  //             }
-                  //           }
-                  //         ]}
-                  //         selectedOption={
-                  //           currentFilters.find((f) => f.key === 'type')
-                  //             ? currentFilters.find((f) => f.key === 'type')
-                  //                 .value
-                  //             : undefined
-                  //         }
-                  //         title="Product type"
-                  //       />
-                  //     )
-                  //   },
-                  //   sortOrder: 15
-                  // }
                 ]}
                 currentFilters={currentFilters}
               />
@@ -331,6 +295,30 @@ export default function StoreGrid({
                     )
                   },
                   sortOrder: 10
+                },
+                {
+                  component: {
+                    default: () => (
+                      <SortableHeader
+                        title="Address"
+                        name="address"
+                        currentFilters={currentFilters}
+                      />
+                    )
+                  },
+                  sortOrder: 10
+                },
+                {
+                  component: {
+                    default: () => (
+                      <SortableHeader
+                        title="Status"
+                        name="status"
+                        currentFilters={currentFilters}
+                      />
+                    )
+                  },
+                  sortOrder: 20
                 }             
               ]}
             />
@@ -376,6 +364,24 @@ export default function StoreGrid({
                       )
                     },
                     sortOrder: 10
+                  },
+                  {
+                    // eslint-disable-next-line react/no-unstable-nested-components
+                    component: {
+                      default: ({ areaProps }) => (
+                        <BasicRow id="address" areaProps={areaProps} />
+                      )
+                    },
+                    sortOrder: 20
+                  },
+                  {
+                    // eslint-disable-next-line react/no-unstable-nested-components
+                    component: {
+                      default: ({ areaProps }) => (
+                        <StatusRow id="status" areaProps={areaProps} />
+                      )
+                    },
+                    sortOrder: 30
                   }
                 ]}
               />
@@ -400,6 +406,8 @@ StoreGrid.propTypes = {
         storeId: PropTypes.number,
         uuid: PropTypes.string,
         name: PropTypes.string,
+        address: PropTypes.string,
+        status: PropTypes.number,
         editUrl: PropTypes.string,
         updateApi: PropTypes.string,
         deleteApi: PropTypes.string
@@ -428,6 +436,8 @@ export const query = `
         storeId
         uuid
         name
+        address
+        status
         editUrl
         deleteApi
       }
