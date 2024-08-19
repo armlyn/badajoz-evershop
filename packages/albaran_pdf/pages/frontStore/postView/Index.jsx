@@ -7,6 +7,9 @@ export const GET_ALBARAN_QUERY = `
   query GetAlbaran($uuid: String!) {
     order(uuid: $uuid) {
       orderNumber
+      createAt{
+      value
+      }
     
       shippingAddress {
         fullName
@@ -58,6 +61,7 @@ function AlbaranPage() {
     return <h2 className="text page-width">Oh no... {error.message}</h2>;
 
   const albaran = data?.order || {};
+
   if (!albaran)
     return <h2 className="text page-width">No hay Albarán disponible :(</h2>;
   return (
