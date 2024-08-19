@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../scss/MarketplaceView.scss';
+import './MarketplaceView.scss';
 
-function MarketplaceView() {
+export default function MarketplaceView() {
   return (
     <div className="marketplace-container">
       <div className="grid">
@@ -32,9 +32,7 @@ function MarketplaceView() {
   );
 }
 
-export default MarketplaceView;
-
 export const layout = {
   areaId: 'content',
-  sortOrder: 5
+  sortOrder: 10
 };
