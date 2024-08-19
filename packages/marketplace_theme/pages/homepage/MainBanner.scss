@@ -15,10 +15,12 @@
 
     .col-text {
       grid-column: span 12;
+
       @media (min-width: 768px) {
         grid-column: span 6;
         text-align: left;
       }
+
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -53,8 +55,9 @@
         background-color: #c51b1b;
         width: max-content;
         padding: 8px 30px;
-        border-radius: 12px;
-        margin-top: 1.5rem; /* Asegura que haya espacio entre el texto y el botón */
+        border-radius: 8px;
+        margin-top: 1.5rem;
+        /* Asegura que haya espacio entre el texto y el botón */
       }
 
       .linkTo a {
@@ -67,9 +70,11 @@
 
     .col-image {
       grid-column: span 12;
+
       @media (min-width: 768px) {
         grid-column: span 6;
       }
+
       overflow: hidden;
       display: flex;
       align-items: center;

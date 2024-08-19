@@ -1,7 +1,7 @@
 import React from 'react';
-import './MarketplaceView.scss';
+import './MainBanner.scss';
 
-export default function MarketplaceView() {
+export default function MainBanner() {
   return (
     <div className="marketplace-container">
       <div className="grid">
@@ -15,12 +15,11 @@ export default function MarketplaceView() {
                 con el mundo digital. Ofrecemos una plataforma donde productores
                 locales, artesanos y emprendedores pueden vender sus productos y
                 servicios, alcanzando nuevos mercados y fortaleciendo la
-                economía de la región. Apoyamos el crecimiento sostenible, la
-                autenticidad y la calidad que solo el campo puede ofrecer.
+                economía de la región.
               </p>
             </section>
             <div className="linkTo">
-              <a routerLink="auth">Accede</a>
+              <a routerLink="auth">Registrar Tienda</a>
             </div>
           </div>
         </div>
@@ -34,5 +33,5 @@ export default function MarketplaceView() {
 
 export const layout = {
   areaId: 'content',
-  sortOrder: 10
+  sortOrder: 1
 };
