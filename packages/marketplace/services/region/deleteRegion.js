@@ -36,7 +36,7 @@ async function deleteRegion(uuid, context) {
     if (!region) {
       throw new Error('Invalid region id');
     }
-    await hookable(deleteRegionData, { ...context, connection, region: region })(
+    await hookable(deleteRegionData, { ...context, connection, region })(
       uuid,
       connection
     );

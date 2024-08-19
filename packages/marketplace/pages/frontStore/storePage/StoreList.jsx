@@ -61,7 +61,7 @@ StoreList.propTypes = {
     stores: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string,
-            id: PropTypes.number,
+            storeId: PropTypes.number,
             url: PropTypes.string
         })
     ).isRequired,
