@@ -428,6 +428,8 @@ export const query = `
         storeId
         uuid
         name
+        editUrl
+        deleteApi
       }
       total
       currentFilters {

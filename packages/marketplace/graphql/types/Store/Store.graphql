@@ -3,6 +3,7 @@ Represents a store.
 """
 type Store {
   storeId: Int!
+  regionId: Int!
   uuid: String!
   name: String!
   description: String

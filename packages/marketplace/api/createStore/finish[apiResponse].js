@@ -23,7 +23,7 @@ module.exports = async (request, response, delegate, next) => {
         },
         {
           rel: 'edit',
-          href: buildUrl('storeEdit', { id: store.id }),
+          href: buildUrl('storeEdit', { id: store.uuid }),
           action: 'GET',
           types: ['text/xml']
         }
