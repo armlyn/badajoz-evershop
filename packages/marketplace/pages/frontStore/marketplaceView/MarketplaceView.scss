@@ -1,0 +1,87 @@
+.marketplace-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #fafafa;
+    color: #333;
+    height: 100%;
+    width: 100%;
+    grid-gap: 0;
+
+    .col-text {
+      grid-column: span 12;
+      @media (min-width: 768px) {
+        grid-column: span 6;
+        text-align: left;
+      }
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
+
+      .title-part1 {
+        display: block;
+        font-size: 3.75rem;
+        font-weight: 800;
+        margin-bottom: 0.25rem;
+        line-height: 1.2;
+      }
+
+      .title-part2 {
+        font-size: 3.75rem;
+        font-weight: 800;
+        color: #007bff;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .description {
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      .linkTo {
+        background-color: #c51b1b;
+        width: max-content;
+        padding: 8px 30px;
+        border-radius: 12px;
+        margin-top: 1.5rem; /* Asegura que haya espacio entre el texto y el botón */
+      }
+
+      .linkTo a {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+        color: #fff;
+      }
+    }
+
+    .col-image {
+      grid-column: span 12;
+      @media (min-width: 768px) {
+        grid-column: span 6;
+      }
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .image {
+        margin-left: auto;
+        display: block;
+        width: 100%;
+        height: auto;
+        clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%);
+      }
+    }
+  }
+}
