@@ -14,12 +14,12 @@ export default function Menu({ menu: { items } }) {
                     </li>
                 ))} */}
                 <li className="nav-item">
-                    <a className="nav-link hover:underline" href={"/regions"}>
+                    <a className="nav-link hover:underline" href="/regions">
                         Municipios
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link hover:underline" href={"/stores"}>
+                    <a className="nav-link hover:underline" href="/stores">
                         Tiendas
                     </a>
                 </li>
@@ -33,15 +33,15 @@ Menu.propTypes = {
         items: PropTypes.arrayOf(
             PropTypes.shape({
                 name: PropTypes.string.isRequired,
-                url: PropTypes.string.isRequired,
+                url: PropTypes.string.isRequired
             })
-        ).isRequired,
-    }).isRequired,
+        ).isRequired
+    }).isRequired
 };
 
 export const layout = {
     areaId: "header",
-    sortOrder: 5,
+    sortOrder: 5
 };
 
 export const query = `
