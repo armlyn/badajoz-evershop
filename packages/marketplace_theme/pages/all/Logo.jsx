@@ -7,7 +7,7 @@ function Logo() {
     <div>
       <a href="/">
         <img
-          className="w-200"
+          className="max-w-180"
           src="/escudo_2016_ancho.svg"
           alt="Logo de Badajoz"
         />
