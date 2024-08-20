@@ -1,7 +1,11 @@
 .logo {
   display: flex;
+  img {
+    height: 100%;
+  }
   a {
     align-self: center;
+    height: 100%;
     color: var(--primary);
     padding: 3px;
     svg {

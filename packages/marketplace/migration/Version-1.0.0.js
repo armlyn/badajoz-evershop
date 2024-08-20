@@ -4,7 +4,10 @@ const { execute } = require('@evershop/postgres-query-builder');
 module.exports = exports = async (connection) => {
   await execute(
     connection,
-    ``
+    `
+    ALTER TABLE public.admin_user ADD store_uuid uuid NULL;
+    ALTER TABLE public.admin_user ADD CONSTRAINT admin_user_fk FOREIGN KEY (store_uuid) REFERENCES public.store("uuid");
+    `
   );
 
   // Create a trigger to build the url_key from the name if the url_key is not provided

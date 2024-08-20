@@ -8,9 +8,15 @@ module.exports = {
       query.where('admin_user_id', '=', id);
 
       const adminUser = await query.load(pool);
-      return adminUser ? camelCase(adminUser) : null;
+      const finalAdminUser = adminUser ? camelCase(adminUser) : null;
+      finalAdminUser.isStoreAdmin = !!finalAdminUser.storeUuid;
+      return finalAdminUser;
     },
-    currentAdminUser: (root, args, { user }) => (user ? camelCase(user) : null),
+    currentAdminUser: (root, args, { user }) => {
+      const finalAdminUser = user ? camelCase(user) : null;
+      finalAdminUser.isStoreAdmin = !!finalAdminUser.storeUuid;
+      return finalAdminUser;
+    },
     adminUsers: async (_, { filters = [] }, { pool }) => {
       const query = select().from('admin_user');
       const currentFilters = [];

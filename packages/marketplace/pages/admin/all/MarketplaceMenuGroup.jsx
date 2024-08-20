@@ -32,8 +32,8 @@ MarketplaceMenuGroup.propTypes = {
 };
 
 export const layout = {
-    areaId: 'adminMenu',
-    sortOrder: 20
+    areaId: 'provinceAdministratorNavigation',
+    sortOrder: 1
 };
 
 export const query = `

@@ -44,6 +44,7 @@ module.exports = async (request, response, delegate, next) => {
 
           if (currentAdminUser) {
             // Delete the password field
+            currentAdminUser.isStoreAdmin = !!currentAdminUser.storeUuid;
             delete currentAdminUser.password;
             request.locals.user = currentAdminUser;
             setContextValue(request, 'user', currentAdminUser);

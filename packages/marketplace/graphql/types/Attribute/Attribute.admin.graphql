@@ -1,0 +1,125 @@
+
+extend type AdminUser {
+    storeUuid: String
+}
+    
+extend type AttributeGroup {
+  storeUuid: String
+}
+
+extend type Attribute {
+  storeUuid: String
+}
+
+
+extend type AttributeCollection {
+  storeUuid: String
+}
+
+
+extend type AttributeGroupCollection {
+   storeUuid: String
+}
+
+extend type AttributeOption {
+  storeUuid: String
+}
+
+extend type CartAddress {
+    storeUuid: String
+}
+extend type CartItem {
+    storeUuid: String
+}
+extend type Cart {
+    storeUuid: String
+}
+extend type Category {
+    storeUuid: String
+}
+
+extend type CmsPage {
+    storeUuid: String
+}
+extend type CmsPageCollection {
+    storeUuid: String
+}
+extend type Collection {
+    storeUuid: String
+}
+extend type Coupon {
+    storeUuid: String
+}
+extend type Customer {
+    storeUuid: String
+}
+
+extend type CustomerGroup {
+    storeUuid: String
+}
+
+
+extend type Order {
+    storeUuid: String
+}
+
+extend type OrderAddress {
+    storeUuid: String
+}
+extend type OrderItem {
+    storeUuid: String
+}
+extend type PaymentTransaction {
+    storeUuid: String
+}
+extend type Product {
+    storeUuid: String
+}
+extend type ProductAttributeIndex {
+    storeUuid: String
+}
+extend type ProductCollection {
+    storeUuid: String
+}
+extend type ProductPrice {
+    storeUuid: String
+}
+extend type Setting {
+    storeUuid: String
+}
+extend type Shipment {
+    storeUuid: String
+}
+extend type ShipmentStatus {
+    storeUuid: String
+}
+extend type ShippingMethod {
+    storeUuid: String
+}
+extend type ShippingMethodByZone {
+    storeUuid: String
+}
+extend type TaxRate {
+    storeUuid: String
+}
+extend type TaxClass {
+    storeUuid: String
+}
+extend type TaxClassCollection {
+    storeUuid: String
+}
+extend type VariantAttribute {
+    storeUuid: String
+}
+extend type VariantAttributeOption {
+    storeUuid: String
+}
+extend type VariantAttributeIndex {
+    storeUuid: String
+}
+extend type Variant {
+    storeUuid: String
+}
+extend type VariantGroup {
+    storeUuid: String
+}

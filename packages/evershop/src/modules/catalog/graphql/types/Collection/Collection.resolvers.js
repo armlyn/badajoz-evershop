@@ -13,9 +13,10 @@ const {
 
 module.exports = {
   Query: {
-    collection: async (_, { code }, { pool }) => {
+    collection: async (_, { code }, { pool, user }) => {
       const query = select().from('collection');
       query.where('code', '=', code);
+      query.where('store_uuid', '=', user.storeUuid);
       const result = await query.load(pool);
       return result ? camelCase(result) : null;
     },
@@ -29,6 +30,7 @@ module.exports = {
   Collection: {
     products: async (collection, { filters = [] }, { user }) => {
       const query = getProductsByCollectionBaseQuery(collection.collectionId);
+      query.where('store_uuid', '=', user.storeUuid);
       const root = new ProductCollection(query);
       await root.init(filters, !!user);
       return root;
