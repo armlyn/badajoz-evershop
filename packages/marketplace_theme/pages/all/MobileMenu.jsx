@@ -11,7 +11,7 @@ export default function MobileMenu({ menu: { items } }) {
         className="menu-icon"
         href="#"
         onClick={(e) => {
-          // e.preventDefault();
+          e.preventDefault();
           setShow(!show);
         }}
       >
@@ -32,17 +32,16 @@ export default function MobileMenu({ menu: { items } }) {
       </a>
       {show && (
         <ul className="nav justify-content-center">
-            <li className="nav-item" >
-              <a className="nav-link" href='/regions'>
-                Municipios
-              </a>
-            </li>
-            <li className="nav-item" >
-              <a className="nav-link" href='/stores'>
-                Tiendas
-              </a>
-            </li>
-
+          <li className="nav-item">
+            <a className="nav-link" href="/regions">
+              Municipios
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/stores">
+              Tiendas
+            </a>
+          </li>
         </ul>
       )}
     </div>
@@ -61,11 +60,7 @@ MobileMenu.propTypes = {
 };
 
 export const layout = {
-<<<<<<< HEAD
   areaId: 'icon-wrapper-toggle',
-=======
-  areaId: 'icon-wrapper',
->>>>>>> 82689edeab1e2f1e1af84134fe2498ab6ba971c5
   sortOrder: 50
 };
 
