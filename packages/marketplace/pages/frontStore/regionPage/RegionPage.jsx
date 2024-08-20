@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import RegionList from './RegionList';
-import './StorePage.scss';
+import './RegionPage.scss';
 
 export default function RegionPage({
     regions: { items: regions, total, currentFilters = [] }
