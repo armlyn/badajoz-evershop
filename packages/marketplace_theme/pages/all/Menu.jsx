@@ -13,35 +13,35 @@ export default function Menu({ menu: { items } }) {
                         </a>
                     </li>
                 ))} */}
-        <li className="nav-item">
-          <a className="nav-link hover:underline" href="/regions">
-            Municipios
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link hover:underline" href="/stores">
-            Tiendas
-          </a>
-        </li>
-      </ul>
-    </div>
-  );
+                <li className="nav-item">
+                    <a className="nav-link hover:underline" href="/regions">
+                        Municipios
+                    </a>
+                </li>
+                <li className="nav-item">
+                    <a className="nav-link hover:underline" href="/stores">
+                        Tiendas
+                    </a>
+                </li>
+            </ul>
+        </div>
+    );
 }
 
 Menu.propTypes = {
-  menu: PropTypes.shape({
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired
-      })
-    ).isRequired
-  }).isRequired
+    menu: PropTypes.shape({
+        items: PropTypes.arrayOf(
+            PropTypes.shape({
+                name: PropTypes.string.isRequired,
+                url: PropTypes.string.isRequired
+            })
+        ).isRequired
+    }).isRequired
 };
 
 export const layout = {
-  areaId: 'header',
-  sortOrder: 50
+    areaId: "header",
+    sortOrder: 5
 };
 
 export const query = `
