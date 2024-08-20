@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import RegionList from './RegionList';
+import './StorePage.scss';
 
 export default function RegionPage({
     regions: { items: regions, total, currentFilters = [] }
@@ -9,9 +10,9 @@ export default function RegionPage({
     return (
 
         <div className="page-width">
-            <h3 className="uppercase h5 tracking-widest">
+            <h1 className="region__name">
                 Municipios
-            </h3>
+            </h1>
             <RegionList regions={regions} countPerRow={4} />
         </div>
     );
