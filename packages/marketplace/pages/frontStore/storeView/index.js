@@ -16,7 +16,7 @@ module.exports = async (request, response, stack, next) => {
             response.status(404);
             next();
         } else {
-            setContextValue(request, 'storeId', store.id);
+            setContextValue(request, 'storeId', store.store_id);
             setContextValue(request, 'pageInfo', {
                 title: store.name,
                 description: store.description,

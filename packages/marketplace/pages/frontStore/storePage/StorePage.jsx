@@ -26,6 +26,7 @@ StorePage.propTypes = {
         uuid: PropTypes.string,
         name: PropTypes.string,
         address: PropTypes.string,
+        url: PropTypes.string,
         status: PropTypes.number,
         editUrl: PropTypes.string,
         updateApi: PropTypes.string,
@@ -57,6 +58,7 @@ export const query = `
         name
         address
         status
+        url
       }
       total
       currentFilters {

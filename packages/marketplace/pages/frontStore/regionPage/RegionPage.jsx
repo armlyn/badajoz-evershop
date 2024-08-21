@@ -26,6 +26,7 @@ RegionPage.propTypes = {
                 uuid: PropTypes.string,
                 name: PropTypes.string,
                 description: PropTypes.string,
+                url: PropTypes.string,
                 editUrl: PropTypes.string,
                 updateApi: PropTypes.string,
                 deleteApi: PropTypes.string
@@ -55,6 +56,7 @@ export const query = `
         uuid
         name
         description
+        url
       }
       total
       currentFilters {
