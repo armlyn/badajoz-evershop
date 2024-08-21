@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "reward_id": {
+      "type": "integer",
+      "description": "Primary key, auto-incremented"
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier"
+    },
+    "seller_user_id": {
+      "type": "integer",
+      "description": "Foreign key referencing seller_user(seller_user_id)"
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 255,
+      "description": "Name of the reward"
+    },
+    "description": {
+      "type": ["string", "null"],
+      "description": "Detailed description of the reward"
+    },
+    "points_required": {
+      "type": "integer",
+      "description": "Points required to redeem the reward"
+    },
+    "status": {
+      "type": "boolean",
+      "default": true,
+      "description": "Status indicating if the reward is active"
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start date and time of the reward availability"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "End date and time of the reward availability"
+    }
+  },
+  "required": ["seller_user_id", "name", "points_required", "status"],
+  "additionalProperties": true,
+  "errorMessage": {
+    "properties": {
+      "reward_id": "Reward ID is invalid",
+      "uuid": "UUID is invalid",
+      "seller_user_id": "Seller user ID is invalid",
+      "name": "Name is required and must be a string with a maximum length of 255 characters",
+      "points_required": "Points required is invalid",
+      "status": "Status is invalid"
+    }
+  }
+}

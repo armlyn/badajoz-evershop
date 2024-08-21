@@ -1,0 +1,32 @@
+"""
+Represents a reward
+"""
+type Reward {
+  rewardId: Int!
+  uuid: String!
+  sellerUserId: Int
+  name: String!
+  description: String
+  pointsRequired: Int!
+  status: Boolean!
+  startDate: DateTime
+  endDate: DateTime
+  editUrl: String!
+  updateApi: String!
+  deleteApi: String!
+}
+
+"""
+Returns a collection of rewards
+"""
+type RewardCollection {
+  items: [Reward]
+  currentPage: Int!
+  total: Int!
+  currentFilters: [Filter]
+}
+
+extend type Query {
+  reward(id: Int): Reward
+  rewards(filters: [FilterInput]): RewardCollection
+}

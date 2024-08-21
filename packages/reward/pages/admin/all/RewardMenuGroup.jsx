@@ -1,30 +1,39 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
-import Icon from '@heroicons/react/solid/esm/GiftIcon';
+import StoreIcon from '@heroicons/react/solid/esm/OfficeBuildingIcon';
+// import RegionIcon from '@heroicons/react/solid/esm/MapIcon';
 import NavigationItemGroup from '@components/admin/cms/NavigationItemGroup';
 
-export default function RewardMenuGroup() {
-  return (
-    <NavigationItemGroup
-      id="rewardMenuGroup"
-      name="Reward"
-      items={[
-        {
-          Icon,
-          url: './',
-          title: 'Reward'
-        }
-      ]}
-    />
-  );
+export default function rewardMenuGroup({
+  rewardGrid
+}) {
+    return (
+        <NavigationItemGroup
+            id="rewardMenuGroup"
+            name="Reward"
+            items={[
+                {
+                    Icon: StoreIcon,
+                    url: rewardGrid,
+                    title: 'Reward'
+                }
+            ]}
+        />
+    );
 }
 
-// RewardMenuGroup.propTypes = {
-//   rewardNew: PropTypes.string.isRequired
-// };
-
-export const layout = {
-  areaId: 'adminMenu',
-  sortOrder: 50
+rewardMenuGroup.propTypes = {
+  rewardGrid: PropTypes.string.isRequired
 };
 
+export const layout = {
+    areaId: 'adminMenu',
+    sortOrder: 20
+};
+
+export const query = `
+  query Query {
+    rewardGrid: url(routeId:"rewardGrid")
+
+  }
+`;
