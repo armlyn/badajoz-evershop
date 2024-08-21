@@ -1,12 +1,9 @@
 const {
   buildFilterFromUrl
 } = require('@evershop/evershop/src/lib/util/buildFilterFromUrl');
-// const {
-//   setContextValue
-// } = require('@graphql/services/contextHelper');
 const {
-  setContextValue
-} = require('../../../../graphql/services/contextHelper');
+    setContextValue
+} = require('@evershop/evershop/src/modules/graphql/services/contextHelper');
 
 module.exports = (request) => {
   setContextValue(request, 'pageInfo', {
