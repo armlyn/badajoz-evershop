@@ -60,9 +60,19 @@
         border-radius: 8px;
         margin-top: 1.5rem;
         margin: 0 auto;
+        transition: all 0.5s ease;
       }
-      .linkTo:hover {
+      .linkTo:hover,
+      .linkTo:active {
         cursor: pointer;
+        background-color: #b30404;
+        transform: scale(1.08);
+        font-weight: 800;
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+      }
+      .linkTo:active {
+        background-color: #df3c3c;
+        font-weight: 800;
       }
 
       .linkTo a {
