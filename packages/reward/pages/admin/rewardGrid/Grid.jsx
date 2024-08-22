@@ -161,6 +161,7 @@ Actions.propTypes = {
 export default function rewardGrid(
   { rewards: { items: rewards, total, currentFilters = [] }}
 ) {
+  console.log(rewards)
   const page = currentFilters.find((filter) => filter.key === 'page')
     ? currentFilters.find((filter) => filter.key === 'page').value
     : 1;
@@ -189,7 +190,7 @@ export default function rewardGrid(
                             id="reward"
                             placeholder="Search"
                             value={
-                              currentFilters.find((f) => f.key === 'coupon')
+                              currentFilters.find((f) => f.key === 'reward')
                                 ?.value
                             }
                             onKeyPress={(e) => {
@@ -350,7 +351,7 @@ export default function rewardGrid(
             selectedIds={selectedRows}
             setSelectedRows={setSelectedRows}
           />
-          {rewards.items.map((c) => (
+          {rewards.map((c) => (
             <tr key={c.rewardId}>
               <td>
                 <Checkbox
@@ -377,7 +378,7 @@ export default function rewardGrid(
                     // eslint-disable-next-line react/no-unstable-nested-components
                     component: {
                       default: () => (
-                        <CouponName url={c.editUrl} name={c.rewardName} />
+                        <CouponName url={c.editUrl} name={c.name} />
                       )
                     },
                     sortOrder: 10
@@ -401,7 +402,7 @@ export default function rewardGrid(
                   {
                     // eslint-disable-next-line react/no-unstable-nested-components
                     component: {
-                      default: () => <TextRow text={c.endDate?.text || '--'} />
+                      default: () => <TextRow text={c.startDate?.text || '--'} />
                     },
                     sortOrder: 30
                   },
@@ -426,7 +427,7 @@ export default function rewardGrid(
           ))}
         </tbody>
       </table>
-      {rewards.items.length === 0 && (
+      {rewards.length === 0 && (
         <div className="flex w-full justify-center">
           There is no reward to display
         </div>
@@ -505,3 +506,7 @@ export const query = `
     }
   }
 `;
+export const variables = `
+{
+  filters: getContextValue('filtersFromUrl')
+}`;
