@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeading from '@components/admin/cms/PageHeading';
 
 export default function Heading() {
-  return <PageHeading backUrl={null} heading="Reward" />;
+  return <PageHeading backUrl={null} heading="Rewards" />;
 }
 
 export const layout = {

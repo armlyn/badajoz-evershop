@@ -16,12 +16,7 @@ export default function FormContent({ gridUrl }) {
             <Area id="rewardEditGeneral" noOuter />
           </Card.Session>
         </Card>
-        {/* <Card title="Discount Type">
-          <Card.Session>
-            <Area id="couponEditDiscountType" noOuter />
-          </Card.Session>
-        </Card> */}
-        <div className="grid grid-cols-3 gap-x-2 grid-flow-row ">
+        {/* <div className="grid grid-cols-3 gap-x-2 grid-flow-row ">
           <div className="col-span-2 grid grid-cols-1 gap-2 auto-rows-max">
             <Card title="Order conditions">
               <Card.Session>
@@ -36,7 +31,7 @@ export default function FormContent({ gridUrl }) {
               </Card.Session>
             </Card>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="form-submit-button flex border-t border-divider mt-15 pt-15 justify-between">
         <Button

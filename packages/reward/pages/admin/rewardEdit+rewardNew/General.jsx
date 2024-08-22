@@ -7,6 +7,7 @@ import { get } from '@evershop/evershop/src/lib/util/get';
 import { Setting } from '@components/admin/promotion/couponEdit/Setting';
 
 export default function General({ reward = {} }) {
+  console.log(reward)
   return (
     <Area
       id="rewardFormGeneral"
@@ -18,8 +19,8 @@ export default function General({ reward = {} }) {
             value: get(reward, 'name'),
             validationRules: ['notEmpty'],
             type: 'text',
-            label: 'Reward code',
-            placeholder: 'Enter reward code'
+            label: 'Reward',
+            placeholder: 'Enter reward'
           },
           sortOrder: 10
         },
@@ -36,6 +37,7 @@ export default function General({ reward = {} }) {
           sortOrder: 20
         },
         {
+          //corregir
           component: { default: Toggle },
           props: {
             name: 'status',
@@ -50,7 +52,7 @@ export default function General({ reward = {} }) {
           props: {
             startDate: get(reward, 'startDate.text', ''),
             endDate: get(reward, 'endDate.text', ''),
-            // discountAmount: get(reward, 'discountAmount', '')
+            discountAmount: get(reward, 'discountAmount', '')
           },
           sortOrder: 40
         }
@@ -85,6 +87,7 @@ export const query = `
       name
       status
       description
+      discountAmount
       startDate {
         text
       }

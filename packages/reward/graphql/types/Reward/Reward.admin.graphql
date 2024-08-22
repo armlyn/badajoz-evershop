@@ -8,13 +8,14 @@ type Reward {
   name: String!
   description: String
   pointsRequired: Int!
-  status: Boolean!
+  status: Int!
   startDate: DateTime
   endDate: DateTime
   editUrl: String!
   updateApi: String!
   deleteApi: String!
   userCondition: UserCondition
+  discountAmount: Float!
 
 
 }

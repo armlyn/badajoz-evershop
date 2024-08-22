@@ -169,9 +169,10 @@ export default function rewardGrid(
     ? currentFilters.find((filter) => filter.key === 'limit').value
     : 20;
   const [selectedRows, setSelectedRows] = useState([]);
+  console.log(rewards)
 
   return (
-    // <h1>Hola</h1>
+
       <Card>
         <Card.Session
           title={
@@ -296,14 +297,9 @@ export default function rewardGrid(
               coreComponents={[
                 {
                   // eslint-disable-next-line react/no-unstable-nested-components
+                  // Quitar el sort y ponerlo como name
                   component: {
-                    default: () => (
-                      <SortableHeader
-                        title="Name"
-                        name="name"
-                        currentFilters={currentFilters}
-                      />
-                    )
+                    default: () => <DummyColumnHeader title="Name" />
                   },
                   sortOrder: 10
                 },
@@ -317,16 +313,23 @@ export default function rewardGrid(
                 {
                   // eslint-disable-next-line react/no-unstable-nested-components
                   component: {
-                    default: () => <DummyColumnHeader title="Start Date" />
+                    default: () => <DummyColumnHeader title="Discount amount" />
                   },
                   sortOrder: 30
                 },
                 {
                   // eslint-disable-next-line react/no-unstable-nested-components
                   component: {
-                    default: () => <DummyColumnHeader title="End Date" />
+                    default: () => <DummyColumnHeader title="Start Date" />
                   },
                   sortOrder: 40
+                },
+                {
+                  // eslint-disable-next-line react/no-unstable-nested-components
+                  component: {
+                    default: () => <DummyColumnHeader title="End Date" />
+                  },
+                  sortOrder: 50
                 },
                 {
                   // eslint-disable-next-line react/no-unstable-nested-components
@@ -339,7 +342,7 @@ export default function rewardGrid(
                       />
                     )
                   },
-                  sortOrder: 50
+                  sortOrder: 60
                 }
               ]}
             />
@@ -388,6 +391,16 @@ export default function rewardGrid(
                     component: {
                       default: () => (
                         <TextRow text={c.pointsRequired} />
+                      )
+                    },
+                    sortOrder: 20
+                  },
+                  {
+                    // eslint-disable-next-line react/no-unstable-nested-components
+                    // Aquiiiii
+                    component: {
+                      default: () => (
+                        <TextRow text={c.discountAmount} />
                       )
                     },
                     sortOrder: 20
@@ -454,6 +467,7 @@ rewardGrid.propTypes = {
         name: PropTypes.string.isRequired,
         description: PropTypes.string,
         pointsRequired: PropTypes.number.isRequired,
+        discountAmount: PropTypes.number.isRequired,
         status: PropTypes.bool.isRequired,
         startDate: PropTypes.string.isRequired, 
         endDate: PropTypes.string.isRequired
@@ -487,6 +501,7 @@ export const query = `
         description
         pointsRequired
         status
+        discountAmount
         startDate {
           text
         }

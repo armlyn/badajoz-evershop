@@ -17,6 +17,6 @@ export const layout = {
 
 export const query = `
   query Query {
-    newRewarUrl: url(routeId: "rewardNew")
+    newRewardUrl: url(routeId: "rewardNew")
   }
 `;
