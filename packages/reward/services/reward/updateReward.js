@@ -59,7 +59,7 @@ async function updateRewardData(uuid, data, connection) {
 }
 
 /**
- * Update coupon service. This service will update a coupon with all related data
+ * Update reward service. This service will update a reward with all related data
  * @param {Object} data
  * @param {Object} context
  */
@@ -68,10 +68,10 @@ async function updateReward(uuid, data, context) {
   await startTransaction(connection);
   try {
     const rewardData = await getValue('rewardDataBeforeUpdate', data);
-    // Validate coupon data
+    // Validate reward data
     validateRewardDataBeforeInsert(rewardData);
 
-    // Insert coupon data
+    // Insert reward data
     const reward = await hookable(updateRewardData, { ...context, connection })(
       uuid,
       rewardData,

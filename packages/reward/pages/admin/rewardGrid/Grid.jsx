@@ -473,7 +473,7 @@ rewardGrid.propTypes = {
 
 export const layout = {
   areaId: 'content',
-  sortOrder: 10
+  sortOrder: 20
 };
 
 export const query = `

@@ -12,10 +12,10 @@ const customStyles = {
 };
 
 export default function CustomerCondition({
-  coupon = {},
+  reward = {},
   groups: { items: customerGroups }
 }) {
-  const condition = coupon?.userCondition || {};
+  const condition = reward?.userCondition || {};
   const selectedGroups = (condition.groups || [])
     .filter((g) =>
       customerGroups.find(
@@ -33,7 +33,7 @@ export default function CustomerCondition({
     });
   return (
     <Area
-      id="couponCustomerCondition"
+      id="rewardCustomerCondition"
       coreComponents={[
         {
           component: {
@@ -54,7 +54,7 @@ export default function CustomerCondition({
           },
           props: {},
           sortOrder: 10,
-          id: 'couponCustomerConditionGroup'
+          id: 'rewardCustomerConditionGroup'
         },
         {
           component: { default: Field },
@@ -84,7 +84,7 @@ export default function CustomerCondition({
             )
           },
           sortOrder: 20,
-          id: 'couponCustomerConditionEmail'
+          id: 'rewardCustomerConditionEmail'
         },
         {
           component: { default: Field },
@@ -98,7 +98,7 @@ export default function CustomerCondition({
             instruction: 'Minimum purchased amount'
           },
           sortOrder: 30,
-          id: 'couponCustomerConditionPurchased'
+          id: 'rewardCustomerConditionPurchased'
         }
       ]}
     />
@@ -106,7 +106,7 @@ export default function CustomerCondition({
 }
 
 CustomerCondition.propTypes = {
-  coupon: PropTypes.shape({
+  reward: PropTypes.shape({
     userCondition: PropTypes.shape({
       groups: PropTypes.arrayOf(PropTypes.number),
       emails: PropTypes.string,
@@ -124,20 +124,20 @@ CustomerCondition.propTypes = {
 };
 
 CustomerCondition.defaultProps = {
-  coupon: {},
+  reward: {},
   groups: {
     items: []
   }
 };
 
 export const layout = {
-  areaId: 'couponEditRight',
+  areaId: 'rewardEditRight',
   sortOrder: 10
 };
 
 export const query = `
   query Query {
-    coupon(id: getContextValue('couponId', null)) {
+    reward(id: getContextValue('rewardId', null)) {
       userCondition {
         groups
         emails

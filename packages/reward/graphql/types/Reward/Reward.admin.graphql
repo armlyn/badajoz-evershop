@@ -1,10 +1,3 @@
-scalar JSON
-
-extend type Cart {
-  applyRewardApi: String!
-}
-
-
 """
 Represents a reward
 """
@@ -21,37 +14,20 @@ type Reward {
   editUrl: String!
   updateApi: String!
   deleteApi: String!
-}
-"""
-The `FilterInput` type represents a filter input object. Operations must be one of the following: eq, neq, gt, gteq, lt, lteq, like, nlike, in, nin.
-"""
-enum FilterOperation {
-  eq
-  neq
-  gt
-  gteq
-  lt
-  lteq
-  like
-  nlike
-  in
-  nin
+  userCondition: UserCondition
+
+
 }
 
-input FilterInput {
-  key: String!
-  operation: FilterOperation!
-  value: String
-}
-"""
-The `Filter` type represents a filter object.
-"""
-type Filter {
-  key: String!
-  operation: String!
-  value: String!
-}
 
+"""
+Represents the user condition of a reward.
+"""
+type UserCondition {
+  groups: [String]
+  emails: String
+  purchased: String
+}
 
 """
 Returns a collection of rewards

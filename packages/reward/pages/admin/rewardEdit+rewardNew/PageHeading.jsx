@@ -2,24 +2,24 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import PageHeading from '@components/admin/cms/PageHeading';
 
-export default function CouponEditPageHeading({ backUrl, coupon }) {
+export default function RewardEditPageHeading({ backUrl, reward }) {
   return (
     <PageHeading
       backUrl={backUrl}
-      heading={coupon ? `Editing ${coupon.coupon}` : 'Create A New Coupon'}
+      heading={reward ? `Editing ${reward.name}` : 'Create A New Reward'}
     />
   );
 }
 
-CouponEditPageHeading.propTypes = {
+RewardEditPageHeading.propTypes = {
   backUrl: PropTypes.string.isRequired,
-  coupon: PropTypes.shape({
-    coupon: PropTypes.string
+  reward: PropTypes.shape({
+    name: PropTypes.string
   })
 };
 
-CouponEditPageHeading.defaultProps = {
-  coupon: null
+RewardEditPageHeading.defaultProps = {
+  reward: null
 };
 
 export const layout = {
@@ -29,9 +29,9 @@ export const layout = {
 
 export const query = `
   query Query {
-    coupon(id: getContextValue("couponId", null)) {
-      coupon
+    reward(id: getContextValue("rewardId", null)) {
+      name
     }
-    backUrl: url(routeId: "couponGrid")
+    backUrl: url(routeId: "rewardGrid")
   }
 `;

@@ -3,7 +3,7 @@ const { pool } = require('@evershop/evershop/src/lib/postgres/connection');
 const { getValueSync } = require('@evershop/evershop/src/lib/util/registry');
 
 /**
- * This method validate a coupon.
+ * This method validate a reward.
  * @param {Cart} cart
  * @param {String} rewardCode
  * @returns {Boolean}

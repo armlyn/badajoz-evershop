@@ -42,7 +42,7 @@ async function insertRewardData(data, connection) {
 }
 
 /**
- * Create coupon service. This service will create a coupon with all related data
+ * Create reward service. This service will create a reward with all related data
  * @param {Object} data
  * @param {Object} context
  */
@@ -51,10 +51,10 @@ async function createReward(data, context) {
   await startTransaction(connection);
   try {
     const rewardData = await getValue('rewardDataBeforeCreate', data);
-    // Validate coupon data
+    // Validate reward data
     validateRewardDataBeforeInsert(rewardData);
 
-    // Insert coupon data
+    // Insert reward data
     const reward = await hookable(insertRewardData, { ...context, connection })(
       rewardData,
       connection

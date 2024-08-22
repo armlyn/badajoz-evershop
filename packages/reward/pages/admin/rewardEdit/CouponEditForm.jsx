@@ -6,7 +6,7 @@ import { Form } from '@components/common/form/Form';
 import { get } from '@evershop/evershop/src/lib/util/get';
 
 export default function RewardEditForm({ action }) {
-  const id = 'rwaerdForm';
+  const id = 'rewardForm';
   return (
     <Form
       method="PATCH"
@@ -24,7 +24,7 @@ export default function RewardEditForm({ action }) {
             )
           );
         } else {
-          toast.success('Coupon saved successfully!');
+          toast.success('Reward saved successfully!');
         }
       }}
       submitBtn={false}
@@ -32,7 +32,6 @@ export default function RewardEditForm({ action }) {
     >
       <Area id={id} noOuter />
     </Form>
-    // <h1>Hola edit </h1>
   );
 }
 
@@ -45,4 +44,9 @@ export const layout = {
   sortOrder: 10
 };
 
-
+export const query = `
+  query Query {
+    action: url(routeId: "updateReward", params: [{key: "id", value: getContextValue("rewardUuid")}]),
+    gridUrl: url(routeId: "rewardGrid")
+  }
+`;

@@ -6,20 +6,20 @@ import { Toggle } from '@components/common/form/fields/Toggle';
 import { get } from '@evershop/evershop/src/lib/util/get';
 import { Setting } from '@components/admin/promotion/couponEdit/Setting';
 
-export default function General({ coupon = {} }) {
+export default function General({ reward = {} }) {
   return (
     <Area
-      id="couponFormGeneral"
+      id="rewardFormGeneral"
       coreComponents={[
         {
           component: { default: Field },
           props: {
-            name: 'coupon',
-            value: get(coupon, 'coupon'),
+            name: 'reward',
+            value: get(reward, 'name'),
             validationRules: ['notEmpty'],
             type: 'text',
-            label: 'Coupon code',
-            placeholder: 'Enter coupon code'
+            label: 'Reward code',
+            placeholder: 'Enter reward code'
           },
           sortOrder: 10
         },
@@ -27,7 +27,7 @@ export default function General({ coupon = {} }) {
           component: { default: Field },
           props: {
             name: 'description',
-            value: get(coupon, 'description'),
+            value: get(reward, 'description'),
             type: 'textarea',
             label: 'Description',
             validationRules: ['notEmpty'],
@@ -39,7 +39,7 @@ export default function General({ coupon = {} }) {
           component: { default: Toggle },
           props: {
             name: 'status',
-            value: get(coupon, 'status', 1).toString(),
+            value: get(reward, 'status', 1).toString(),
             validationRules: ['notEmpty'],
             label: 'Status'
           },
@@ -48,22 +48,11 @@ export default function General({ coupon = {} }) {
         {
           component: { default: Setting },
           props: {
-            startDate: get(coupon, 'startDate.text', ''),
-            endDate: get(coupon, 'endDate.text', ''),
-            discountAmount: get(coupon, 'discountAmount', '')
+            startDate: get(reward, 'startDate.text', ''),
+            endDate: get(reward, 'endDate.text', ''),
+            // discountAmount: get(reward, 'discountAmount', '')
           },
           sortOrder: 40
-        },
-        {
-          component: { default: Field },
-          props: {
-            name: 'free_shipping',
-            value: 1,
-            type: 'checkbox',
-            label: 'Free shipping?',
-            isChecked: parseInt(get(coupon, 'freeShipping'), 10) === 1
-          },
-          sortOrder: 50
         }
       ]}
     />
@@ -71,34 +60,31 @@ export default function General({ coupon = {} }) {
 }
 
 General.propTypes = {
-  coupon: PropTypes.shape({
-    coupon: PropTypes.string,
-    status: PropTypes.number,
+  reward: PropTypes.shape({
+    name: PropTypes.string,
+    // status: PropTypes.number,
     description: PropTypes.string,
-    discountAmount: PropTypes.number,
-    freeShipping: PropTypes.number,
+    // discountAmount: PropTypes.number,
     startDate: PropTypes.string,
     endDate: PropTypes.string
   })
 };
 
 General.defaultProps = {
-  coupon: {}
+  reward: {}
 };
 
 export const layout = {
-  areaId: 'couponEditGeneral',
+  areaId: 'rewardEditGeneral',
   sortOrder: 10
 };
 
 export const query = `
   query Query {
-    coupon(id: getContextValue('couponId', null)) {
-      coupon
+    reward(id: getContextValue('rewardId', null)) {
+      name
       status
       description
-      discountAmount
-      freeShipping
       startDate {
         text
       }

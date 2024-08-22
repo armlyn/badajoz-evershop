@@ -15,7 +15,7 @@ async function deleteRewardData(uuid, connection) {
 }
 
 /**
- * Delete coupon service. This service will delete a coupon with all related data
+ * Delete reward service. This service will delete a reward with all related data
  * @param {String} uuid
  * @param {Object} context
  */

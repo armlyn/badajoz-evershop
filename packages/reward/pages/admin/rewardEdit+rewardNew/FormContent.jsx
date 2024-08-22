@@ -13,26 +13,26 @@ export default function FormContent({ gridUrl }) {
       <div className="grid grid-cols-1 gap-2">
         <Card title="General">
           <Card.Session>
-            <Area id="couponEditGeneral" noOuter />
+            <Area id="rewardEditGeneral" noOuter />
           </Card.Session>
         </Card>
-        <Card title="Discount Type">
+        {/* <Card title="Discount Type">
           <Card.Session>
             <Area id="couponEditDiscountType" noOuter />
           </Card.Session>
-        </Card>
+        </Card> */}
         <div className="grid grid-cols-3 gap-x-2 grid-flow-row ">
           <div className="col-span-2 grid grid-cols-1 gap-2 auto-rows-max">
             <Card title="Order conditions">
               <Card.Session>
-                <Area id="couponEditLeft" noOuter className="col-8" />
+                <Area id="rewardEditLeft" noOuter className="col-8" />
               </Card.Session>
             </Card>
           </div>
           <div className="col-span-1 grid grid-cols-1 gap-2 auto-rows-max">
             <Card title="Customer conditions">
               <Card.Session>
-                <Area id="couponEditRight" className="col-4" noOuter />
+                <Area id="rewardEditRight" className="col-4" noOuter />
               </Card.Session>
             </Card>
           </div>
@@ -51,7 +51,7 @@ export default function FormContent({ gridUrl }) {
           title="Save"
           onAction={() => {
             document
-              .getElementById('couponForm')
+              .getElementById('rewardForm')
               .dispatchEvent(
                 new Event('submit', { cancelable: true, bubbles: true })
               );
@@ -68,12 +68,12 @@ FormContent.propTypes = {
 };
 
 export const layout = {
-  areaId: 'couponForm',
+  areaId: 'rewardForm',
   sortOrder: 10
 };
 
 export const query = `
   query Query {
-    gridUrl: url(routeId: "couponGrid")
+    gridUrl: url(routeId: "rewardGrid")
   }
 `;

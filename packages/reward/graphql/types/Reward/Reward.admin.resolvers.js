@@ -27,6 +27,13 @@ module.exports = {
     }
   },
   Reward: {
+      userCondition: ({ userCondition }) => {
+      if (!userCondition) {
+        return null;
+      } else {
+        return camelCase(userCondition);
+      }
+    },
     editUrl: ({ uuid }) => buildUrl('rewardEdit', { id: uuid }),
     updateApi: (reward) => buildUrl('updateReward', { id: reward.uuid }),
     deleteApi: (reward) => buildUrl('deleteReward', { id: reward.uuid })
