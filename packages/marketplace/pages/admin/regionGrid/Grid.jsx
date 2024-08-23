@@ -9,10 +9,10 @@ import Pagination from '@components/common/grid/Pagination';
 import { useAlertContext } from '@components/common/modal/Alert';
 import { Checkbox } from '@components/common/form/fields/Checkbox';
 import { Card } from '@components/admin/cms/Card';
-import RegionNameRow from './rows/RegionName';
 import SortableHeader from '@components/common/grid/headers/Sortable';
 import { Form } from '@components/common/form/Form';
 import { Field } from '@components/common/form/Field';
+import RegionNameRow from './rows/RegionName';
 
 function Actions({ regions = [], selectedIds = [] }) {
   const { openAlert, closeAlert } = useAlertContext();
@@ -209,7 +209,7 @@ export default function RegionGrid({
                       default: () => <RegionNameRow id="name" region={c} />
                     },
                     sortOrder: 10
-                  },
+                  }
                 ]}
               />
             </tr>

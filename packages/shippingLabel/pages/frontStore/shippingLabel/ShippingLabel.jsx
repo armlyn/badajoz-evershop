@@ -72,12 +72,13 @@ export default function ShippingLabel() {
     const [shippingData, setshippingData] = useState(dataDefault);
 
 
+    // eslint-disable-next-line no-unused-vars
     const handleClick = () => {
         generateLabelPDF();
     };
 
     const [{ data, fetching, error }] = useQuery({
-      query: OrderQuery,
+      query: OrderQuery
     });
     
     useEffect(() => {
@@ -125,8 +126,8 @@ export default function ShippingLabel() {
           <div className="order-info item">
             <p className="order-number">Número de Pedido: {shippingData.orderInfo.orderNumber}</p>
             <p className="order-date">Fecha de Pedido: {shippingData.orderInfo.orderDate}</p>
-             <p className="delivery-date">Fecha Estimada de Entrega: {shippingData.orderInfo.orderDate}</p>  {/* Fata aqui fecha de entrega*/}
-            <Barcode id='barcode' value={"1"} displayValue={false} />   {/* Falta fijar como de creara codigo de barra */}
+             <p className="delivery-date">Fecha Estimada de Entrega: {shippingData.orderInfo.orderDate}</p>  {/* Fata aqui fecha de entrega */}
+            <Barcode id='barcode' value="1" displayValue={false} />   {/* Falta fijar como de creara codigo de barra */}
           </div>
         </div>
       );

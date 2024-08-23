@@ -5,7 +5,7 @@ module.exports.getQrCode = async (
     text
 ) => {
     const apiUrl = getEnv('QR_API_URL', '');
-    console.log('QR_API_URL', apiUrl);
+    // console.log('QR_API_URL', apiUrl);
     const url = `${apiUrl}qr?text=${text}&size=500&format=png`;
 
     const response = await axios.post(url, {

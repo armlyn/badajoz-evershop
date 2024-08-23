@@ -6,7 +6,7 @@ import Pagination from '@components/common/grid/Pagination';
 import { Checkbox } from '@components/common/form/fields/Checkbox';
 import { useAlertContext } from '@components/common/modal/Alert';
 import CouponName from '@components/admin/promotion/couponGrid/rows/CouponName';
-import BasicRow from '@components/common/grid/rows/BasicRow';
+// import BasicRow from '@components/common/grid/rows/BasicRow';
 import StatusRow from '@components/common/grid/rows/StatusRow';
 import { Card } from '@components/admin/cms/Card';
 import TextRow from '@components/common/grid/rows/TextRow';
@@ -161,7 +161,6 @@ Actions.propTypes = {
 export default function rewardGrid(
   { rewards: { items: rewards, total, currentFilters = [] }}
 ) {
-  console.log(rewards)
   const page = currentFilters.find((filter) => filter.key === 'page')
     ? currentFilters.find((filter) => filter.key === 'page').value
     : 1;
@@ -169,7 +168,6 @@ export default function rewardGrid(
     ? currentFilters.find((filter) => filter.key === 'limit').value
     : 20;
   const [selectedRows, setSelectedRows] = useState([]);
-  console.log(rewards)
 
   return (
 
@@ -243,6 +241,7 @@ export default function rewardGrid(
                               }
                             ]}
                             selectedOption={
+                              // eslint-disable-next-line no-nested-ternary
                               currentFilters.find((f) => f.key === 'status')
                                 ? currentFilters.find((f) => f.key === 'status')
                                     .value === '1'
@@ -449,7 +448,7 @@ export default function rewardGrid(
       <Pagination
         page={page}
         limit={limit}
-        total={rewards.total}
+        total={total}
       />
     </Card>
 

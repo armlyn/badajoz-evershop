@@ -32,17 +32,16 @@ module.exports.mapResponseToData = (response) => {
         (orderData.shippingAddress.country && orderData.shippingAddress.country.name) || ''
       ].filter(part => part).join(', ') : ''),
       postalCode: (orderData.shippingInfo && orderData.shippingInfo.postalCode) ? orderData.shippingInfo.postalCode : '', 
-      phone: (orderData.shippingAddress && orderData.shippingAddress.telephone) ? orderData.shippingAddress.telephone : '',
+      phone: (orderData.shippingAddress && orderData.shippingAddress.telephone) ? orderData.shippingAddress.telephone : ''
     },
     orderInfo: {
       orderNumber: orderData.orderNumber || '',
       orderDate: orderData.createdAt ? mapDate(orderData.createdAt.value) : '12/12/1900',
       // Falta aqui fecha de entrega
       trackingNumber: (orderData.Shipment && orderData.Shipment.trackingNumber) ? orderData.Shipment.trackingNumber : '',
-      orderNotes: orderData.shippingNote || '', 
-    },
+      orderNotes: orderData.shippingNote || '' 
+    }
   };
-  console.log(mappedData)
   return mappedData;
 };
 

@@ -7,7 +7,6 @@ import { get } from '@evershop/evershop/src/lib/util/get';
 import { Setting } from '@components/admin/promotion/couponEdit/Setting';
 
 export default function General({ reward = {} }) {
-  console.log(reward)
   return (
     <Area
       id="rewardFormGeneral"
@@ -37,7 +36,6 @@ export default function General({ reward = {} }) {
           sortOrder: 20
         },
         {
-          //corregir
           component: { default: Toggle },
           props: {
             name: 'status',

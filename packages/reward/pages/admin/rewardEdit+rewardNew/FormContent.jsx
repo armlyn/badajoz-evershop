@@ -16,6 +16,7 @@ export default function FormContent({ gridUrl }) {
             <Area id="rewardEditGeneral" noOuter />
           </Card.Session>
         </Card>
+        {/* Borre el customerConditon.jsx */}
         {/* <div className="grid grid-cols-3 gap-x-2 grid-flow-row ">
           <div className="col-span-2 grid grid-cols-1 gap-2 auto-rows-max">
             <Card title="Order conditions">
